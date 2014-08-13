@@ -44,7 +44,7 @@ namespace My_Cal
         }
         private void CustomInitialization()
         {
-            
+
             i = 0;
             AList = new ArrayList();
             cellpointer = new MyCellTracking();
@@ -54,7 +54,7 @@ namespace My_Cal
 
             CellChangedEvent = new SourceGrid.Cells.Controllers.CustomEvents();
             CellChangedEvent.EditEnded += new EventHandler(CellEvent_Changed);
-            foreach (SourceGrid.Grid GRID in tabControl1.Controls.Find("grid",true))
+            foreach (SourceGrid.Grid GRID in tabControl1.Controls.Find("grid", true))
             {
                 for (int r = 0; r < GRID.Rows.Count; r++)
                 {
@@ -497,10 +497,10 @@ namespace My_Cal
                     {
                         grid6[r, c].AddController(clickEvent);//клик мыши
                         grid6[r, c].AddController(rowpointer);//наведение
-                        if (!((r == 7 && c == 2) || (r == 8 && c == 2) ))
+                        if (!((r == 7 && c == 2) || (r == 8 && c == 2)))
                         {
-                        grid6[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
-                        grid6[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                            grid6[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                            grid6[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
                         }
                         grid6[r, c].AddController(new MyHelpRowTracking());//help row pointer
                     }
@@ -551,7 +551,7 @@ namespace My_Cal
             #endregion
             sqlite_conn.Close();
         }
-        
+
         private void DoFullTab7()
         {
             #region SQLite Connection
@@ -992,7 +992,7 @@ namespace My_Cal
             sqlite_conn.Close();
             #endregion
         }
-        #endregion 
+        #endregion
         /// <summary>
         /// Выделяет ячейку
         /// </summary>
@@ -1006,24 +1006,12 @@ namespace My_Cal
 
         /// <summary>
         /// Происходит при изменении значения ячейки
+        /// нужен для задания значения шага при точении резьбы
         /// </summary>
         /// 
         private void CellEvent_Changed(object sender, EventArgs e)
         {
             SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
-            //if (context.Cell != grid6[7, 2])
-            //{
-            //    grid6[7, 2].Value = "s=p";
-            //}
-            //if (context.Cell != grid6[7, 2])
-            //{
-            //    grid6[8, 2].Value = "s=p";
-            //}
-            //if (context.Cell != grid6[7, 2])
-            //{
-            //    grid6[14, 2].Value = "s=p";
-            //}
-           // MessageBox.Show("!!!");
             try
             {
                 s1.IData.s_rezba = Convert.ToSingle(context.Value);
@@ -1035,15 +1023,11 @@ namespace My_Cal
                 grid6[14, 2].Value = "s=p";
                 grid6[8, 2].Value = "s=p";
                 grid6[7, 2].Value = "s=p";
-                //Редактирование s 
-                //context = new CellContext(grid6, new Position(context.Position.Row, 2));
-                //context.StartEdit();
-                //MessageBox.Show("Ошибка ввода!\n");
             }
 
         }
-        
-        
+
+
         /// <summary>
         /// Выделяет все ячейки в строке от 
         /// 2й в строке до последней 
@@ -1357,10 +1341,10 @@ namespace My_Cal
         private void tabPage9_Enter(object sender, EventArgs e)
         {
             ClearTab9();
-            if (s1.IData.s_rezba!=0)
-                {
-                    s1.IData.s = s1.IData.s_rezba;
-                }
+            if (s1.IData.s_rezba != 0)
+            {
+                s1.IData.s = s1.IData.s_rezba;
+            }
             textBox1.Text = Convert.ToString(s1.IData.t);
             textBox2.Text = Convert.ToString(s1.IData.s);
             textBox3.Text = Convert.ToString(s1.IData.Kmv);
@@ -1379,7 +1363,7 @@ namespace My_Cal
             comboBox1.SelectedIndex = s1.CBoxIndex;
             if (s1)
             {
-                
+
                 textBox17.Text = Convert.ToString(s1.V());
                 textBox18.Text = Convert.ToString(s1.n());
                 textBox19.Text = Convert.ToString(s1.Pz());
@@ -1420,67 +1404,67 @@ namespace My_Cal
         private void button1_Click(object sender, EventArgs e)
         {
             textBox16.Text = textBox16.Text.Replace(".", ",");
-            
-                try
+
+            try
+            {
+                s1.IData.D = Convert.ToSingle(textBox16.Text);
+                if (s1)
                 {
-                    s1.IData.D = Convert.ToSingle(textBox16.Text);
-                    if (s1)
-                    {
                     textBox17.Text = Convert.ToString(s1.V());
                     textBox18.Text = Convert.ToString(s1.n());
                     textBox19.Text = Convert.ToString(s1.Pz());
                     textBox20.Text = Convert.ToString(s1.M());
                     textBox21.Text = Convert.ToString(s1.N());
-                    }
-                    else
-                    {
-                        string str="\n";
-                        if (s1.LCells.grid1.Cell==null)
-                        {
-                            str = str + tabPage1.Text+"\n";
-                        }
-                        if (s1.LCells.grid2.Cell==null)
-                        {
-                            str = str + tabPage2.Text + "\n";
-                        }
-                        if (s1.LCells.grid3.Cell==null)
-                        {
-                            str = str + tabPage3.Text + "\n";
-                        }
-                        
-                        if (s1.LCells.grid4.Cell==null)
-                        {
-                            str = str + tabPage4.Text + "\n";
-                        }
-                        if (s1.LCells.grid5.Cell==null)
-                        {
-                            str = str + tabPage5.Text + "\n";
-                        }
-                        if (s1.LCells.grid6.Cell==null)
-                        {
-                            str = str + tabPage6.Text + "\n";
-                        }
-                        if (s1.LCells.grid7.Cell==null)
-                        {
-                            str = str + tabPage7.Text + "\n";
-                        }
-                        if (s1.LCells.grid8.Cell==null)
-                        {
-                            str = str + tabPage8.Text + "\n";
-                        }
-
-                        if ((s1.IData.D == 0) || (s1.CBoxIndex == -1))
-                        {
-                            str = str + tabPage9.Text + "\n";
-                        }
-                        MessageBox.Show("Не все данные выбраны!\nПроверьте вкладки:"+str);
-                    }
                 }
-                catch (System.FormatException)
+                else
                 {
-                    textBox16.Text = "";
-                    MessageBox.Show("Ошибка ввода!\n");
+                    string str = "\n";
+                    if (s1.LCells.grid1.Cell == null)
+                    {
+                        str = str + tabPage1.Text + "\n";
+                    }
+                    if (s1.LCells.grid2.Cell == null)
+                    {
+                        str = str + tabPage2.Text + "\n";
+                    }
+                    if (s1.LCells.grid3.Cell == null)
+                    {
+                        str = str + tabPage3.Text + "\n";
+                    }
+
+                    if (s1.LCells.grid4.Cell == null)
+                    {
+                        str = str + tabPage4.Text + "\n";
+                    }
+                    if (s1.LCells.grid5.Cell == null)
+                    {
+                        str = str + tabPage5.Text + "\n";
+                    }
+                    if (s1.LCells.grid6.Cell == null)
+                    {
+                        str = str + tabPage6.Text + "\n";
+                    }
+                    if (s1.LCells.grid7.Cell == null)
+                    {
+                        str = str + tabPage7.Text + "\n";
+                    }
+                    if (s1.LCells.grid8.Cell == null)
+                    {
+                        str = str + tabPage8.Text + "\n";
+                    }
+
+                    if ((s1.IData.D == 0) || (s1.CBoxIndex == -1))
+                    {
+                        str = str + tabPage9.Text + "\n";
+                    }
+                    MessageBox.Show("Не все данные выбраны!\nПроверьте вкладки:" + str);
                 }
+            }
+            catch (System.FormatException)
+            {
+                textBox16.Text = "";
+                MessageBox.Show("Ошибка ввода!\n");
+            }
         }
 
 
@@ -1554,48 +1538,13 @@ namespace My_Cal
             textBox7Frez.Text = Convert.ToString(s3.n());
             textBox8Frez.Text = Convert.ToString(s3.Pz());
             textBox9Frez.Text = Convert.ToString(s3.N());
-            
+
         }
 
 
         void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
         {
-            if ((e.Button == MouseButtons.Left))
-            {
-                //Todo Сделать проверку типа
-                try
-                {
-                    DoFullTab6();
-                    s1 = (Step)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
-                    tabControl3.Visible = false;
-                    tabControl1.Visible = true;
-                    this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-                    comboBox1.SelectedIndex = -1;
-                    if (tabControl1.SelectedIndex == 8)
-                    {
-                        tabPage9_Enter(null, null);
-                    }
-                    ClearAllSelection();//почистить выделение всех ячеек всех гридов
-                    tabControl1.Visible = true;
-                    s1.ReturnSelect();
-                }
-                
-                catch (InvalidCastException)
-                {
-                    s3 = (Step_frez)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
-                    tabControl3.Visible = true;
-                    tabControl1.Visible = false;
-                    this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-                    //comboBox1.SelectedIndex = -1;
-                    if (tabControl1.SelectedIndex == 8)
-                    {
-                        tabPage7Frez_Enter(null, null);
-                    }
-                    ClearAllSelectionFrez();//почистить выделение всех ячеек всех гридов
-                    //tabControl1.Visible = true;
-                    s3.ReturnSelect();
-                }
-            }
+
         }
         /// <summary>
         /// очистить операцию
@@ -1603,37 +1552,23 @@ namespace My_Cal
         /// <param name="sender"></param>
         /// <param name="e"></param>
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //ToDoОчистка дерева 
-            //i = 0;
-            //AList.Clear();
-            //treeView1.Nodes[0].Nodes.Clear();
-            //ClearAllSelection();
-            //ClearTab9();
-            //tabControl1.Visible = false;
+        //ToDoОчистка дерева 
+        //i = 0;
+        //AList.Clear();
+        //treeView1.Nodes[0].Nodes.Clear();
+        //ClearAllSelection();
+        //ClearTab9();
+        //tabControl1.Visible = false;
 
 
         private void button2_Click(object sender, EventArgs e)
         {
-            i++;
-            treeView1.BeginUpdate();
-            treeView1.Nodes.Add("Переход"+i+" (токарный)");
-            treeView1.Nodes[0].Expand();
-            treeView1.EndUpdate();
-            Step s2 = new Step();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
-            //текущий не трогаем(!) а подменяем его только при выборе!!
-            AList.Add(s2);
+
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            i++;
-            treeView1.BeginUpdate();
-            treeView1.Nodes.Add("Переход" + i + " (фрезерный)");
-            treeView1.Nodes[0].Expand();
-            treeView1.EndUpdate();
-            Step_frez s3 = new Step_frez();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
-            //текущий не трогаем(!) а подменяем его только при выборе!!
-            AList.Add(s3);
+
         }
         public void MyRowSelector_4(CellContext context)
         {
@@ -1645,8 +1580,42 @@ namespace My_Cal
 
         private void button4_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void menu1ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void makeTurningStepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            i++;
+            treeView1.BeginUpdate();
+            treeView1.Nodes.Add("Переход" + i + " (токарный)");
+            treeView1.Nodes[0].Expand();
+            treeView1.EndUpdate();
+            Step s2 = new Step();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
+            //текущий не трогаем(!) а подменяем его только при выборе!!
+            AList.Add(s2);
+        }
+
+        private void makeFrezStepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            i++;
+            treeView1.BeginUpdate();
+            treeView1.Nodes.Add("Переход" + i + " (фрезерный)");
+            treeView1.Nodes[0].Expand();
+            treeView1.EndUpdate();
+            Step_frez s2 = new Step_frez();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
+            //текущий не трогаем(!) а подменяем его только при выборе!!
+            AList.Add(s2);
+        }
+
+        private void makeReportToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             //Проверка готовности записи в файл
-            string str="";
+            string str = "";
             for (int i = 0; i < AList.Count; i++)
             {
                 try
@@ -1657,7 +1626,7 @@ namespace My_Cal
                     }
                     else
                     {
-                        str = str + treeView1.Nodes[i].Text+"\n";
+                        str = str + treeView1.Nodes[i].Text + "\n";
                     }
                 }
                 catch
@@ -1670,23 +1639,28 @@ namespace My_Cal
             }
             else
             {
-            saveFileDialog1.AddExtension = true;
-            saveFileDialog1.ShowDialog();
-            StreamWriter fstr_out;
-            // Открываем выходной файл.
-            try
-            {
-                fstr_out = new StreamWriter(saveFileDialog1.FileName);
-                //fstr_out = new StreamWriter(
-            }
-            catch (IOException exc)
-            {
-                Console.WriteLine(
-                exc.Message +
-                "\nОшибка при открытии выходного файла.");
-                return;
-            }
-            
+
+                saveFileDialog1.AddExtension = true;
+                saveFileDialog1.ShowDialog();
+                StreamWriter fstr_out;
+                // Открываем выходной файл.
+                try
+                {
+                    fstr_out = new StreamWriter(saveFileDialog1.FileName);
+                    //fstr_out = new StreamWriter(
+                }
+                catch (IOException exc)
+                {
+                    Console.WriteLine(
+                    exc.Message +
+                    "\nОшибка при открытии выходного файла.");
+                    return;
+                }
+                catch (ArgumentException exc)
+                {
+                    return;
+                }
+
                 // Записываем в файл.
                 for (int i = 0; i < AList.Count; i++)
                 {
@@ -1731,6 +1705,112 @@ namespace My_Cal
                 fstr_out.Close();
                 Process.Start(saveFileDialog1.FileName);
             }
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void deleteStepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (TreeNode n in treeView1.Nodes)
+            {
+                if (n.IsSelected)
+                {
+                    n.Remove();
+                    //TODO Важно! Написать удаление из ArrayList
+                    if (treeView1.GetNodeCount(true) == 0)
+                    {
+                        tabControl1.Visible = false;
+                        tabControl3.Visible = false;
+                    }
+                    else
+                    {
+                        treeView1.SelectedNode = treeView1.GetNodeAt(treeView1.GetNodeCount(true), 0);
+
+                    }
+                    break;
+                }
+            }
+
+        }
+
+        private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
+        {
+            //e = (TreeNodeMouseClickEventArgs)e;
+
+            if ((true))
+            {
+                //Todo Сделать проверку типа
+                try
+                {
+                    DoFullTab6();
+                    s1 = (Step)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+                    tabControl3.Visible = false;
+                    tabControl1.Visible = true;
+                    tabControl2.Visible = false;
+                    this.Text = "Калькулятор режимов резания: " + e.Node.Text;
+                    comboBox1.SelectedIndex = -1;
+                    if (tabControl1.SelectedIndex == 8)
+                    {
+                        tabPage9_Enter(null, null);
+                    }
+                    ClearAllSelection();//почистить выделение всех ячеек всех гридов
+                    tabControl1.Visible = true;
+                    s1.ReturnSelect();
+                }
+
+                catch (InvalidCastException)
+                {
+                    try
+                    {
+                        s3 = (Step_frez)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+                        tabControl3.Visible = true;
+                        tabControl1.Visible = false;
+                        tabControl2.Visible = false;
+                        this.Text = "Калькулятор режимов резания: " + e.Node.Text;
+                        //comboBox1.SelectedIndex = -1;
+                        if (tabControl1.SelectedIndex == 8)
+                        {
+                            tabPage7Frez_Enter(null, null);
+                        }
+                        ClearAllSelectionFrez();//почистить выделение всех ячеек всех гридов
+                        //tabControl1.Visible = true;
+                        s3.ReturnSelect();
+                    }
+                    catch (InvalidCastException)
+                    {
+
+                        s4 = (Step_drill)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+                        tabControl3.Visible = false;
+                        tabControl1.Visible = false;
+                        tabControl2.Visible = true;
+                        this.Text = "Калькулятор режимов резания: " + e.Node.Text;
+                        //comboBox1.SelectedIndex = -1;
+                        //if (tabControl1.SelectedIndex == 8)
+                        //{
+                        //    tabPage7Frez_Enter(null, null);
+                        //}
+                        //ClearAllSelectionFrez();//почистить выделение всех ячеек всех гридов
+                        ////tabControl1.Visible = true;
+                        //s3.ReturnSelect();
+
+                    }
+                }
+            }
+        }
+
+        private void создатьСверлильныйПереходToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            i++;
+            treeView1.BeginUpdate();
+            treeView1.Nodes.Add("Переход" + i + " (сверлильный)");
+            treeView1.Nodes[0].Expand();
+            treeView1.EndUpdate();
+            Step_drill s2 = new Step_drill();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
+            //текущий не трогаем(!) а подменяем его только при выборе!!
+            AList.Add(s2);
         }
     }
 }

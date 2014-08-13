@@ -55,6 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Step_drill.cs" />
     <Compile Include="Step_frez.cs" />
     <Compile Include="Step.cs" />
     <Compile Include="Form1.cs">
