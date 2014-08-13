@@ -1,0 +1,1744 @@
+using System;
+using System.Drawing;
+using System.Windows.Forms;
+using SourceGrid;
+using System.Data.SQLite;
+using SourceGrid.Selection;
+using System.Collections;
+using System.ComponentModel;
+//using System.
+namespace My_Cal
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Требуется переменная конструктора.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Освободить все используемые ресурсы.
+        /// </summary>
+        /// <param name="disposing">истинно, если управляемый ресурс должен быть удален; иначе ложно.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Код, автоматически созданный конструктором форм Windows
+
+        /// <summary>
+        /// Обязательный метод для поддержки конструктора - не изменяйте
+        /// содержимое данного метода при помощи редактора кода.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.grid1 = new SourceGrid.Grid();
+            this.grid2 = new SourceGrid.Grid();
+            this.grid3 = new SourceGrid.Grid();
+            this.grid4 = new SourceGrid.Grid();
+            this.grid5 = new SourceGrid.Grid();
+            this.grid6 = new SourceGrid.Grid();
+            this.grid7 = new SourceGrid.Grid();
+            this.grid8 = new SourceGrid.Grid();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.tabPage6 = new System.Windows.Forms.TabPage();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.tabPage9 = new System.Windows.Forms.TabPage();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.tabPage4.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.tabPage6.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.tabPage9.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // grid1
+            // 
+            this.grid1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid1.EnableSort = true;
+            this.grid1.Location = new System.Drawing.Point(4, 5);
+            this.grid1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grid1.Name = "grid1";
+            this.grid1.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid1.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid1.Size = new System.Drawing.Size(1349, 560);
+            this.grid1.TabIndex = 0;
+            this.grid1.TabStop = true;
+            this.grid1.ToolTipText = "";
+            // 
+            // grid2
+            // 
+            this.grid2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid2.EnableSort = true;
+            this.grid2.Location = new System.Drawing.Point(4, 5);
+            this.grid2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grid2.Name = "grid2";
+            this.grid2.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid2.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid2.Size = new System.Drawing.Size(1349, 560);
+            this.grid2.TabIndex = 0;
+            this.grid2.TabStop = true;
+            this.grid2.ToolTipText = "";
+            // 
+            // grid3
+            // 
+            this.grid3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid3.EnableSort = true;
+            this.grid3.Location = new System.Drawing.Point(3, 3);
+            this.grid3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grid3.Name = "grid3";
+            this.grid3.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid3.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid3.Size = new System.Drawing.Size(1351, 564);
+            this.grid3.TabIndex = 1;
+            this.grid3.TabStop = true;
+            this.grid3.ToolTipText = "";
+            // 
+            // grid4
+            // 
+            this.grid4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid4.EnableSort = true;
+            this.grid4.Location = new System.Drawing.Point(3, 3);
+            this.grid4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grid4.Name = "grid4";
+            this.grid4.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid4.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid4.Size = new System.Drawing.Size(1351, 564);
+            this.grid4.TabIndex = 2;
+            this.grid4.TabStop = true;
+            this.grid4.ToolTipText = "";
+            // 
+            // grid5
+            // 
+            this.grid5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid5.EnableSort = true;
+            this.grid5.Location = new System.Drawing.Point(3, 3);
+            this.grid5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grid5.Name = "grid5";
+            this.grid5.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid5.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid5.Size = new System.Drawing.Size(1351, 564);
+            this.grid5.TabIndex = 3;
+            this.grid5.TabStop = true;
+            this.grid5.ToolTipText = "";
+            // 
+            // grid6
+            // 
+            this.grid6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid6.EnableSort = true;
+            this.grid6.Location = new System.Drawing.Point(4, 5);
+            this.grid6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grid6.Name = "grid6";
+            this.grid6.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid6.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid6.Size = new System.Drawing.Size(1349, 560);
+            this.grid6.TabIndex = 3;
+            this.grid6.TabStop = true;
+            this.grid6.ToolTipText = "";
+            // 
+            // grid7
+            // 
+            this.grid7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid7.EnableSort = true;
+            this.grid7.Location = new System.Drawing.Point(4, 5);
+            this.grid7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grid7.Name = "grid7";
+            this.grid7.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid7.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid7.Size = new System.Drawing.Size(1349, 560);
+            this.grid7.TabIndex = 4;
+            this.grid7.TabStop = true;
+            this.grid7.ToolTipText = "";
+            // 
+            // grid8
+            // 
+            this.grid8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid8.EnableSort = true;
+            this.grid8.Location = new System.Drawing.Point(4, 5);
+            this.grid8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.grid8.Name = "grid8";
+            this.grid8.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid8.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid8.Size = new System.Drawing.Size(1349, 560);
+            this.grid8.TabIndex = 4;
+            this.grid8.TabStop = true;
+            this.grid8.ToolTipText = "";
+            // 
+            // tabControl1
+            // 
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage4);
+            this.tabControl1.Controls.Add(this.tabPage5);
+            this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
+            this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage10);
+            this.tabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabControl1.ItemSize = new System.Drawing.Size(131, 25);
+            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1365, 603);
+            this.tabControl1.SizeMode = System.Windows.Forms.TabSizeMode.FillToRight;
+            this.tabControl1.TabIndex = 1;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.Transparent;
+            this.tabPage1.Controls.Add(this.grid1);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage1.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Выбор глубины резания";
+            this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.grid2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage2.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Выбор подачи";
+            this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.grid3);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Поправка на материал детали";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // tabPage4
+            // 
+            this.tabPage4.Controls.Add(this.grid4);
+            this.tabPage4.Location = new System.Drawing.Point(4, 29);
+            this.tabPage4.Name = "tabPage4";
+            this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage4.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage4.TabIndex = 3;
+            this.tabPage4.Text = "Поправка на состояние поверхности";
+            this.tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.grid5);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Поправка на материал инструмента";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            this.tabPage6.Controls.Add(this.grid6);
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
+            this.tabPage6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage6.Name = "tabPage6";
+            this.tabPage6.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage6.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage6.TabIndex = 5;
+            this.tabPage6.Text = "Эмпирические коэффициенты скорости резания";
+            this.tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.grid7);
+            this.tabPage7.Location = new System.Drawing.Point(4, 29);
+            this.tabPage7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage7.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Эмпирические коэффициенты силы резания ";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.grid8);
+            this.tabPage8.Location = new System.Drawing.Point(4, 29);
+            this.tabPage8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage8.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Поправка на обрабатываемый материал";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // tabPage9
+            // 
+            this.tabPage9.Controls.Add(this.textBox21);
+            this.tabPage9.Controls.Add(this.label22);
+            this.tabPage9.Controls.Add(this.textBox20);
+            this.tabPage9.Controls.Add(this.label21);
+            this.tabPage9.Controls.Add(this.textBox19);
+            this.tabPage9.Controls.Add(this.label20);
+            this.tabPage9.Controls.Add(this.textBox18);
+            this.tabPage9.Controls.Add(this.label19);
+            this.tabPage9.Controls.Add(this.textBox17);
+            this.tabPage9.Controls.Add(this.label18);
+            this.tabPage9.Controls.Add(this.textBox16);
+            this.tabPage9.Controls.Add(this.label17);
+            this.tabPage9.Controls.Add(this.textBox15);
+            this.tabPage9.Controls.Add(this.label16);
+            this.tabPage9.Controls.Add(this.textBox14);
+            this.tabPage9.Controls.Add(this.label15);
+            this.tabPage9.Controls.Add(this.button1);
+            this.tabPage9.Controls.Add(this.textBox13);
+            this.tabPage9.Controls.Add(this.label11);
+            this.tabPage9.Controls.Add(this.textBox12);
+            this.tabPage9.Controls.Add(this.label12);
+            this.tabPage9.Controls.Add(this.textBox11);
+            this.tabPage9.Controls.Add(this.label13);
+            this.tabPage9.Controls.Add(this.textBox10);
+            this.tabPage9.Controls.Add(this.label14);
+            this.tabPage9.Controls.Add(this.textBox9);
+            this.tabPage9.Controls.Add(this.label10);
+            this.tabPage9.Controls.Add(this.textBox8);
+            this.tabPage9.Controls.Add(this.label9);
+            this.tabPage9.Controls.Add(this.textBox7);
+            this.tabPage9.Controls.Add(this.label8);
+            this.tabPage9.Controls.Add(this.textBox6);
+            this.tabPage9.Controls.Add(this.label7);
+            this.tabPage9.Controls.Add(this.textBox5);
+            this.tabPage9.Controls.Add(this.label6);
+            this.tabPage9.Controls.Add(this.textBox4);
+            this.tabPage9.Controls.Add(this.label5);
+            this.tabPage9.Controls.Add(this.textBox3);
+            this.tabPage9.Controls.Add(this.label4);
+            this.tabPage9.Controls.Add(this.textBox2);
+            this.tabPage9.Controls.Add(this.label3);
+            this.tabPage9.Controls.Add(this.textBox1);
+            this.tabPage9.Controls.Add(this.label2);
+            this.tabPage9.Controls.Add(this.label1);
+            this.tabPage9.Controls.Add(this.comboBox1);
+            this.tabPage9.Location = new System.Drawing.Point(4, 29);
+            this.tabPage9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage9.Name = "tabPage9";
+            this.tabPage9.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage9.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage9.TabIndex = 8;
+            this.tabPage9.Text = "Результат";
+            this.tabPage9.UseVisualStyleBackColor = true;
+            this.tabPage9.Enter += new System.EventHandler(this.tabPage9_Enter);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label22.Location = new System.Drawing.Point(982, 359);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(38, 25);
+            this.label22.TabIndex = 43;
+            this.label22.Text = "N=";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label21.Location = new System.Drawing.Point(982, 298);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(41, 25);
+            this.label21.TabIndex = 41;
+            this.label21.Text = "M=";
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(1062, 238);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(195, 26);
+            this.textBox19.TabIndex = 40;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label20.Location = new System.Drawing.Point(982, 237);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(47, 25);
+            this.label20.TabIndex = 39;
+            this.label20.Text = "Pz=";
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(1062, 360);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(195, 26);
+            this.textBox21.TabIndex = 44;
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(1062, 299);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(195, 26);
+            this.textBox20.TabIndex = 42;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(1062, 177);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(195, 26);
+            this.textBox18.TabIndex = 38;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label19.Location = new System.Drawing.Point(982, 176);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(35, 25);
+            this.label19.TabIndex = 37;
+            this.label19.Text = "n=";
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(1062, 116);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(195, 26);
+            this.textBox17.TabIndex = 36;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label18.Location = new System.Drawing.Point(982, 115);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(38, 25);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "V=";
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(919, 21);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(195, 26);
+            this.textBox16.TabIndex = 34;
+            this.textBox16.KeyUp += new KeyEventHandler(textBox16_KeyUp);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label17.Location = new System.Drawing.Point(648, 18);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(265, 25);
+            this.label17.TabIndex = 33;
+            this.label17.Text = "Введите диаметр детали=";
+            // 
+            // textBox15
+            // 
+            this.textBox15.Location = new System.Drawing.Point(728, 360);
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(195, 26);
+            this.textBox15.TabIndex = 32;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label16.Location = new System.Drawing.Point(648, 359);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(65, 25);
+            this.label16.TabIndex = 31;
+            this.label16.Text = "Kmp=";
+            // 
+            // textBox14
+            // 
+            this.textBox14.Location = new System.Drawing.Point(393, 360);
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(195, 26);
+            this.textBox14.TabIndex = 30;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label15.Location = new System.Drawing.Point(331, 359);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(37, 25);
+            this.label15.TabIndex = 29;
+            this.label15.Text = "T=";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(1062, 453);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(195, 51);
+            this.button1.TabIndex = 28;
+            this.button1.Text = "Расчитать";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(728, 299);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(195, 26);
+            this.textBox13.TabIndex = 27;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label11.Location = new System.Drawing.Point(648, 298);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(35, 25);
+            this.label11.TabIndex = 26;
+            this.label11.Text = "n=";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(728, 238);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(195, 26);
+            this.textBox12.TabIndex = 25;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label12.Location = new System.Drawing.Point(648, 237);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(34, 25);
+            this.label12.TabIndex = 24;
+            this.label12.Text = "y=";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(728, 177);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(195, 26);
+            this.textBox11.TabIndex = 23;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label13.Location = new System.Drawing.Point(648, 176);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(34, 25);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "x=";
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(728, 116);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(195, 26);
+            this.textBox10.TabIndex = 21;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label14.Location = new System.Drawing.Point(648, 115);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(50, 25);
+            this.label14.TabIndex = 20;
+            this.label14.Text = "Cp=";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(393, 299);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(195, 26);
+            this.textBox9.TabIndex = 19;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label10.Location = new System.Drawing.Point(333, 298);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(40, 25);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "m=";
+            // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(393, 238);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(195, 26);
+            this.textBox8.TabIndex = 17;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label9.Location = new System.Drawing.Point(333, 237);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(34, 25);
+            this.label9.TabIndex = 16;
+            this.label9.Text = "y=";
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(393, 177);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(195, 26);
+            this.textBox7.TabIndex = 15;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label8.Location = new System.Drawing.Point(333, 176);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(34, 25);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "x=";
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(393, 116);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(195, 26);
+            this.textBox6.TabIndex = 13;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label7.Location = new System.Drawing.Point(333, 114);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(49, 25);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "Cv=";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(85, 360);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(195, 26);
+            this.textBox5.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label6.Location = new System.Drawing.Point(13, 359);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 25);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Knv=";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(85, 299);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(195, 26);
+            this.textBox4.TabIndex = 9;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label5.Location = new System.Drawing.Point(13, 298);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(59, 25);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Kpv=";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(85, 238);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(195, 26);
+            this.textBox3.TabIndex = 7;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label4.Location = new System.Drawing.Point(13, 237);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(64, 25);
+            this.label4.TabIndex = 6;
+            this.label4.Text = "Kmv=";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(85, 177);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(195, 26);
+            this.textBox2.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label3.Location = new System.Drawing.Point(13, 176);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 25);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "s=";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(85, 116);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(195, 26);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label2.Location = new System.Drawing.Point(13, 115);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 25);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "t=";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(8, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(364, 25);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Выбирете период стойкости резца T:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "20",
+            "30",
+            "40",
+            "60",
+            "90",
+            "120"});
+            this.comboBox1.Location = new System.Drawing.Point(398, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(219, 28);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // tabPage10
+            // 
+            this.tabPage10.Location = new System.Drawing.Point(4, 29);
+            this.tabPage10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tabPage10.Size = new System.Drawing.Size(1357, 570);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "tabPage10";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1365, 603);
+            this.Controls.Add(this.tabControl1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "Form1";
+            this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage4.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.tabPage6.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.tabPage9.ResumeLayout(false);
+            this.tabPage9.PerformLayout();
+            this.ResumeLayout(false);
+
+        }
+
+        private void CustomInitialization()
+        {
+            gv1 = new GVar();
+            cellpointer = new MyCellPointer();
+            rowpointer = new MyRowPointer();
+            clickEvent = new SourceGrid.Cells.Controllers.CustomEvents();
+            clickEvent.Click += new EventHandler(clickEvent_Click);
+            
+        }
+        #region DuFullTab
+        private void DoFullTab1()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open(); // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM external_turning";// First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
+            #endregion
+            #region Код таблицы 1 (Наружнее точение)
+            grid1.BorderStyle = BorderStyle.FixedSingle;
+            grid1.Redim(14, 4);
+            grid1.Rows.Insert(0);
+            SourceGrid.Cells.Views.Cell viewImage = new SourceGrid.Cells.Views.Cell();
+            grid1[0, 0] = new SourceGrid.Cells.ColumnHeader("Наружнее точение");
+            grid1[0, 0].ColumnSpan = 4;
+            grid1[0, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            grid1[1, 0] = new SourceGrid.Cells.ColumnHeader("D, мм");
+            grid1[1, 0].RowSpan = 2;
+            grid1[1, 1] = new SourceGrid.Cells.ColumnHeader("Черновое");
+            grid1[1, 2] = new SourceGrid.Cells.ColumnHeader("Получистовое");
+            grid1[1, 3] = new SourceGrid.Cells.ColumnHeader("Чистовое");
+            grid1[2, 1] = new SourceGrid.Cells.ColumnHeader("t, мм");
+            grid1[2, 1].ColumnSpan = 3;
+            for (int r = 3; r < 9; r++)
+            {
+                grid1.Rows.Insert(r);
+                if (sqlite_datareader.Read())
+                {
+                    grid1[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid1[r, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid1[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid1[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                }
+                SourceGrid.Range R1 = new SourceGrid.Range(new Position(1,3),new Position(8,3));
+                SourceGrid.RangeRegion rr = new RangeRegion(R1);
+                for (int c = 0; c < 4; c++) //задание свойств ячеек
+                {
+                    if (c != 0)
+                    {
+                        grid1[r, c].AddController(cellpointer);//наведение
+                        grid1[r, c].AddController(clickEvent);//клик мыши
+                        grid1[r, c].Editor.EnableEdit = false;
+                        grid1[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid1[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+            }
+            #endregion
+            sqlite_conn.Close();
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");    // create a new database connection
+            sqlite_conn.Open(); // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                               // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM boring";                                                        // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 1 (растачивание)
+            grid1[9, 0] = new SourceGrid.Cells.ColumnHeader("Растачивание");
+            for (int r = 11; r < 15; r++)
+            {
+                grid1.Rows.Insert(r);
+                if (sqlite_datareader.Read())
+                {
+                    grid1[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid1[r, 1] = new SourceGrid.Cells.Cell(" ", typeof(string));
+                    grid1[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid1[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                }
+                for (int c = 0; c < 4; c++) //задание свойств ячеек
+                {
+                    if ((c != 0) & (c != 1))
+                    {
+                        grid1[r, c].AddController(cellpointer);//наведение
+                        grid1[r, c].AddController(clickEvent);//клик мыши
+                        grid1[r, c].Editor.EnableEdit = false;
+                        grid1[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid1[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+            }
+            grid1[9, 0].ColumnSpan = 4;
+            grid1.AutoSizeCells();
+            grid1.EnableSort = false;
+            grid1.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();
+            	 
+        }
+        private void DoFullTab2()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open();                                                                                 // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM roughing";                                                  // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();                                                     // The SQLiteDataReader allows us to run through the result lines
+            #endregion
+            #region Код таблицы 2(черновое точение)
+            grid2.BorderStyle = BorderStyle.FixedSingle;
+            grid2.Redim(19, 4);
+            grid2[0, 0] = new SourceGrid.Cells.ColumnHeader("Черновое точение");
+            grid2[0, 0].ColumnSpan = 4;
+            grid2[1, 0] = new SourceGrid.Cells.ColumnHeader("D, мм");
+            grid2[1, 0].ColumnSpan = 2;
+            grid2[1, 0].RowSpan = 3;
+            grid2[1, 2] = new SourceGrid.Cells.ColumnHeader("Материал детали");
+            grid2[1, 2].ColumnSpan = 2;
+            grid2[2, 2] = new SourceGrid.Cells.ColumnHeader("Сталь углеродистая");
+            grid2[2, 2].Column.Width = 40;
+            grid2[2, 3] = new SourceGrid.Cells.ColumnHeader("Чугун серый");
+            grid2[3, 2] = new SourceGrid.Cells.ColumnHeader("S, мм");
+            grid2[3, 2].ColumnSpan = 2;
+            for (int r = 4; r < 9; r++)
+            {
+                grid2.Rows.Insert(r);
+                if (sqlite_datareader.Read())
+                {
+                    grid2[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid2[r, 0].ColumnSpan = 2;
+                    grid2[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid2[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                }
+                for (int c = 0; c < 4; c++) //задание свойств ячеек
+                {
+                    if ((c != 0) & (c != 1)) //для заголовков свойства не задаются
+                    {
+                        grid2[r, c].AddController(clickEvent);//клик мыши
+                        grid2[r, c].AddController(cellpointer);//наведение
+                        grid2[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                        grid2[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid2[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+            }
+            #endregion
+            sqlite_conn.Close(); 
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");    // create a new database connection
+            sqlite_conn.Open();                                                                                     // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                               // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM finish_turning";                                                // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();                                                         // The SQLiteDataReader allows us to run through the result lines
+            #endregion
+            #region Код таблицы 3(получистовое и чистовое точение)
+            grid2[9, 0] = new SourceGrid.Cells.ColumnHeader("Получистовое и чистовое точение");
+            grid2[9, 0].ColumnSpan = 4;
+            grid2[10, 0] = new SourceGrid.Cells.ColumnHeader("Шероховатость");
+            grid2[10, 0].ColumnSpan = 2;
+            grid2[10, 2] = new SourceGrid.Cells.ColumnHeader("Радиус при вершине, R, мм");
+            grid2[10, 2].ColumnSpan = 2;
+            grid2[11, 0] = new SourceGrid.Cells.ColumnHeader("Ra, мкм");
+            grid2[11, 0].RowSpan = 2;
+            grid2[11, 1] = new SourceGrid.Cells.ColumnHeader("Rz, мкм");
+            grid2[11, 1].RowSpan = 2;
+            grid2[11, 2] = new SourceGrid.Cells.ColumnHeader("<0,5");
+            grid2[11, 3] = new SourceGrid.Cells.ColumnHeader(">0,5-1,0");
+            grid2[12, 2] = new SourceGrid.Cells.ColumnHeader("s, мм/об");
+            grid2[12, 2].ColumnSpan = 2;
+            for (int r = 13; r < 19; r++)
+            {
+                grid2.Rows.Insert(r);
+                if (sqlite_datareader.Read())
+                {
+                    grid2[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid2[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(1)));
+                    grid2[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid2[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                }
+                for (int c = 0; c < 4; c++) //задание свойств ячеек
+                {
+                    if ((c != 0) & (c != 1)) //для заголовков свойства не задаются
+                    {
+                        grid2[r, c].AddController(clickEvent);//клик мыши
+                        grid2[r, c].AddController(cellpointer);//наведение
+                        grid2[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                        grid2[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid2[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+            }
+            
+            grid2.AutoSizeCells();
+            grid2.EnableSort = false;
+            grid2.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();// We are ready, now lets cleanup and close our connection
+        }
+        private void DoFullTab3()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open();                                                                                 // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM KMV";                                                  // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 4
+            grid3.BorderStyle = BorderStyle.FixedSingle;
+            grid3.Redim(3, 2);
+            grid3.Rows.Insert(0);
+            grid3[0, 0] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый материал");
+            grid3[0, 0].Column.Width = 200;
+            grid3[0, 1] = new SourceGrid.Cells.ColumnHeader("Kмv");
+            for (int r = 1; r < 3; r++)
+            {
+                if (sqlite_datareader.Read())
+                {
+                    grid3[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid3[r, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                }
+                for (int c = 0; c < 2; c++) //задание свойств ячеек
+                {
+                    if (c != 0) //для заголовков свойства не задаются
+                    {
+                        grid3[r, c].AddController(clickEvent);//клик мыши
+                        grid3[r, c].AddController(cellpointer);//наведение
+                        grid3[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                        grid3[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid3[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+            }
+            grid3.AutoSizeCells();
+            grid3.EnableSort = false;
+            grid3.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();
+        }
+        private void DoFullTab4()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open();                                                                                 // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM KpV";                                                  // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 5
+            grid4.BorderStyle = BorderStyle.FixedSingle;
+            grid4.Redim(4, 5);
+            grid4[0, 0] = new SourceGrid.Cells.ColumnHeader("Материалы детали");
+            //grid4[0, 0].Column.Width = 200;
+            grid4[0, 0].RowSpan = 3;
+            grid4[0, 1] = new SourceGrid.Cells.ColumnHeader("Заготовки с коркой");
+            grid4[0, 1].ColumnSpan = 3;
+            grid4[1, 1] = new SourceGrid.Cells.ColumnHeader("Поковка");
+            grid4[1, 2] = new SourceGrid.Cells.ColumnHeader("Отливка");
+            grid4[1, 3] = new SourceGrid.Cells.ColumnHeader("Прокат");
+            grid4[0, 4] = new SourceGrid.Cells.ColumnHeader("Полуфабрикат \nбез корки");
+            grid4[0, 4].RowSpan = 2;
+            grid4[2, 1] = new SourceGrid.Cells.ColumnHeader("Kпv");
+            grid4[2, 1].ColumnSpan = 4;
+            if (sqlite_datareader.Read())
+            {
+                grid4[3, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                for (int c = 1; c < 5; c++)
+                {
+                    grid4[3, c] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(c)), typeof(float));
+                    grid4[3, c].AddController(clickEvent);//клик мыши
+                    grid4[3, c].AddController(cellpointer);//наведение
+                    grid4[3, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                    grid4[3, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                    grid4[3, c].AddController(new MyHelpRowPointer());//help row pointer
+                }
+            }
+            grid4.AutoSizeCells();
+            grid4.EnableSort = false;
+            grid4.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();
+        }
+        private void DoFullTab5()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open();                                                                                 // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM KiV_hard_alloy";                                                  // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 6 (твердый сплав)
+            grid5.BorderStyle = BorderStyle.FixedSingle;
+            grid5.Redim(7, 7);
+            grid5[0, 0] = new SourceGrid.Cells.ColumnHeader("Материалы детали");
+            //grid5[0, 0].Column.Width = 200;
+            grid5[0, 0].RowSpan = 3;
+            grid5[0, 1] = new SourceGrid.Cells.ColumnHeader("Твердый сплав");
+            grid5[0, 1].ColumnSpan = 6;
+            grid5[1, 1] = new SourceGrid.Cells.ColumnHeader("Т15К10");
+            grid5[1, 2] = new SourceGrid.Cells.ColumnHeader("Т15К6");
+            grid5[1, 3] = new SourceGrid.Cells.ColumnHeader("Т30К4");
+            grid5[1, 4] = new SourceGrid.Cells.ColumnHeader("ВК8");
+            grid5[1, 5] = new SourceGrid.Cells.ColumnHeader("ВК6");
+            grid5[1, 6] = new SourceGrid.Cells.ColumnHeader("ВК4");
+            grid5[2, 1] = new SourceGrid.Cells.ColumnHeader("Kиv");
+            grid5[2, 1].ColumnSpan = 6;
+            grid5[3, 4] = new SourceGrid.Cells.Cell("", typeof(string));
+            grid5[3, 4].ColumnSpan = 3;
+            grid5[4, 1] = new SourceGrid.Cells.Cell("", typeof(string));
+            grid5[4, 1].ColumnSpan = 3;
+            
+            for (int r = 3; r < 5; r++)
+            {
+                if (sqlite_datareader.Read())
+                {
+                    grid5[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    switch (r)
+                    {
+                        case 3:
+                            for (int c = 1; c < 4; c++)
+                            {
+                                grid5[3, c] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(c)),typeof(float));
+                                grid5[3, c].AddController(clickEvent);//клик мыши
+                                grid5[3, c].AddController(cellpointer);//наведение
+                                grid5[3, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                                grid5[3, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                                grid5[3, c].AddController(new MyHelpRowPointer());//help row pointer
+                            }
+                            break;
+                        case 4:
+                            for (int c = 4; c < 7; c++)
+                            {
+                                grid5[4, c] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(c)), typeof(float));
+                                grid5[4, c].AddController(clickEvent);//клик мыши
+                                grid5[4, c].AddController(cellpointer);//наведение
+                                grid5[4, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                                grid5[4, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                                grid5[4, c].AddController(new MyHelpRowPointer());//help row pointer
+                            }
+                            break;
+                    }
+                }
+            }
+            #endregion
+            sqlite_conn.Close();
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open();                                                                                 // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM KiV_high_speed_steel";                                                  // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 6 (быстрорежущая сталь)
+            
+            grid5[5, 0] = new SourceGrid.Cells.ColumnHeader("Материалы детали");
+            grid5[5, 1] = new SourceGrid.Cells.ColumnHeader("Быстрорежущая сталь");
+            grid5[5, 1].ColumnSpan = 6;
+            
+            grid5[6, 1] = new SourceGrid.Cells.Cell("123");
+            
+            if (sqlite_datareader.Read())
+            {
+                grid5[6, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                grid5[6, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)),typeof(float));
+                grid5[6, 1].ColumnSpan = 6;
+                grid5[6, 1].AddController(clickEvent);//клик мыши
+                grid5[6, 1].AddController(cellpointer);//наведение
+                grid5[6, 1].Editor.EnableEdit = false;//нередактируемые ячейки
+                grid5[6, 1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                grid5[6, 1].AddController(new MyHelpRowPointer());//help row pointer
+            }
+            grid5.AutoSizeCells();
+            grid5.EnableSort = false;
+            grid5.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();
+        }
+        private void DoFullTab6()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open();                                                                                 // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM EmpParamV";                                                  // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 7 (СтУг)
+            grid6.BorderStyle = BorderStyle.FixedSingle;
+            grid6.Redim(15, 7);
+            //строка0
+            grid6[0, 0] = new SourceGrid.Cells.ColumnHeader("Вид обработки");
+            grid6[0, 1] = new SourceGrid.Cells.ColumnHeader("Материал резца");
+            grid6[0, 2] = new SourceGrid.Cells.ColumnHeader("S");
+            grid6[0, 3] = new SourceGrid.Cells.ColumnHeader("Cv");
+            grid6[0, 4] = new SourceGrid.Cells.ColumnHeader("x");
+            grid6[0, 5] = new SourceGrid.Cells.ColumnHeader("y");
+            grid6[0, 6] = new SourceGrid.Cells.ColumnHeader("m");
+            //строка1
+            grid6[1, 0] = new SourceGrid.Cells.ColumnHeader("Сталь углеродистая");
+            grid6[1, 0].ColumnSpan = 7;
+            //строка2-4
+            grid6[2, 0] = new SourceGrid.Cells.RowHeader("Наружнее точение \n Растачивание");
+            grid6[2, 0].RowSpan = 3;
+            
+            //строка5-6
+            grid6[5, 0] = new SourceGrid.Cells.RowHeader("Подрезание \n отрезание");
+            grid6[5, 0].RowSpan = 2;
+            //строка7-8
+            grid6[7, 0] = new SourceGrid.Cells.RowHeader("Нарезание резьбы \n резцом");
+            grid6[7, 0].RowSpan = 2;
+            
+            //Строка9
+            grid6[9, 0] = new SourceGrid.Cells.ColumnHeader("Серый чугун");
+            grid6[9, 0].ColumnSpan = 7;
+            //материал резца
+            grid6[2, 1] = new SourceGrid.Cells.RowHeader("Твердый \nсплав");
+            grid6[2, 1].RowSpan = 4;
+            grid6[6, 1] = new SourceGrid.Cells.RowHeader("Быстрорежущая \nсталь");
+            grid6[7, 1] = new SourceGrid.Cells.RowHeader("Твердый \nсплав");
+            grid6[8, 1] = new SourceGrid.Cells.RowHeader("Быстрорежущая \nсталь");
+            
+            for (int r = 2; r < 9;r++ )
+            {
+                if (sqlite_datareader.Read())
+                {
+                    grid6[r, 2] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(0)), typeof(string));
+                    grid6[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid6[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid6[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                    grid6[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
+                    for (int c = 2; c < 7; c++)
+                    {
+                        grid6[r, c].AddController(clickEvent);//клик мыши
+                        grid6[r, c].AddController(rowpointer);//наведение
+                        grid6[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                        grid6[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid6[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+
+            }
+            #endregion
+            #region Код таблицы 7 (СЧ)
+            grid6[10, 0] = new SourceGrid.Cells.RowHeader("Наружнее точение \nРастачивание");
+            grid6[10, 0].RowSpan = 2;
+            grid6[12, 0] = new SourceGrid.Cells.RowHeader("Подрезание\nОтрезание");
+            grid6[12, 0].RowSpan = 2;
+            grid6[14, 0] = new SourceGrid.Cells.RowHeader("Нарезание\nрезьбы");
+            //grid6[14, 0].RowSpan = 2;
+            grid6[10, 1] = new SourceGrid.Cells.RowHeader("Твердый сплав");
+            grid6[10, 1].RowSpan = 5;
+            for (int r = 10; r < 15;r++ )
+            {
+                if (sqlite_datareader.Read())
+                {
+                    grid6[r, 2] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(0)), typeof(string));
+                    grid6[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid6[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid6[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                    grid6[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
+                    for (int c = 2; c < 7; c++)
+                    {
+                        grid6[r, c].AddController(clickEvent);//клик мыши
+                        grid6[r, c].AddController(rowpointer);//наведение
+                        grid6[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                        grid6[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid6[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+            }
+            grid6.AutoSizeCells();
+            grid6.EnableSort = false;
+            grid6.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();
+        }
+        private void DoFullTab7()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open();                                                                                 // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM EmpParamPz";                                                  // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 8 (СтУг)
+            grid7.BorderStyle = BorderStyle.FixedSingle;
+            grid7.Redim(15, 6);
+            //строка0
+            grid7[0, 0] = new SourceGrid.Cells.ColumnHeader("Вид обработки");
+            grid7[0, 1] = new SourceGrid.Cells.ColumnHeader("Материал резца");
+            grid7[0, 2] = new SourceGrid.Cells.ColumnHeader("Cp");
+            grid7[0, 3] = new SourceGrid.Cells.ColumnHeader("x");
+            grid7[0, 4] = new SourceGrid.Cells.ColumnHeader("y");
+            grid7[0, 5] = new SourceGrid.Cells.ColumnHeader("n");
+            //строка1
+            grid7[1, 0] = new SourceGrid.Cells.ColumnHeader("Сталь углеродистая");
+            grid7[1, 0].ColumnSpan = 6;
+            grid7[2, 0] = new SourceGrid.Cells.RowHeader("Наружнее точение \n Растачивание");
+            grid7[3, 0] = new SourceGrid.Cells.RowHeader("Подрезание \n отрезание");
+            grid7[4, 0] = new SourceGrid.Cells.RowHeader("Нарезание резьбы \n резцом");
+            grid7[5, 0] = new SourceGrid.Cells.RowHeader("Наружнее точение \n растачивание");
+            grid7[6, 0] = new SourceGrid.Cells.RowHeader("Подрезание \n отрезание");
+            //Строка7
+            grid7[7, 0] = new SourceGrid.Cells.ColumnHeader("Серый чугун");
+            grid7[7, 0].ColumnSpan = 6;
+            //материал резца
+            grid7[2, 1] = new SourceGrid.Cells.RowHeader("Твердый \nсплав");
+            grid7[2, 1].RowSpan = 3;
+            grid7[5, 1] = new SourceGrid.Cells.RowHeader("Быстрорежущая \nсталь");
+            grid7[5, 1].RowSpan = 2;
+
+            for (int r = 2; r < 7; r++)
+            {
+                if (sqlite_datareader.Read())
+                {
+                    grid7[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(0)), typeof(float));
+                    grid7[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid7[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid7[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                    
+                    for (int c = 2; c < 6; c++)
+                    {
+                        grid7[r, c].AddController(clickEvent);//клик мыши
+                        grid7[r, c].AddController(rowpointer);//наведение
+                        grid7[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                        grid7[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid7[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+
+            }
+            #endregion
+            #region Код таблицы 8 (СЧ)
+            grid7[8, 0] = new SourceGrid.Cells.RowHeader("Наружнее точение \nРастачивание");
+            grid7[8, 1] = new SourceGrid.Cells.RowHeader("Твердый сплав");
+            grid7[9, 0] = new SourceGrid.Cells.RowHeader("Подрезание\nОтрезание");
+            grid7[9, 1] = new SourceGrid.Cells.RowHeader("Быстрорежущая сталь");
+            grid7[10, 0] = new SourceGrid.Cells.RowHeader("Нарезание\nрезьбы");
+            grid7[10, 1] = new SourceGrid.Cells.RowHeader("Твердый сплав");
+
+            for (int r = 8; r < 11; r++)
+            {
+                if (sqlite_datareader.Read())
+                {
+                    grid7[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(0)), typeof(float));
+                    grid7[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid7[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid7[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                    for (int c = 2; c < 6; c++)
+                    {
+                        grid7[r, c].AddController(clickEvent);//клик мыши
+                        grid7[r, c].AddController(rowpointer);//наведение
+                        grid7[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                        grid7[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid7[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+            }
+            grid7.AutoSizeCells();
+            grid7.EnableSort = false;
+            grid7.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();
+        }
+        private void DoFullTab8()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open();                                                                                 // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM KmP";                                                  // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 9
+            grid8.BorderStyle = BorderStyle.FixedSingle;
+            grid8.Redim(3, 2);
+            grid8.Rows.Insert(0);
+            grid8[0, 0] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый материал");
+            grid8[0, 0].Column.Width = 200;
+            grid8[0, 1] = new SourceGrid.Cells.ColumnHeader("Kmp");
+            for (int r = 1; r < 3; r++)
+            {
+                if (sqlite_datareader.Read())
+                {
+                    grid8[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid8[r, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                }
+                for (int c = 0; c < 2; c++) //задание свойств ячеек
+                {
+                    if (c != 0) //для заголовков свойства не задаются
+                    {
+                        grid8[r, c].AddController(clickEvent);//клик мыши
+                        grid8[r, c].AddController(cellpointer);//наведение
+                        grid8[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                        grid8[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid8[r, c].AddController(new MyHelpRowPointer());//help row pointer
+                    }
+                }
+            }
+            grid8.AutoSizeCells();
+            grid8.EnableSort = false;
+            grid8.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();
+        }
+        #endregion
+
+        private void clickEvent_Click(object sender, EventArgs e)   //обработчик события клика на ячейку
+        {
+            SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
+            if (context.Grid.Handle == grid1.Handle) {gv1.t = Convert.ToSingle (context.Value);}
+            if (context.Grid.Handle == grid2.Handle) {gv1.s = Convert.ToSingle(context.Value);}
+            if (context.Grid.Handle == grid3.Handle) { gv1.Kmv = Convert.ToSingle(context.Value); }
+            if (context.Grid.Handle == grid4.Handle) { gv1.Kpv = Convert.ToSingle(context.Value); }
+            if (context.Grid.Handle == grid5.Handle) { gv1.Knv = Convert.ToSingle(context.Value); }
+            if (context.Grid.Handle == grid8.Handle) { gv1.Kmp = Convert.ToSingle(context.Value); }
+            if ((context.Grid.Handle == grid6.Handle) | (context.Grid.Handle == grid7.Handle))
+            {
+                SourceGrid.Range r1 = new SourceGrid.Range(new Position(context.Position.Row, 2), new Position(context.Position.Row, context.Grid.Columns.Count));
+                SourceGrid.Range r2 = new SourceGrid.Range(new Position(0, 0), new Position(context.Grid.Rows.Count, context.Grid.Columns.Count));
+                context.Grid.Selection.SelectRange(r2,false);
+                context.Grid.Selection.SelectRange(r1, true);
+                if (context.Grid.Handle == grid6.Handle)
+                {
+                    gv1.Cv = Convert.ToSingle(grid6[context.Position.Row, 3].Value);
+                    gv1.xv = Convert.ToSingle(grid6[context.Position.Row, 4].Value);
+                    gv1.yv = Convert.ToSingle(grid6[context.Position.Row, 5].Value);
+                    gv1.mv = Convert.ToSingle(grid6[context.Position.Row, 6].Value);
+                }
+                if (context.Grid.Handle == grid7.Handle)
+                {
+                    gv1.Cp = Convert.ToSingle(grid7[context.Position.Row, 2].Value);
+                    gv1.xp = Convert.ToSingle(grid7[context.Position.Row, 3].Value);
+                    gv1.yp = Convert.ToSingle(grid7[context.Position.Row, 4].Value);
+                    gv1.np = Convert.ToSingle(grid7[context.Position.Row, 5].Value);
+                }
+            }
+            else 
+            {
+                //следующий код необходим для верного выделения (click-drop) иначе 
+                //click на одной ячейке, select на другой.(+unselectable)
+                //+решения проблеммы shift+arrow т.е. выделение только при событии click 
+                SourceGrid.Range r3 = new SourceGrid.Range(new Position(0, 0), new Position(context.Grid.Rows.Count, context.Grid.Columns.Count));
+                context.Grid.Selection.SelectRange(r3, false);
+                context.Grid.Selection.SelectCell(context.Position, true);
+            }
+        }
+
+        private void tabPage9_Enter(object sender, EventArgs e)
+        {
+            textBox1.Text = Convert.ToString(gv1.t);
+            textBox2.Text = Convert.ToString(gv1.s);
+            textBox3.Text = Convert.ToString(gv1.Kmv);
+            textBox4.Text = Convert.ToString(gv1.Kpv);
+            textBox5.Text = Convert.ToString(gv1.Knv);
+            textBox6.Text = Convert.ToString(gv1.Cv);
+            textBox7.Text = Convert.ToString(gv1.xv);
+            textBox8.Text = Convert.ToString(gv1.yv);
+            textBox9.Text = Convert.ToString(gv1.mv);
+            textBox10.Text = Convert.ToString(gv1.Cp);
+            textBox11.Text = Convert.ToString(gv1.xp);
+            textBox12.Text = Convert.ToString(gv1.yp);
+            textBox13.Text = Convert.ToString(gv1.np);
+            textBox15.Text = Convert.ToString(gv1.Kmp);
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            textBox14.Text = comboBox1.Text;
+            gv1.T = Convert.ToSingle(comboBox1.Text);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            textBox16.Text = textBox16.Text.Replace(".",",");
+            try
+            {
+                gv1.D = Convert.ToSingle(textBox16.Text);
+                gv1.V = (gv1.Cv * gv1.Kmv * gv1.Kpv * gv1.Knv) / ((float)(Math.Pow(gv1.T, gv1.mv)) * ((float)(Math.Pow(gv1.t, gv1.xv))) * ((float)(Math.Pow(gv1.s, gv1.yv))));
+                gv1.Pz = 100 * gv1.Cp * ((float)Math.Pow(gv1.t, gv1.xp)) * ((float)Math.Pow(gv1.s, gv1.yp)) * ((float)Math.Pow(gv1.V, gv1.np)) * gv1.Kmp;
+                gv1.M = gv1.Pz * (gv1.D / 2);
+                gv1.N = (gv1.Pz * gv1.V) / (1020 * 60);
+                gv1.n = (1000 * gv1.V) / ((float)Math.PI * gv1.D);
+                textBox17.Text = Convert.ToString(gv1.V);
+                textBox18.Text = Convert.ToString(gv1.n);
+                textBox19.Text = Convert.ToString(gv1.Pz);
+                textBox20.Text = Convert.ToString(gv1.M);
+                textBox21.Text = Convert.ToString(gv1.N);
+            }
+            catch (System.FormatException)
+            {
+                textBox16.Text = "";
+                MessageBox.Show("Ошибка ввода!\n");
+            }
+
+        }
+
+        private class MyHeader : SourceGrid.Cells.ColumnHeader
+        {
+            public MyHeader(object value)
+                : base(value)
+            {
+                SourceGrid.Cells.Views.ColumnHeader view = new SourceGrid.Cells.Views.ColumnHeader();
+                view.Font = new Font(FontFamily.GenericSansSerif, 10, FontStyle.Bold);
+                view.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+                View = view;
+                AutomaticSortEnabled = false;
+            }
+        }
+
+        public class MyCellPointer :  SourceGrid.Cells.Controllers.ControllerBase  //control выделяющий ячейку
+        {
+            private SourceGrid.Cells.Views.Cell cellView;
+            public
+                override void OnMouseEnter(SourceGrid.CellContext sender, EventArgs e)
+            {
+                cellView = new SourceGrid.Cells.Views.Cell();
+                cellView.Background = new DevAge.Drawing.VisualElements.BackgroundSolid(Color.SkyBlue);
+                sender.Cell.View = cellView;
+                sender.Grid.InvalidateCell(sender.Position);
+            }
+            public
+                override void OnMouseLeave(SourceGrid.CellContext sender, EventArgs e) 
+            {
+                cellView = new SourceGrid.Cells.Views.Cell();
+                cellView.Background = new DevAge.Drawing.VisualElements.BackgroundSolid(Color.White);
+                sender.Cell.View = cellView;
+                sender.Grid.InvalidateCell(sender.Position);
+            }
+        }
+
+        public class MyRowPointer : SourceGrid.Cells.Controllers.ControllerBase     //control выделяющий неск.ячеек в строке
+        {
+
+            private SourceGrid.Cells.Views.Cell cellView;
+            public
+                override void OnMouseEnter(SourceGrid.CellContext sender, EventArgs e)
+            {
+                cellView = new SourceGrid.Cells.Views.Cell();
+                cellView.Background = new DevAge.Drawing.VisualElements.BackgroundSolid(Color.SkyBlue);
+                for (int c = 0; c < sender.Grid.Columns.Count; c++)
+                {
+                    if(Convert.ToString(sender.Grid.GetCell(new Position(sender.Position.Row, c)).GetType()) == "SourceGrid.Cells.Cell")
+                    {
+                        sender.Grid.GetCell(new Position(sender.Position.Row, c)).View = cellView;
+                        sender.Grid.InvalidateCell(new Position(sender.Position.Row, c));
+                    }
+                }
+                   
+            }
+            public
+                override void OnMouseLeave(SourceGrid.CellContext sender, EventArgs e)
+            {
+                cellView = new SourceGrid.Cells.Views.Cell();
+                cellView.Background = new DevAge.Drawing.VisualElements.BackgroundSolid(Color.White);
+
+                for (int c = 0; c < sender.Grid.Columns.Count; c++)
+                {
+                    if (Convert.ToString(sender.Grid.GetCell(new Position(sender.Position.Row, c)).GetType()) == "SourceGrid.Cells.Cell")
+                    {
+                        sender.Grid.GetCell(new Position(sender.Position.Row, c)).View = cellView;
+                        sender.Grid.InvalidateCell(new Position(sender.Position.Row, c));
+                    }
+                }
+            }
+        }
+
+        public class MyHelpRowPointer : SourceGrid.Cells.Controllers.ControllerBase //control выделяющий заголовки
+        {
+
+            private SourceGrid.Cells.Views.Cell cellView;
+            public
+                override void OnMouseEnter(SourceGrid.CellContext sender, EventArgs e)
+            {
+                cellView = new SourceGrid.Cells.Views.Cell();
+                cellView.Background = new DevAge.Drawing.VisualElements.BackgroundSolid(Color.LightGreen);
+                for (int c = 0; c < sender.Grid.Columns.Count; c++)
+                {
+                    if (Convert.ToString(sender.Grid.GetCell(new Position(sender.Position.Row, c)).GetType()) != "SourceGrid.Cells.Cell")
+                    {
+                        sender.Grid.GetCell(new Position(sender.Position.Row, c)).View = cellView;
+                        sender.Grid.InvalidateCell(new Position(sender.Position.Row, c));
+                    }
+                }
+
+            }
+            public
+                override void OnMouseLeave(SourceGrid.CellContext sender, EventArgs e)
+            {
+                cellView = new SourceGrid.Cells.Views.Cell();
+                cellView.Background = new DevAge.Drawing.VisualElements.BackgroundSolid(Color.White);
+
+                for (int c = 0; c < sender.Grid.Columns.Count; c++)
+                {
+                    if (Convert.ToString(sender.Grid.GetCell(new Position(sender.Position.Row, c)).GetType()) != "SourceGrid.Cells.Cell")
+                    {
+                        sender.Grid.GetCell(new Position(sender.Position.Row, c)).View = cellView;
+                        sender.Grid.InvalidateCell(new Position(sender.Position.Row, c));
+                    }
+                }
+            }
+        }
+
+        private void textBox16_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                button1_Click(null,null);
+            }
+        }
+        
+        public class GVar   //общая переменная
+        {
+            public float t;
+            public float s;
+            public float Kmv;
+            public float Kpv;
+            public float Knv;
+            public float Cv;
+            public float xv;
+            public float yv;
+            public float mv;
+            public float Cp;
+            public float xp;
+            public float yp;
+            public float np;
+            public float Kmp;
+            public float D;
+            public float n;
+            public float V;
+            public float T;
+            public float Pz;
+            public float M;
+            public float N;
+        }
+
+        #endregion
+        private Grid grid1;
+        private Grid grid2;
+        private Grid grid3;
+        private Grid grid4;
+        private Grid grid5;
+        private Grid grid6;
+        private Grid grid7;
+        private Grid grid8;
+        private TabControl tabControl1;
+        private TabPage tabPage1;
+        private TabPage tabPage2;
+        private TabPage tabPage3;
+        private TabPage tabPage4;
+        private TabPage tabPage5;
+        private TabPage tabPage6;
+        private TabPage tabPage7;
+        private TabPage tabPage8;
+        private TabPage tabPage9;
+        private TabPage tabPage10;
+        private GVar gv1;
+        public MyCellPointer cellpointer;
+        public MyRowPointer rowpointer;
+        public SourceGrid.Cells.Controllers.CustomEvents clickEvent;
+        public SQLiteConnection sqlite_conn;
+        public SQLiteCommand sqlite_cmd;
+        public SQLiteDataReader sqlite_datareader;
+        private ComboBox comboBox1;
+        private Label label1;
+        private TextBox textBox13;
+        private Label label11;
+        private TextBox textBox12;
+        private Label label12;
+        private TextBox textBox11;
+        private Label label13;
+        private TextBox textBox10;
+        private Label label14;
+        private TextBox textBox9;
+        private Label label10;
+        private TextBox textBox8;
+        private Label label9;
+        private TextBox textBox7;
+        private Label label8;
+        private TextBox textBox6;
+        private Label label7;
+        private TextBox textBox5;
+        private Label label6;
+        private TextBox textBox4;
+        private Label label5;
+        private TextBox textBox3;
+        private Label label4;
+        private TextBox textBox2;
+        private Label label3;
+        private TextBox textBox1;
+        private Label label2;
+        private Button button1;
+        private TextBox textBox15;
+        private Label label16;
+        private TextBox textBox14;
+        private Label label15;
+        private TextBox textBox16;
+        private Label label17;
+        private TextBox textBox17;
+        private Label label18;
+        private TextBox textBox21;
+        private Label label22;
+        private TextBox textBox20;
+        private Label label21;
+        private TextBox textBox19;
+        private Label label20;
+        private TextBox textBox18;
+        private Label label19;
+
+    }
+}
+
