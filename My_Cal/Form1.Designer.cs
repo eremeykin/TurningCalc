@@ -3069,7 +3069,7 @@ namespace My_Cal
         private SplitContainer splitContainer1;
 
         public int i;
-        public Step s1;
+        public Step_turning s1;
         private ArrayList AList;
         private SaveFileDialog saveFileDialog1;
 

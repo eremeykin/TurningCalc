@@ -1,30 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Class Name="My_Cal.Step">
+  <Class Name="My_Cal.Step_turning">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Class Name="My_Cal.Step.InputData">
+      <Class Name="My_Cal.Step_turning.InputData" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Step.cs</NewMemberFileName>
+          <NewMemberFileName>Step_turning.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
-      <Class Name="My_Cal.Step.OutputData" Collapsed="true">
+      <Class Name="My_Cal.Step_turning.OutputData">
         <TypeIdentifier>
-          <NewMemberFileName>Step.cs</NewMemberFileName>
+          <NewMemberFileName>Step_turning.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
-      <Class Name="My_Cal.Step.LinkedCells" Collapsed="true">
+      <Class Name="My_Cal.Step_turning.LinkedCells" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Step.cs</NewMemberFileName>
+          <NewMemberFileName>Step_turning.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAFAAAABIQARA=</HashCode>
-      <FileName>Step.cs</FileName>
+      <HashCode>AAEAAAAAAgAAAAAAAAEAEAAAAAAAABAAFABAABISAxA=</HashCode>
+      <FileName>Step_turning.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Cal.Step_frez">
+    <Position X="3.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="My_Cal.Step_frez.InputData" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Step_frez.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="My_Cal.Step_frez.OutputData">
+        <TypeIdentifier>
+          <NewMemberFileName>Step_frez.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="My_Cal.Step_frez.LinkedCells" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Step_frez.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAEAAAQAAwAAAAAAAAEAEAAAAAAAAAAAFAAAABISAxA=</HashCode>
+      <FileName>Step_frez.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

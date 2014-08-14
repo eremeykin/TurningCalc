@@ -1595,7 +1595,7 @@ namespace My_Cal
             treeView1.Nodes.Add("Переход" + i + " (токарный)");
             treeView1.Nodes[0].Expand();
             treeView1.EndUpdate();
-            Step s2 = new Step();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
+            Step_turning s2 = new Step_turning();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
             //текущий не трогаем(!) а подменяем его только при выборе!!
             AList.Add(s2);
         }
@@ -1620,7 +1620,7 @@ namespace My_Cal
             {
                 try
                 {
-                    if ((Step)AList[i])//если объект ложный
+                    if ((Step_turning)AList[i])//если объект ложный
                     {
 
                     }
@@ -1668,18 +1668,18 @@ namespace My_Cal
                     {
                         try
                         {
-                            Convert.ToString(((Step)AList[i]).V());
+                            Convert.ToString(((Step_turning)AList[i]).V());
                             fstr_out.Write("\r\n           Переход №" + (i + 1) + " (токарный)\r\n");
                             fstr_out.Write("Скорость резания:   ");
-                            fstr_out.Write(Convert.ToString(((Step)AList[i]).V()) + " м/с\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).V()) + " м/с\r\n");
                             fstr_out.Write("Частота вращения:   ");
-                            fstr_out.Write(Convert.ToString(((Step)AList[i]).n()) + " об/мин\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).n()) + " об/мин\r\n");
                             fstr_out.Write("Мощность:           ");
-                            fstr_out.Write(Convert.ToString(((Step)AList[i]).N()) + " кВт\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).N()) + " кВт\r\n");
                             fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((Step)AList[i]).Pz()) + " Н\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).Pz()) + " Н\r\n");
                             fstr_out.Write("Момент:             ");
-                            fstr_out.Write(Convert.ToString(((Step)AList[i]).M()) + " Нм\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).M()) + " Нм\r\n");
                         }
                         catch (InvalidCastException)
                         {
@@ -1746,7 +1746,7 @@ namespace My_Cal
                 try
                 {
                     DoFullTab6();
-                    s1 = (Step)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+                    s1 = (Step_turning)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
                     tabControl3.Visible = false;
                     tabControl1.Visible = true;
                     tabControl2.Visible = false;
