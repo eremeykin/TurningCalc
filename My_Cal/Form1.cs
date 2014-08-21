@@ -21,6 +21,7 @@ namespace My_Cal
 
         static TurningStep ts;
         static MillingStep ms;
+        static DrillingStep ds;
 
         public Form1()
         {
@@ -45,6 +46,8 @@ namespace My_Cal
             DoFullTab4_Mill();
             DoFullTab5_Mill();
             tabControl2.Visible = false;
+            DoFullTab1_Drill();
+            tabControl3.Visible = false;
         }
         private void CustomInitialization()
         {
@@ -993,7 +996,101 @@ namespace My_Cal
             #endregion
         }
         #endregion
+        #region Заполнение таблиц сверления
+        private void DoFullTab1_Drill()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open(); // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM external_turning";// First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
+            #endregion
+            #region Код таблицы 1 (Наружнее точение)
+            grid9.BorderStyle = BorderStyle.FixedSingle;
+            grid9.Redim(14, 4);
+            grid9.Rows.Insert(0);
+            SourceGrid.Cells.Views.Cell viewImage = new SourceGrid.Cells.Views.Cell();
+            grid9[0, 0] = new SourceGrid.Cells.ColumnHeader("Наружнее точение");
+            grid9[0, 0].ColumnSpan = 4;
+            grid9[0, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            grid9[1, 0] = new SourceGrid.Cells.ColumnHeader("D, мм");
+            grid9[1, 0].RowSpan = 2;
+            grid9[1, 1] = new SourceGrid.Cells.ColumnHeader("Черновое");
+            grid9[1, 2] = new SourceGrid.Cells.ColumnHeader("Получистовое");
+            grid9[1, 3] = new SourceGrid.Cells.ColumnHeader("Чистовое");
+            grid9[2, 1] = new SourceGrid.Cells.ColumnHeader("t, мм");
+            grid9[2, 1].ColumnSpan = 3;
+            for (int r = 3; r < 9; r++)
+            {
+                grid9.Rows.Insert(r);
+                if (sqlite_datareader.Read())
+                {
+                    grid9[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid9[r, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid9[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid9[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                }
+                SourceGrid.Range R1 = new SourceGrid.Range(new Position(1, 3), new Position(8, 3));
+                SourceGrid.RangeRegion rr = new RangeRegion(R1);
+                for (int c = 0; c < 4; c++) //задание свойств ячеек
+                {
+                    if (c != 0)
+                    {
+                        grid9[r, c].AddController(cellpointer);//наведение
+                        grid9[r, c].AddController(clickEvent);//клик мыши
+                        grid9[r, c].Editor.EnableEdit = false;
+                        grid9[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid9[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    }
+                }
+            }
+            #endregion
+            sqlite_conn.Close();
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");    // create a new database connection
+            sqlite_conn.Open(); // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();                                                               // create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM boring";                                                        // First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();
+            #endregion
+            #region Код таблицы 1 (растачивание)
+            grid9[9, 0] = new SourceGrid.Cells.ColumnHeader("Растачивание");
+            for (int r = 11; r < 15; r++)
+            {
+                grid9.Rows.Insert(r);
+                if (sqlite_datareader.Read())
+                {
+                    grid9[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid9[r, 1] = new SourceGrid.Cells.Cell(" ", typeof(string));
+                    grid9[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid9[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                }
+                for (int c = 0; c < 4; c++) //задание свойств ячеек
+                {
+                    if ((c != 0) & (c != 1))
+                    {
+                        grid9[r, c].AddController(cellpointer);//наведение
+                        grid9[r, c].AddController(clickEvent);//клик мыши
+                        grid9[r, c].Editor.EnableEdit = false;
+                        grid9[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid9[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    }
+                }
+            }
+            grid9[11, 1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+            grid9[12, 1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+            grid9[13, 1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+            grid9[14, 1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+            grid9[9, 0].ColumnSpan = 4;
+            grid9.AutoSizeCells();
+            grid9.EnableSort = false;
+            grid9.Selection.EnableMultiSelection = false;
+            #endregion
+            sqlite_conn.Close();
 
+        }
+        #endregion
 
         /// <summary>
         /// Происходит при изменении значения ячейки
@@ -1535,7 +1632,7 @@ namespace My_Cal
             {
                 try
                 {
-                    if ((Step_turning)stepList[i])//если объект ложный
+                    if ((TurningStep)stepList[i])//если объект ложный
                     {
 
                     }
@@ -1571,7 +1668,7 @@ namespace My_Cal
                     "\nОшибка при открытии выходного файла.");
                     return;
                 }
-                catch (ArgumentException exc)
+                catch (ArgumentException)
                 {
                     return;
                 }
@@ -1583,32 +1680,32 @@ namespace My_Cal
                     {
                         try
                         {
-                            Convert.ToString(((Step_turning)stepList[i]).V());
+                            Convert.ToString(((TurningStep)stepList[i]).getV());
                             fstr_out.Write("\r\n           Переход №" + (i + 1) + " (токарный)\r\n");
                             fstr_out.Write("Скорость резания:   ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).V()) + " м/с\r\n");
+                            fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getV()) + " м/с\r\n");
                             fstr_out.Write("Частота вращения:   ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).n()) + " об/мин\r\n");
+                            fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getn()) + " об/мин\r\n");
                             fstr_out.Write("Мощность:           ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).N()) + " кВт\r\n");
+                            fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getN()) + " кВт\r\n");
                             fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).Pz()) + " Н\r\n");
+                            fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getPz()) + " Н\r\n");
                             fstr_out.Write("Момент:             ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).M()) + " Нм\r\n");
+                            fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getM()) + " Нм\r\n");
                         }
                         catch (InvalidCastException)
                         {
                             fstr_out.Write("\r\n           Переход №" + (i + 1) + "(фрезерный)\r\n");
                             fstr_out.Write("Скорость резания:   ");
-                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).V()) + " м/с\r\n");
+                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getV()) + " м/с\r\n");
                             fstr_out.Write("Частота вращения:   ");
-                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).n()) + " об/мин\r\n");
+                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getn()) + " об/мин\r\n");
                             fstr_out.Write("Мощность:           ");
-                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).N()) + " кВт\r\n");
+                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getN()) + " кВт\r\n");
                             fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).Pz()) + " Н\r\n");
+                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getPz()) + " Н\r\n");
                             fstr_out.Write("Момент:             ");
-                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).M()) + " Нм\r\n");
+                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getM()) + " Нм\r\n");
                         }
                     }
                     catch (IOException exc)
@@ -1658,7 +1755,7 @@ namespace My_Cal
             if (s is TurningStep)
             {
                 DoFullTab6();
-                TurningStep ts = (TurningStep)stepList[e.Node.Index];// stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+                ts = (TurningStep)stepList[e.Node.Index];// stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
                 tabControl2.Visible = false;
                 tabControl1.Visible = true;
                 tabControl3.Visible = false;
@@ -1674,7 +1771,7 @@ namespace My_Cal
             }
             if (s is MillingStep)
             {
-                MillingStep ms = (MillingStep)s;
+                ms = (MillingStep)s;
                 //s2 = (Step_Mill)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
                 tabControl2.Visible = true;
                 tabControl1.Visible = false;
@@ -1687,6 +1784,15 @@ namespace My_Cal
                 }
                 Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
                 ms.ReturnSelect();
+            }
+            if (s is DrillingStep)
+            {
+                ds = (DrillingStep)s;
+                tabControl2.Visible = false;
+                tabControl1.Visible = false;
+                tabControl3.Visible = true;
+                Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
+                ds.ReturnSelect();
             }
 
 
@@ -1758,7 +1864,7 @@ namespace My_Cal
             treeView1.Nodes.Add("Переход" + i + " (сверлильный)");
             treeView1.Nodes[0].Expand();
             treeView1.EndUpdate();
-            Step_drill s2 = new Step_drill();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
+            DrillingStep s2 = new DrillingStep();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
             //текущий не трогаем(!) а подменяем его только при выборе!!
             stepList.Add(s2);
         }

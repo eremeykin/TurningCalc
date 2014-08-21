@@ -11,11 +11,7 @@ namespace My_Cal
         /// <summary>
         ///  
         /// </summary>
-        private System.Collections.ArrayList linkedCells = new System.Collections.ArrayList();
-
-        
-
-        
+        private SourceGrid.CellContext[] linkedCells = new SourceGrid.CellContext[9];
 
         /// <summary>
         /// Инкапсулирует получение связанных ячеек
