@@ -27,31 +27,31 @@
       <FileName>Step_turning.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="My_Cal.Step_frez">
+  <Class Name="My_Cal.Step_Mill">
     <Position X="3.5" Y="0.5" Width="1.5" />
     <Compartments>
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Class Name="My_Cal.Step_frez.InputData" Collapsed="true">
+      <Class Name="My_Cal.Step_Mill.InputData" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Step_frez.cs</NewMemberFileName>
+          <NewMemberFileName>Step_Mill.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
-      <Class Name="My_Cal.Step_frez.OutputData">
+      <Class Name="My_Cal.Step_Mill.OutputData">
         <TypeIdentifier>
-          <NewMemberFileName>Step_frez.cs</NewMemberFileName>
+          <NewMemberFileName>Step_Mill.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
-      <Class Name="My_Cal.Step_frez.LinkedCells" Collapsed="true">
+      <Class Name="My_Cal.Step_Mill.LinkedCells" Collapsed="true">
         <TypeIdentifier>
-          <NewMemberFileName>Step_frez.cs</NewMemberFileName>
+          <NewMemberFileName>Step_Mill.cs</NewMemberFileName>
         </TypeIdentifier>
       </Class>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAEAAAQAAwAAAAAAAAEAEAAAAAAAAAAAFAAAABISAxA=</HashCode>
-      <FileName>Step_frez.cs</FileName>
+      <FileName>Step_Mill.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />

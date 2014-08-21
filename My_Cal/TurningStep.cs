@@ -19,6 +19,11 @@ namespace My_Cal
         /// </summary>
         public TurningOutputData outputData = new TurningOutputData();
 
+        /// <summary>
+        /// Поле для хранения индекса ComboBox
+        /// </summary>
+        public int cBoxIndex=-1;
+
         public static bool operator true(TurningStep st)
         {
             for (int i = 1; i < 9; i++)
@@ -55,7 +60,7 @@ namespace My_Cal
                 return false;
         }
 
-        protected override float getV()
+        public override float getV()
         {
             if (calc_all())
                 return outputData.V;
@@ -63,7 +68,7 @@ namespace My_Cal
                 return 0;
         }
 
-        protected override float getM()
+        public override float getM()
         {
 
             if (calc_all())
@@ -71,7 +76,7 @@ namespace My_Cal
             else return 0;
         }
 
-        protected override float getN()
+        public override float getN()
         {
             if (calc_all())
                 return outputData.N;
@@ -79,7 +84,7 @@ namespace My_Cal
                 return 0;
         }
 
-        protected override float getn()
+        public override float getn()
         {
             if (calc_all())
                 return outputData.n;
@@ -87,30 +92,33 @@ namespace My_Cal
                 return 0;
         }
 
-        protected override void RowSelector(SourceGrid.CellContext context)
+        public override float getPz()
         {
-            SourceGrid.Range r1 = new SourceGrid.Range(new SourceGrid.Position(context.Position.Row, 2), new SourceGrid.Position(context.Position.Row, context.Grid.Columns.Count));
-            SourceGrid.Range r2 = new SourceGrid.Range(new SourceGrid.Position(0, 0), new SourceGrid.Position(context.Grid.Rows.Count, context.Grid.Columns.Count));
-            context.Grid.Selection.SelectRange(r2, false);
-            context.Grid.Selection.SelectRange(r1, true);
+            if (calc_all())
+                return outputData.Pz;
+            else
+                return 0;
         }
 
-        protected override void ReturnSelect()
+        public override void ReturnSelect()
         {
             for (int i = 1; i < 9; i++)
             {
                 if (i != 6)
                 {
-                    if (getLCell(i) != null)
-                        CellSelector(getLCell(i));
+                    if (checkLCell(i))
+                        Utils.CellSelector(getLCell(i));
                 }
                 else
                 {
-                    RowSelector(getLCell(i));
-                    if(getLCell(i).Position.Row == 7 || getLCell(i).Position.Row == 8 || getLCell(i).Position.Row == 14)
+                    if (checkLCell(i))
                     {
-                    SourceGrid.Position P = new SourceGrid.Position(getLCell(i).Position.Row, 2);
-                    ((SourceGrid.Cells.Cell)getLCell(i).Grid.GetCell(P)).Value = inputData.s_rezba;
+                        Utils.RowSelector(getLCell(i));
+                        if (getLCell(i).Position.Row == 7 || getLCell(i).Position.Row == 8 || getLCell(i).Position.Row == 14)
+                        {
+                            SourceGrid.Position P = new SourceGrid.Position(getLCell(i).Position.Row, 2);
+                            ((SourceGrid.Cells.Cell)getLCell(i).Grid.GetCell(P)).Value = inputData.s_rezba;
+                        }
                     }
                 }
             }
@@ -179,11 +187,10 @@ namespace My_Cal
         /// <summary>
         /// Расширение OutputData для токарного перехода
         /// </summary>
+        /// TODO заменить public на  private внутри
         public class TurningOutputData : OutputData
         {
         }
-
-
 
     }
 }

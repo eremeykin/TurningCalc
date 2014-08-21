@@ -133,19 +133,19 @@
   <data name="V" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\V.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="M_frez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="M_Mill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\M.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="NN_frez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="NN_Mill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\NN.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="n_frez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="n_Mill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\n.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Pz_frez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Pz_Mill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pz.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="V_Frez" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="V_Mill" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\V.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

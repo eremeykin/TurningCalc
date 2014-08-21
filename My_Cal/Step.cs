@@ -13,22 +13,29 @@ namespace My_Cal
         /// </summary>
         private System.Collections.ArrayList linkedCells = new System.Collections.ArrayList();
 
-        /// <summary>
-        /// Выделяет ячейку
-        /// </summary>
-        protected static void CellSelector(SourceGrid.CellContext context)
-        {
-            SourceGrid.Range range = new SourceGrid.Range(new SourceGrid.Position(0, 0), new SourceGrid.Position(context.Grid.Rows.Count, context.Grid.Columns.Count));
-            context.Grid.Selection.SelectRange(range, false);
-            context.Grid.Selection.SelectCell(context.Position, true);
-        }
+        
+
+        
 
         /// <summary>
         /// Инкапсулирует получение связанных ячеек
         /// </summary>
         public SourceGrid.CellContext getLCell(int i)
         {
-            return (SourceGrid.CellContext)this.linkedCells[i];
+                return (SourceGrid.CellContext)this.linkedCells[i];
+        }
+
+        public bool checkLCell(int i)
+        {
+            try
+            {
+                SourceGrid.CellContext c =(SourceGrid.CellContext)this.linkedCells[i];
+                return true;
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                return false;
+            }
         }
 
         /// <summary>
@@ -47,36 +54,39 @@ namespace My_Cal
         /// <summary>
         /// Сбрасывает выделение ячеек
         /// </summary>
-        protected abstract void ReturnSelect();
+        public abstract void ReturnSelect();
 
-        /// <summary>
-        /// Выделяет строку
-        /// </summary>
-         protected abstract void RowSelector(SourceGrid.CellContext context);
 
         /// <summary>
         /// Возвращает момент на шпинделе
         /// </summary>
-        protected abstract float getM();
+        public abstract float getM();
 
         /// <summary>
         /// Возвращает потребляемую мощность
         /// </summary>
-        protected abstract float getN();
+        public abstract float getN();
 
         /// <summary>
         /// Возвращает частоту вращения шпинделя
         /// </summary>
-        protected abstract float getn();
+        public abstract float getn();
 
         /// <summary>
         /// Возвращает скорость резания
         /// </summary>
-        protected abstract float getV();
+        public abstract float getV();
+
+        /// <summary>
+        /// Возвращает силу резания
+        /// </summary>
+        public abstract float getPz();
 
         /// <summary>
         /// Класс для хранения входных данных
         /// </summary>
+        /// TODO заменить public на  private внутри
+        /// 
         public abstract class InputData
         {
             /// <summary>

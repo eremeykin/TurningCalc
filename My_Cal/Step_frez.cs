@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace My_Cal
 {
-    public class Step_frez
+    public class Step_Mill
     {
         /// <summary>
         /// Входные данные

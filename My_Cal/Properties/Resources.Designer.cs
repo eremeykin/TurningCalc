@@ -73,9 +73,9 @@ namespace My_Cal.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap M_frez {
+        internal static System.Drawing.Bitmap M_Mill {
             get {
-                object obj = ResourceManager.GetObject("M_frez", resourceCulture);
+                object obj = ResourceManager.GetObject("M_Mill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,9 +103,9 @@ namespace My_Cal.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap n_frez {
+        internal static System.Drawing.Bitmap n_Mill {
             get {
-                object obj = ResourceManager.GetObject("n_frez", resourceCulture);
+                object obj = ResourceManager.GetObject("n_Mill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -113,9 +113,9 @@ namespace My_Cal.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap NN_frez {
+        internal static System.Drawing.Bitmap NN_Mill {
             get {
-                object obj = ResourceManager.GetObject("NN_frez", resourceCulture);
+                object obj = ResourceManager.GetObject("NN_Mill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -133,9 +133,9 @@ namespace My_Cal.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap Pz_frez {
+        internal static System.Drawing.Bitmap Pz_Mill {
             get {
-                object obj = ResourceManager.GetObject("Pz_frez", resourceCulture);
+                object obj = ResourceManager.GetObject("Pz_Mill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +153,9 @@ namespace My_Cal.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap V_Frez {
+        internal static System.Drawing.Bitmap V_Mill {
             get {
-                object obj = ResourceManager.GetObject("V_Frez", resourceCulture);
+                object obj = ResourceManager.GetObject("V_Mill", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

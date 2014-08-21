@@ -18,6 +18,10 @@ namespace My_Cal
 {
     public partial class Form1 : Form
     {
+
+        static TurningStep ts;
+        static MillingStep ms;
+
         public Form1()
         {
             InitializeComponent();
@@ -35,26 +39,24 @@ namespace My_Cal
             DoFullTab7();
             DoFullTab8();
             tabControl1.Visible = false;
-            DoFullTab1_frez();
-            DoFullTab2_frez();
-            DoFullTab3_frez();
-            DoFullTab4_frez();
-            DoFullTab5_frez();
-            tabControl3.Visible = false;
+            DoFullTab1_Mill();
+            DoFullTab2_Mill();
+            DoFullTab3_Mill();
+            DoFullTab4_Mill();
+            DoFullTab5_Mill();
+            tabControl2.Visible = false;
         }
         private void CustomInitialization()
         {
-
             i = 0;
-            AList = new ArrayList();
+            stepList = new ArrayList();//список переходов
             cellpointer = new MyCellTracking();
             rowpointer = new MyRowTrecking();
             clickEvent = new SourceGrid.Cells.Controllers.CustomEvents();
             clickEvent.Click += new EventHandler(clickEvent_Click);
-
             CellChangedEvent = new SourceGrid.Cells.Controllers.CustomEvents();
             CellChangedEvent.EditEnded += new EventHandler(CellEvent_Changed);
-            foreach (SourceGrid.Grid GRID in tabControl1.Controls.Find("grid", true))
+            foreach (SourceGrid.Grid GRID in tabControl1.Controls.Find("grid", true))//выставить выравнивание по центру для всех ячеек
             {
                 for (int r = 0; r < GRID.Rows.Count; r++)
                 {
@@ -65,7 +67,6 @@ namespace My_Cal
                 }
             }
         }
-
 
         #region DuFullTab
         private void DoFullTab1()
@@ -551,7 +552,6 @@ namespace My_Cal
             #endregion
             sqlite_conn.Close();
         }
-
         private void DoFullTab7()
         {
             #region SQLite Connection
@@ -692,7 +692,7 @@ namespace My_Cal
         }
         #endregion
         #region Код М DoFullTab
-        public void DoFullTab1_frez()
+        public void DoFullTab1_Mill()
         {
             #region SQLite Connection
             sqlite_conn = new SQLiteConnection("Data Source=databaseF.sqlite;Version=3;New=True;Compress=True;");// create a new databaseF connection
@@ -702,58 +702,58 @@ namespace My_Cal
             sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
             #endregion
             #region Код таблицы 1 (твердый сплав)
-            grid1Frez.BorderStyle = BorderStyle.FixedSingle;
-            grid1Frez.Redim(15, 11);
+            grid1Mill.BorderStyle = BorderStyle.FixedSingle;
+            grid1Mill.Redim(15, 11);
             //заголовок
-            grid1Frez[0, 0] = new SourceGrid.Cells.ColumnHeader("Вид обработки");
-            grid1Frez[0, 1] = new SourceGrid.Cells.ColumnHeader("Материал резца");
-            grid1Frez[0, 2] = new SourceGrid.Cells.ColumnHeader("t");
-            grid1Frez[0, 3] = new SourceGrid.Cells.ColumnHeader("Sz");
-            grid1Frez[0, 4] = new SourceGrid.Cells.ColumnHeader("Cv");
-            grid1Frez[0, 5] = new SourceGrid.Cells.ColumnHeader("q");
-            grid1Frez[0, 6] = new SourceGrid.Cells.ColumnHeader("x");
-            grid1Frez[0, 7] = new SourceGrid.Cells.ColumnHeader("y");
-            grid1Frez[0, 8] = new SourceGrid.Cells.ColumnHeader("u");
-            grid1Frez[0, 9] = new SourceGrid.Cells.ColumnHeader("p");
-            grid1Frez[0, 10] = new SourceGrid.Cells.ColumnHeader("m");
-            grid1Frez[1, 0] = new SourceGrid.Cells.ColumnHeader("Сталь углеродистая");
-            grid1Frez[1, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
-            grid1Frez[1, 0].ColumnSpan = 11;
+            grid1Mill[0, 0] = new SourceGrid.Cells.ColumnHeader("Вид обработки");
+            grid1Mill[0, 1] = new SourceGrid.Cells.ColumnHeader("Материал резца");
+            grid1Mill[0, 2] = new SourceGrid.Cells.ColumnHeader("t");
+            grid1Mill[0, 3] = new SourceGrid.Cells.ColumnHeader("Sz");
+            grid1Mill[0, 4] = new SourceGrid.Cells.ColumnHeader("Cv");
+            grid1Mill[0, 5] = new SourceGrid.Cells.ColumnHeader("q");
+            grid1Mill[0, 6] = new SourceGrid.Cells.ColumnHeader("x");
+            grid1Mill[0, 7] = new SourceGrid.Cells.ColumnHeader("y");
+            grid1Mill[0, 8] = new SourceGrid.Cells.ColumnHeader("u");
+            grid1Mill[0, 9] = new SourceGrid.Cells.ColumnHeader("p");
+            grid1Mill[0, 10] = new SourceGrid.Cells.ColumnHeader("m");
+            grid1Mill[1, 0] = new SourceGrid.Cells.ColumnHeader("Сталь углеродистая");
+            grid1Mill[1, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            grid1Mill[1, 0].ColumnSpan = 11;
             //строка 2
-            grid1Frez[2, 0] = new SourceGrid.Cells.RowHeader("Торцевое \nфрезерование");
-            grid1Frez[2, 0].RowSpan = 2;
-            grid1Frez[4, 0] = new SourceGrid.Cells.RowHeader("Боковое \nфрезерование");
-            grid1Frez[4, 0].RowSpan = 4;
-            grid1Frez[8, 0] = new SourceGrid.Cells.ColumnHeader("Чугун");
-            grid1Frez[8, 0].ColumnSpan = 11;
+            grid1Mill[2, 0] = new SourceGrid.Cells.RowHeader("Торцевое \nфрезерование");
+            grid1Mill[2, 0].RowSpan = 2;
+            grid1Mill[4, 0] = new SourceGrid.Cells.RowHeader("Боковое \nфрезерование");
+            grid1Mill[4, 0].RowSpan = 4;
+            grid1Mill[8, 0] = new SourceGrid.Cells.ColumnHeader("Чугун");
+            grid1Mill[8, 0].ColumnSpan = 11;
             //строка 2
-            grid1Frez[9, 0] = new SourceGrid.Cells.RowHeader("Торцевое \nфрезерование");
-            grid1Frez[9, 0].RowSpan = 2;
-            grid1Frez[11, 0] = new SourceGrid.Cells.RowHeader("Боковое \nфрезерование");
-            grid1Frez[11, 0].RowSpan = 4;
+            grid1Mill[9, 0] = new SourceGrid.Cells.RowHeader("Торцевое \nфрезерование");
+            grid1Mill[9, 0].RowSpan = 2;
+            grid1Mill[11, 0] = new SourceGrid.Cells.RowHeader("Боковое \nфрезерование");
+            grid1Mill[11, 0].RowSpan = 4;
             for (int r = 2; r < 8; r++)
             {
                 //grid1.Rows.Insert(r);
                 if (sqlite_datareader.Read())
                 {
-                    grid1Frez[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
-                    grid1Frez[r, 2] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(1)));
-                    grid1Frez[r, 3] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(2)));
-                    grid1Frez[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
-                    grid1Frez[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
-                    grid1Frez[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)), typeof(float));
-                    grid1Frez[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)), typeof(float));
-                    grid1Frez[r, 8] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(7)), typeof(float));
-                    grid1Frez[r, 9] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(8)), typeof(float));
-                    grid1Frez[r, 10] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(9)), typeof(float));
+                    grid1Mill[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid1Mill[r, 2] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(1)));
+                    grid1Mill[r, 3] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(2)));
+                    grid1Mill[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                    grid1Mill[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
+                    grid1Mill[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)), typeof(float));
+                    grid1Mill[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)), typeof(float));
+                    grid1Mill[r, 8] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(7)), typeof(float));
+                    grid1Mill[r, 9] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(8)), typeof(float));
+                    grid1Mill[r, 10] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(9)), typeof(float));
                 }
                 for (int c = 4; c < 11; c++)
                 {
-                    grid1Frez[r, c].AddController(clickEvent);//клик мыши
-                    grid1Frez[r, c].AddController(rowpointer);//наведение
-                    grid1Frez[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
-                    grid1Frez[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                    grid1Frez[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    grid1Mill[r, c].AddController(clickEvent);//клик мыши
+                    grid1Mill[r, c].AddController(rowpointer);//наведение
+                    grid1Mill[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                    grid1Mill[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                    grid1Mill[r, c].AddController(new MyHelpRowTracking());//help row pointer
 
                 }
             }
@@ -761,75 +761,75 @@ namespace My_Cal
             {
                 if (sqlite_datareader.Read())
                 {
-                    grid1Frez[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
-                    grid1Frez[r, 2] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(1)));
-                    grid1Frez[r, 3] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(2)));
-                    grid1Frez[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
-                    grid1Frez[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
-                    grid1Frez[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)), typeof(float));
-                    grid1Frez[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)), typeof(float));
-                    grid1Frez[r, 8] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(7)), typeof(float));
-                    grid1Frez[r, 9] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(8)), typeof(float));
-                    grid1Frez[r, 10] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(9)), typeof(float));
+                    grid1Mill[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid1Mill[r, 2] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(1)));
+                    grid1Mill[r, 3] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(2)));
+                    grid1Mill[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                    grid1Mill[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
+                    grid1Mill[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)), typeof(float));
+                    grid1Mill[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)), typeof(float));
+                    grid1Mill[r, 8] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(7)), typeof(float));
+                    grid1Mill[r, 9] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(8)), typeof(float));
+                    grid1Mill[r, 10] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(9)), typeof(float));
                 }
                 for (int c = 4; c < 11; c++)
                 {
-                    grid1Frez[r, c].AddController(clickEvent);//клик мыши
-                    grid1Frez[r, c].AddController(rowpointer);//наведение
-                    grid1Frez[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
-                    grid1Frez[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                    grid1Frez[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    grid1Mill[r, c].AddController(clickEvent);//клик мыши
+                    grid1Mill[r, c].AddController(rowpointer);//наведение
+                    grid1Mill[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                    grid1Mill[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                    grid1Mill[r, c].AddController(new MyHelpRowTracking());//help row pointer
                 }
             }
-            grid1Frez.AutoSizeCells();
-            grid1Frez.EnableSort = false;
-            grid1Frez.Selection.EnableMultiSelection = false;
+            grid1Mill.AutoSizeCells();
+            grid1Mill.EnableSort = false;
+            grid1Mill.Selection.EnableMultiSelection = false;
             sqlite_conn.Close();
             #endregion
         }
-        public void DoFullTab2_frez()
+        public void DoFullTab2_Mill()
         {
             #region Код таблицы 2 (Зав z от D)
 
-            grid2Frez.BorderStyle = BorderStyle.FixedSingle;
-            grid2Frez.Redim(2, 10);
+            grid2Mill.BorderStyle = BorderStyle.FixedSingle;
+            grid2Mill.Redim(2, 10);
             //заголовок
-            grid2Frez[0, 0] = new SourceGrid.Cells.RowHeader("D, мм");
-            grid2Frez[0, 1] = new SourceGrid.Cells.RowHeader("10-18");
-            grid2Frez[0, 2] = new SourceGrid.Cells.RowHeader("19-28");
-            grid2Frez[0, 3] = new SourceGrid.Cells.RowHeader("29-50");
-            grid2Frez[0, 4] = new SourceGrid.Cells.RowHeader("51-63");
-            grid2Frez[0, 5] = new SourceGrid.Cells.RowHeader("64-80");
-            grid2Frez[0, 6] = new SourceGrid.Cells.RowHeader("81-100");
-            grid2Frez[0, 7] = new SourceGrid.Cells.RowHeader("101-125");
-            grid2Frez[0, 8] = new SourceGrid.Cells.RowHeader("126-160");
-            grid2Frez[0, 9] = new SourceGrid.Cells.RowHeader("161-200");
-            grid2Frez[1, 0] = new SourceGrid.Cells.RowHeader("z");
-            grid2Frez[0, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
-            grid2Frez[0, 1].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
-            grid2Frez[1, 1] = new SourceGrid.Cells.Cell(Convert.ToString(3), typeof(string));
-            grid2Frez[1, 2] = new SourceGrid.Cells.Cell(Convert.ToString(3), typeof(string));
-            grid2Frez[1, 3] = new SourceGrid.Cells.Cell(Convert.ToString(4), typeof(string));
-            grid2Frez[1, 4] = new SourceGrid.Cells.Cell(Convert.ToString(5), typeof(string));
-            grid2Frez[1, 5] = new SourceGrid.Cells.Cell(Convert.ToString(8), typeof(string));
-            grid2Frez[1, 6] = new SourceGrid.Cells.Cell(Convert.ToString(10), typeof(string));
-            grid2Frez[1, 7] = new SourceGrid.Cells.Cell(Convert.ToString(12), typeof(string));
-            grid2Frez[1, 8] = new SourceGrid.Cells.Cell(Convert.ToString(14), typeof(string));
-            grid2Frez[1, 9] = new SourceGrid.Cells.Cell(Convert.ToString(18), typeof(string));
+            grid2Mill[0, 0] = new SourceGrid.Cells.RowHeader("D, мм");
+            grid2Mill[0, 1] = new SourceGrid.Cells.RowHeader("10-18");
+            grid2Mill[0, 2] = new SourceGrid.Cells.RowHeader("19-28");
+            grid2Mill[0, 3] = new SourceGrid.Cells.RowHeader("29-50");
+            grid2Mill[0, 4] = new SourceGrid.Cells.RowHeader("51-63");
+            grid2Mill[0, 5] = new SourceGrid.Cells.RowHeader("64-80");
+            grid2Mill[0, 6] = new SourceGrid.Cells.RowHeader("81-100");
+            grid2Mill[0, 7] = new SourceGrid.Cells.RowHeader("101-125");
+            grid2Mill[0, 8] = new SourceGrid.Cells.RowHeader("126-160");
+            grid2Mill[0, 9] = new SourceGrid.Cells.RowHeader("161-200");
+            grid2Mill[1, 0] = new SourceGrid.Cells.RowHeader("z");
+            grid2Mill[0, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            grid2Mill[0, 1].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            grid2Mill[1, 1] = new SourceGrid.Cells.Cell(Convert.ToString(3), typeof(string));
+            grid2Mill[1, 2] = new SourceGrid.Cells.Cell(Convert.ToString(3), typeof(string));
+            grid2Mill[1, 3] = new SourceGrid.Cells.Cell(Convert.ToString(4), typeof(string));
+            grid2Mill[1, 4] = new SourceGrid.Cells.Cell(Convert.ToString(5), typeof(string));
+            grid2Mill[1, 5] = new SourceGrid.Cells.Cell(Convert.ToString(8), typeof(string));
+            grid2Mill[1, 6] = new SourceGrid.Cells.Cell(Convert.ToString(10), typeof(string));
+            grid2Mill[1, 7] = new SourceGrid.Cells.Cell(Convert.ToString(12), typeof(string));
+            grid2Mill[1, 8] = new SourceGrid.Cells.Cell(Convert.ToString(14), typeof(string));
+            grid2Mill[1, 9] = new SourceGrid.Cells.Cell(Convert.ToString(18), typeof(string));
             for (int c = 1; c < 10; c++)
             {
-                grid2Frez[1, c].AddController(clickEvent);//клик мыши
-                grid2Frez[1, c].AddController(cellpointer);//наведение
-                grid2Frez[1, c].Editor.EnableEdit = false;//нередактируемые ячейки
-                grid2Frez[1, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                grid2Frez[1, c].AddController(new MyHelpRowTracking());//help row pointer
+                grid2Mill[1, c].AddController(clickEvent);//клик мыши
+                grid2Mill[1, c].AddController(cellpointer);//наведение
+                grid2Mill[1, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                grid2Mill[1, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                grid2Mill[1, c].AddController(new MyHelpRowTracking());//help row pointer
             }
-            grid2Frez.AutoSizeCells();
-            grid2Frez.EnableSort = false;
-            grid2Frez.Selection.EnableMultiSelection = false;
+            grid2Mill.AutoSizeCells();
+            grid2Mill.EnableSort = false;
+            grid2Mill.Selection.EnableMultiSelection = false;
             #endregion
         }
-        public void DoFullTab3_frez()
+        public void DoFullTab3_Mill()
         {
             #region SQLite Connection
             sqlite_conn = new SQLiteConnection("Data Source=databaseF.sqlite;Version=3;New=True;Compress=True;");// create a new databaseF connection
@@ -839,44 +839,44 @@ namespace My_Cal
             sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
             #endregion
             #region Код таблицы 3 (Коэф. Kv)
-            grid3Frez.BorderStyle = BorderStyle.FixedSingle;
-            grid3Frez.Redim(7, 3);
+            grid3Mill.BorderStyle = BorderStyle.FixedSingle;
+            grid3Mill.Redim(7, 3);
 
-            grid3Frez[0, 0] = new SourceGrid.Cells.ColumnHeader("Коэффициент Kv");
-            grid3Frez[0, 0].ColumnSpan = 3;
-            grid3Frez[1, 0] = new SourceGrid.Cells.ColumnHeader("Вид загатовки");
-            grid3Frez[1, 0].RowSpan = 2;
-            grid3Frez[1, 1] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый материал");
-            grid3Frez[1, 1].ColumnSpan = 2;
-            grid3Frez[2, 1] = new SourceGrid.Cells.ColumnHeader("Конструкционная сталь");
-            grid3Frez[2, 2] = new SourceGrid.Cells.ColumnHeader("Серый чугун");
-            grid3Frez[0, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
-            grid3Frez[0, 1].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            grid3Mill[0, 0] = new SourceGrid.Cells.ColumnHeader("Коэффициент Kv");
+            grid3Mill[0, 0].ColumnSpan = 3;
+            grid3Mill[1, 0] = new SourceGrid.Cells.ColumnHeader("Вид загатовки");
+            grid3Mill[1, 0].RowSpan = 2;
+            grid3Mill[1, 1] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый материал");
+            grid3Mill[1, 1].ColumnSpan = 2;
+            grid3Mill[2, 1] = new SourceGrid.Cells.ColumnHeader("Конструкционная сталь");
+            grid3Mill[2, 2] = new SourceGrid.Cells.ColumnHeader("Серый чугун");
+            grid3Mill[0, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+            grid3Mill[0, 1].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
             for (int r = 3; r < 7; r++)
             {
                 if (sqlite_datareader.Read())
                 {
-                    grid3Frez[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
-                    grid3Frez[r, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
-                    grid3Frez[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid3Mill[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid3Mill[r, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid3Mill[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
                 }
                 for (int c = 1; c < 3; c++)
                 {
-                    grid3Frez[r, c].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
-                    grid3Frez[r, c].AddController(clickEvent);//клик мыши
-                    grid3Frez[r, c].AddController(cellpointer);//наведение
-                    grid3Frez[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
-                    grid3Frez[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                    grid3Frez[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    grid3Mill[r, c].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+                    grid3Mill[r, c].AddController(clickEvent);//клик мыши
+                    grid3Mill[r, c].AddController(cellpointer);//наведение
+                    grid3Mill[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                    grid3Mill[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                    grid3Mill[r, c].AddController(new MyHelpRowTracking());//help row pointer
                 }
             }
-            grid3Frez.AutoSizeCells();
-            grid3Frez.EnableSort = false;
-            grid3Frez.Selection.EnableMultiSelection = false;
+            grid3Mill.AutoSizeCells();
+            grid3Mill.EnableSort = false;
+            grid3Mill.Selection.EnableMultiSelection = false;
             sqlite_conn.Close();
             #endregion
         }
-        public void DoFullTab4_frez()
+        public void DoFullTab4_Mill()
         {
             #region SQLite Connection
             sqlite_conn = new SQLiteConnection("Data Source=databaseF.sqlite;Version=3;New=True;Compress=True;");// create a new databaseF connection
@@ -886,32 +886,32 @@ namespace My_Cal
             sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
             #endregion
             #region Код таблицы 4 (Коэф. Kp)
-            grid4Frez.BorderStyle = BorderStyle.FixedSingle;
-            grid4Frez.Redim(3, 2);
-            grid4Frez[0, 0] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый \nматериал");
-            grid4Frez[0, 1] = new SourceGrid.Cells.ColumnHeader("Коэффицент Kp");
+            grid4Mill.BorderStyle = BorderStyle.FixedSingle;
+            grid4Mill.Redim(3, 2);
+            grid4Mill[0, 0] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый \nматериал");
+            grid4Mill[0, 1] = new SourceGrid.Cells.ColumnHeader("Коэффицент Kp");
             for (int r = 1; r < 3; r++)
             {
                 if (sqlite_datareader.Read())
                 {
-                    grid4Frez[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
-                    grid4Frez[r, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
-                    grid4Frez[r, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+                    grid4Mill[r, 0] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid4Mill[r, 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid4Mill[r, 0].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
                 }
-                grid4Frez[r, 1].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
-                grid4Frez[r, 1].AddController(clickEvent);//клик мыши
-                grid4Frez[r, 1].AddController(cellpointer);//наведение
-                grid4Frez[r, 1].Editor.EnableEdit = false;//нередактируемые ячейки
-                grid4Frez[r, 1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                grid4Frez[r, 1].AddController(new MyHelpRowTracking());//help row pointer
+                grid4Mill[r, 1].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+                grid4Mill[r, 1].AddController(clickEvent);//клик мыши
+                grid4Mill[r, 1].AddController(cellpointer);//наведение
+                grid4Mill[r, 1].Editor.EnableEdit = false;//нередактируемые ячейки
+                grid4Mill[r, 1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                grid4Mill[r, 1].AddController(new MyHelpRowTracking());//help row pointer
             }
-            grid4Frez.AutoSizeCells();
-            grid4Frez.EnableSort = false;
-            grid4Frez.Selection.EnableMultiSelection = false;
+            grid4Mill.AutoSizeCells();
+            grid4Mill.EnableSort = false;
+            grid4Mill.Selection.EnableMultiSelection = false;
             sqlite_conn.Close();
             #endregion
         }
-        public void DoFullTab5_frez()
+        public void DoFullTab5_Mill()
         {
             #region SQLite Connection
             sqlite_conn = new SQLiteConnection("Data Source=databaseF.sqlite;Version=3;New=True;Compress=True;");// create a new databaseF connection
@@ -921,101 +921,92 @@ namespace My_Cal
             sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
             #endregion
             #region Код таблицы 5 (Коэф. к ур. силы резания)
-            grid5Frez.BorderStyle = BorderStyle.FixedSingle;
-            grid5Frez.Redim(11, 8);
-            grid5Frez[0, 0] = new SourceGrid.Cells.ColumnHeader("Вид обработки");
-            grid5Frez[0, 1] = new SourceGrid.Cells.ColumnHeader("Материал резца");
-            grid5Frez[0, 2] = new SourceGrid.Cells.ColumnHeader("Cр");
-            grid5Frez[0, 3] = new SourceGrid.Cells.ColumnHeader("х");
-            grid5Frez[0, 4] = new SourceGrid.Cells.ColumnHeader("y");
-            grid5Frez[0, 5] = new SourceGrid.Cells.ColumnHeader("u");
-            grid5Frez[0, 6] = new SourceGrid.Cells.ColumnHeader("q");
-            grid5Frez[0, 7] = new SourceGrid.Cells.ColumnHeader("w");
-            grid5Frez[1, 0] = new SourceGrid.Cells.ColumnHeader("Сталь углеродистая");
-            grid5Frez[1, 0].ColumnSpan = 8;
-            grid5Frez[2, 0] = new SourceGrid.Cells.RowHeader("Торцевое \nфрезерование");
-            grid5Frez[2, 0].RowSpan = 2;
-            grid5Frez[4, 0] = new SourceGrid.Cells.RowHeader("Боковое \nфрезерование");
-            grid5Frez[4, 0].RowSpan = 2;
-            grid5Frez[6, 0] = new SourceGrid.Cells.ColumnHeader("Серый чугун");
-            grid5Frez[6, 0].ColumnSpan = 8;
-            grid5Frez[7, 0] = new SourceGrid.Cells.RowHeader("Торцевое \nфрезерование");
-            grid5Frez[7, 0].RowSpan = 2;
-            grid5Frez[9, 0] = new SourceGrid.Cells.RowHeader("Боковое \nфрезерование");
-            grid5Frez[9, 0].RowSpan = 2;
+            grid5Mill.BorderStyle = BorderStyle.FixedSingle;
+            grid5Mill.Redim(11, 8);
+            grid5Mill[0, 0] = new SourceGrid.Cells.ColumnHeader("Вид обработки");
+            grid5Mill[0, 1] = new SourceGrid.Cells.ColumnHeader("Материал резца");
+            grid5Mill[0, 2] = new SourceGrid.Cells.ColumnHeader("Cр");
+            grid5Mill[0, 3] = new SourceGrid.Cells.ColumnHeader("х");
+            grid5Mill[0, 4] = new SourceGrid.Cells.ColumnHeader("y");
+            grid5Mill[0, 5] = new SourceGrid.Cells.ColumnHeader("u");
+            grid5Mill[0, 6] = new SourceGrid.Cells.ColumnHeader("q");
+            grid5Mill[0, 7] = new SourceGrid.Cells.ColumnHeader("w");
+            grid5Mill[1, 0] = new SourceGrid.Cells.ColumnHeader("Сталь углеродистая");
+            grid5Mill[1, 0].ColumnSpan = 8;
+            grid5Mill[2, 0] = new SourceGrid.Cells.RowHeader("Торцевое \nфрезерование");
+            grid5Mill[2, 0].RowSpan = 2;
+            grid5Mill[4, 0] = new SourceGrid.Cells.RowHeader("Боковое \nфрезерование");
+            grid5Mill[4, 0].RowSpan = 2;
+            grid5Mill[6, 0] = new SourceGrid.Cells.ColumnHeader("Серый чугун");
+            grid5Mill[6, 0].ColumnSpan = 8;
+            grid5Mill[7, 0] = new SourceGrid.Cells.RowHeader("Торцевое \nфрезерование");
+            grid5Mill[7, 0].RowSpan = 2;
+            grid5Mill[9, 0] = new SourceGrid.Cells.RowHeader("Боковое \nфрезерование");
+            grid5Mill[9, 0].RowSpan = 2;
             for (int r = 2; r < 6; r++)
             {
                 if (sqlite_datareader.Read())
                 {
-                    grid5Frez[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
-                    grid5Frez[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
-                    grid5Frez[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
-                    grid5Frez[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
-                    grid5Frez[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
-                    grid5Frez[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)), typeof(float));
-                    grid5Frez[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)), typeof(float));
+                    grid5Mill[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid5Mill[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid5Mill[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid5Mill[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                    grid5Mill[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
+                    grid5Mill[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)), typeof(float));
+                    grid5Mill[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)), typeof(float));
                 }
                 for (int c = 2; c < 8; c++)
                 {
-                    grid5Frez[r, c].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
-                    grid5Frez[r, c].AddController(clickEvent);//клик мыши
-                    grid5Frez[r, c].AddController(rowpointer);//наведение
-                    grid5Frez[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
-                    grid5Frez[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                    grid5Frez[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    grid5Mill[r, c].View.TextAlignment = DevAge.Drawing.ContentAlignment.MiddleCenter;
+                    grid5Mill[r, c].AddController(clickEvent);//клик мыши
+                    grid5Mill[r, c].AddController(rowpointer);//наведение
+                    grid5Mill[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                    grid5Mill[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                    grid5Mill[r, c].AddController(new MyHelpRowTracking());//help row pointer
                 }
             }
             for (int r = 7; r < 11; r++)
             {
                 if (sqlite_datareader.Read())
                 {
-                    grid5Frez[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
-                    grid5Frez[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
-                    grid5Frez[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
-                    grid5Frez[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
-                    grid5Frez[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
-                    grid5Frez[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)), typeof(float));
-                    grid5Frez[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)), typeof(float));
+                    grid5Mill[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(0)));
+                    grid5Mill[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(1)), typeof(float));
+                    grid5Mill[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)), typeof(float));
+                    grid5Mill[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)), typeof(float));
+                    grid5Mill[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)), typeof(float));
+                    grid5Mill[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)), typeof(float));
+                    grid5Mill[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)), typeof(float));
                 }
                 for (int c = 2; c < 8; c++)
                 {
-                    grid5Frez[r, c].AddController(clickEvent);//клик мыши
-                    grid5Frez[r, c].AddController(rowpointer);//наведение
-                    grid5Frez[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
-                    grid5Frez[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                    grid5Frez[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    grid5Mill[r, c].AddController(clickEvent);//клик мыши
+                    grid5Mill[r, c].AddController(rowpointer);//наведение
+                    grid5Mill[r, c].Editor.EnableEdit = false;//нередактируемые ячейки
+                    grid5Mill[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                    grid5Mill[r, c].AddController(new MyHelpRowTracking());//help row pointer
                 }
             }
-            grid5Frez.AutoSizeCells();
-            grid5Frez.EnableSort = false;
-            grid5Frez.Selection.EnableMultiSelection = false;
+            grid5Mill.AutoSizeCells();
+            grid5Mill.EnableSort = false;
+            grid5Mill.Selection.EnableMultiSelection = false;
             sqlite_conn.Close();
             #endregion
         }
         #endregion
-        /// <summary>
-        /// Выделяет ячейку
-        /// </summary>
-        /// <param name="context"></param>
-        public void MyCellSelector(CellContext context)
-        {
-            SourceGrid.Range r3 = new SourceGrid.Range(new Position(0, 0), new Position(context.Grid.Rows.Count, context.Grid.Columns.Count));
-            context.Grid.Selection.SelectRange(r3, false);
-            context.Grid.Selection.SelectCell(context.Position, true);
-        }
+
 
         /// <summary>
         /// Происходит при изменении значения ячейки
         /// нужен для задания значения шага при точении резьбы
         /// </summary>
-        /// 
         private void CellEvent_Changed(object sender, EventArgs e)
         {
             SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
             try
             {
-                s1.IData.s_rezba = Convert.ToSingle(context.Value);
-                context.Value = Convert.ToString(s1.IData.s_rezba);
+
+                ts.inputData.s_rezba = Convert.ToSingle(context.Value);
+                context.Value = Convert.ToString(ts.inputData.s_rezba);
                 context.Invalidate();
             }
             catch (System.FormatException)
@@ -1027,45 +1018,6 @@ namespace My_Cal
 
         }
 
-
-        /// <summary>
-        /// Выделяет все ячейки в строке от 
-        /// 2й в строке до последней 
-        /// </summary>
-        public void MyRowSelector(CellContext context)
-        {
-            SourceGrid.Range r1 = new SourceGrid.Range(new Position(context.Position.Row, 2), new Position(context.Position.Row, context.Grid.Columns.Count));
-            SourceGrid.Range r2 = new SourceGrid.Range(new Position(0, 0), new Position(context.Grid.Rows.Count, context.Grid.Columns.Count));
-            context.Grid.Selection.SelectRange(r2, false);
-            context.Grid.Selection.SelectRange(r1, true);
-        }
-
-        /// <summary>
-        /// Снимает выделение со всех ячеек всех таблиц
-        /// </summary>
-        private void ClearAllSelection()
-        {
-            for (int i = 0; i < tabControl1.TabCount; i++)
-            {
-                foreach (SourceGrid.Grid SGrid in tabControl1.Controls.Find("grid" + i, true))
-                {
-                    SourceGrid.Range R = new Range(0, 0, SGrid.Rows.Count, SGrid.Columns.Count);
-                    SGrid.Selection.SelectRange(R, false);
-                }
-            }
-        }
-
-        private void ClearAllSelectionFrez()
-        {
-            for (int i = 0; i < tabControl3.TabCount; i++)
-            {
-                foreach (SourceGrid.Grid SGrid in tabControl3.Controls.Find("grid" + i + "Frez", true))
-                {
-                    SourceGrid.Range R = new Range(0, 0, SGrid.Rows.Count, SGrid.Columns.Count);
-                    SGrid.Selection.SelectRange(R, false);
-                }
-            }
-        }
         /// <summary>
         /// Отслеживание текущей ячейки 
         /// при наведении мыши
@@ -1196,38 +1148,39 @@ namespace My_Cal
         private void clickEvent_Click(object sender, EventArgs e)
         {
             SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
+
             if (context.Grid.Handle == grid1.Handle)
             {
-                s1.IData.t = Convert.ToSingle(context.Value);
-                s1.LCells.grid1 = context;
+                ts.inputData.t = Convert.ToSingle(context.Value);
+                ts.setLCell(1, context);
             }
             if (context.Grid.Handle == grid2.Handle)
             {
-                s1.IData.s = Convert.ToSingle(context.Value);
-                s1.LCells.grid2 = context;
+                ts.inputData.s = Convert.ToSingle(context.Value);
+                ts.setLCell(2, context);
             }
             if (context.Grid.Handle == grid3.Handle)
             {
-                s1.IData.Kmv = Convert.ToSingle(context.Value);
-                s1.LCells.grid3 = context;
+                ts.inputData.Kmv = Convert.ToSingle(context.Value);
+                ts.setLCell(3, context);
             }
             if (context.Grid.Handle == grid4.Handle)
             {
-                s1.IData.Kpv = Convert.ToSingle(context.Value);
-                s1.LCells.grid4 = context;
+                ts.inputData.Kpv = Convert.ToSingle(context.Value);
+                ts.setLCell(4, context);
             }
             if (context.Grid.Handle == grid5.Handle)
             {
-                s1.IData.Kiv = Convert.ToSingle(context.Value);
-                s1.LCells.grid5 = context;
+                ts.inputData.Kiv = Convert.ToSingle(context.Value);
+                ts.setLCell(5, context);
             }
             if (context.Grid.Handle == grid6.Handle)
             {
-                s1.IData.Cv = Convert.ToSingle(grid6[context.Position.Row, 3].Value);
-                s1.IData.xv = Convert.ToSingle(grid6[context.Position.Row, 4].Value);
-                s1.IData.yv = Convert.ToSingle(grid6[context.Position.Row, 5].Value);
-                s1.IData.mv = Convert.ToSingle(grid6[context.Position.Row, 6].Value);
-                s1.LCells.grid6 = context;
+                ts.inputData.Cv = Convert.ToSingle(grid6[context.Position.Row, 3].Value);
+                ts.inputData.xv = Convert.ToSingle(grid6[context.Position.Row, 4].Value);
+                ts.inputData.yv = Convert.ToSingle(grid6[context.Position.Row, 5].Value);
+                ts.inputData.mv = Convert.ToSingle(grid6[context.Position.Row, 6].Value);
+                ts.setLCell(6, context);
                 if (context.Position.Row == 7 || context.Position.Row == 8 || context.Position.Row == 14)
                 {
                     //Редактирование s сразу после нажатия на строку.
@@ -1238,34 +1191,34 @@ namespace My_Cal
                 {
                     try
                     {
-                        s1.IData.s = Convert.ToSingle(s1.LCells.grid2.Value);
-                        s1.IData.s_rezba = 0;
+                        ts.inputData.s = Convert.ToSingle(ts.getLCell(2).Value);
+                        ts.inputData.s_rezba = 0;
                     }
                     catch
                     {
-                        s1.IData.s_rezba = 0;
+                        ts.inputData.s_rezba = 0;
                     }
                 }
             }
             if (context.Grid.Handle == grid7.Handle)
             {
-                s1.IData.Cp = Convert.ToSingle(grid7[context.Position.Row, 2].Value);
-                s1.IData.xp = Convert.ToSingle(grid7[context.Position.Row, 3].Value);
-                s1.IData.yp = Convert.ToSingle(grid7[context.Position.Row, 4].Value);
-                s1.IData.np = Convert.ToSingle(grid7[context.Position.Row, 5].Value);
-                s1.LCells.grid7 = context;
+                ts.inputData.Cp = Convert.ToSingle(grid7[context.Position.Row, 2].Value);
+                ts.inputData.xp = Convert.ToSingle(grid7[context.Position.Row, 3].Value);
+                ts.inputData.yp = Convert.ToSingle(grid7[context.Position.Row, 4].Value);
+                ts.inputData.np = Convert.ToSingle(grid7[context.Position.Row, 5].Value);
+                ts.setLCell(7, context);
             }
             if (context.Grid.Handle == grid8.Handle)
             {
-                s1.IData.Kmp = Convert.ToSingle(context.Value);
-                s1.LCells.grid8 = context;
+                ts.inputData.Kmp = Convert.ToSingle(context.Value);
+                ts.setLCell(8, context);
             }
 
             //Выделение ячеек (они unselectable)
 
             if ((context.Grid.Handle == grid6.Handle) | (context.Grid.Handle == grid7.Handle))
             {
-                MyRowSelector(context);
+                Utils.RowSelector(context);
             }
             //else
             //{
@@ -1279,61 +1232,61 @@ namespace My_Cal
             //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             //
             //
-            if (context.Grid.Handle == grid1Frez.Handle)
+            if (context.Grid.Handle == grid1Mill.Handle)
             {
-                s3.IData.Cv = Convert.ToSingle(grid1Frez[context.Position.Row, 4].Value);
-                s3.IData.qv = Convert.ToSingle(grid1Frez[context.Position.Row, 5].Value);
-                s3.IData.xv = Convert.ToSingle(grid1Frez[context.Position.Row, 6].Value);
-                s3.IData.yv = Convert.ToSingle(grid1Frez[context.Position.Row, 7].Value);
-                s3.IData.uv = Convert.ToSingle(grid1Frez[context.Position.Row, 8].Value);
-                s3.IData.pv = Convert.ToSingle(grid1Frez[context.Position.Row, 9].Value);
-                s3.IData.mv = Convert.ToSingle(grid1Frez[context.Position.Row, 10].Value);
-                s3.LCells.grid1 = context;
+                ms.inputData.Cv = Convert.ToSingle(grid1Mill[context.Position.Row, 4].Value);
+                ms.inputData.qv = Convert.ToSingle(grid1Mill[context.Position.Row, 5].Value);
+                ms.inputData.xv = Convert.ToSingle(grid1Mill[context.Position.Row, 6].Value);
+                ms.inputData.yv = Convert.ToSingle(grid1Mill[context.Position.Row, 7].Value);
+                ms.inputData.uv = Convert.ToSingle(grid1Mill[context.Position.Row, 8].Value);
+                ms.inputData.pv = Convert.ToSingle(grid1Mill[context.Position.Row, 9].Value);
+                ms.inputData.mv = Convert.ToSingle(grid1Mill[context.Position.Row, 10].Value);
+                ms.setLCell(1, context);
             }
-            if (context.Grid.Handle == grid2Frez.Handle)
+            if (context.Grid.Handle == grid2Mill.Handle)
             {
-                s3.IData.z = Convert.ToSingle(context.Value);
-                s3.LCells.grid2 = context;
+                ms.inputData.z = Convert.ToSingle(context.Value);
+                ms.setLCell(2, context);
             }
-            if (context.Grid.Handle == grid3Frez.Handle)
+            if (context.Grid.Handle == grid3Mill.Handle)
             {
-                s3.IData.Kv = Convert.ToSingle(context.Value);
-                s3.LCells.grid3 = context;
+                ms.inputData.Kv = Convert.ToSingle(context.Value);
+                ms.setLCell(3, context);
             }
-            if (context.Grid.Handle == grid4Frez.Handle)
+            if (context.Grid.Handle == grid4Mill.Handle)
             {
-                s3.IData.Kp = Convert.ToSingle(context.Value);
-                s3.LCells.grid4 = context;
+                ms.inputData.Kp = Convert.ToSingle(context.Value);
+                ms.setLCell(4, context);
             }
-            if (context.Grid.Handle == grid5Frez.Handle)
+            if (context.Grid.Handle == grid5Mill.Handle)
             {
-                s3.IData.Cp = Convert.ToSingle(grid5Frez[context.Position.Row, 2].Value);
-                s3.IData.xp = Convert.ToSingle(grid5Frez[context.Position.Row, 3].Value);
-                s3.IData.yp = Convert.ToSingle(grid5Frez[context.Position.Row, 4].Value);
-                s3.IData.up = Convert.ToSingle(grid5Frez[context.Position.Row, 5].Value);
-                s3.IData.qp = Convert.ToSingle(grid5Frez[context.Position.Row, 6].Value);
-                s3.IData.wp = Convert.ToSingle(grid5Frez[context.Position.Row, 7].Value);
-                s3.LCells.grid5 = context;
-                MyRowSelector(context);
+                ms.inputData.Cp = Convert.ToSingle(grid5Mill[context.Position.Row, 2].Value);
+                ms.inputData.xp = Convert.ToSingle(grid5Mill[context.Position.Row, 3].Value);
+                ms.inputData.yp = Convert.ToSingle(grid5Mill[context.Position.Row, 4].Value);
+                ms.inputData.up = Convert.ToSingle(grid5Mill[context.Position.Row, 5].Value);
+                ms.inputData.qp = Convert.ToSingle(grid5Mill[context.Position.Row, 6].Value);
+                ms.inputData.wp = Convert.ToSingle(grid5Mill[context.Position.Row, 7].Value);
+                ms.setLCell(5, context);
+                Utils.RowSelector(context);
             }
             //Выделение ячеек (они unselectable)
 
-            if (context.Grid.Handle == grid5Frez.Handle)
+            if (context.Grid.Handle == grid5Mill.Handle)
             {
-                MyRowSelector(context);
+                Utils.RowSelector(context);
             }
-            if (context.Grid.Handle == grid1Frez.Handle)
+            if (context.Grid.Handle == grid1Mill.Handle)
             {
-                MyRowSelector_4(context);
+                Utils.RowSelector(context);
             }
-            if ((context.Grid.Handle != grid1Frez.Handle) && (context.Grid.Handle != grid5Frez.Handle) && (context.Grid.Handle != grid6.Handle) && (context.Grid.Handle != grid7.Handle))
+            if ((context.Grid.Handle != grid1Mill.Handle) && (context.Grid.Handle != grid5Mill.Handle) && (context.Grid.Handle != grid6.Handle) && (context.Grid.Handle != grid7.Handle))
             {
                 //следующий код необходим для верного выделения (click-drop) иначе 
                 //click на одной ячейке, select на другой.(+unselectable)
                 //+решения проблеммы shift+arrow т.е. выделение только при событии click 
                 if (!((context.Position.Column == 1) && (context.Position.Row > 10) && (context.Grid.Handle == grid1.Handle)))
                 {
-                    MyCellSelector(context);
+                    Utils.CellSelector(context);
                 }
             }
         }
@@ -1341,34 +1294,34 @@ namespace My_Cal
         private void tabPage9_Enter(object sender, EventArgs e)
         {
             ClearTab9();
-            if (s1.IData.s_rezba != 0)
+            if (ts.inputData.s_rezba != 0)
             {
-                s1.IData.s = s1.IData.s_rezba;
+                ts.inputData.s = ts.inputData.s_rezba;
             }
-            textBox1.Text = Convert.ToString(s1.IData.t);
-            textBox2.Text = Convert.ToString(s1.IData.s);
-            textBox3.Text = Convert.ToString(s1.IData.Kmv);
-            textBox4.Text = Convert.ToString(s1.IData.Kpv);
-            textBox5.Text = Convert.ToString(s1.IData.Kiv);
-            textBox6.Text = Convert.ToString(s1.IData.Cv);
-            textBox7.Text = Convert.ToString(s1.IData.xv);
-            textBox8.Text = Convert.ToString(s1.IData.yv);
-            textBox9.Text = Convert.ToString(s1.IData.mv);
-            textBox10.Text = Convert.ToString(s1.IData.Cp);
-            textBox11.Text = Convert.ToString(s1.IData.xp);
-            textBox12.Text = Convert.ToString(s1.IData.yp);
-            textBox13.Text = Convert.ToString(s1.IData.np);
-            textBox15.Text = Convert.ToString(s1.IData.Kmp);
-            textBox16.Text = Convert.ToString(s1.IData.D);
-            comboBox1.SelectedIndex = s1.CBoxIndex;
-            if (s1)
+            textBox1.Text = Convert.ToString(ts.inputData.t);
+            textBox2.Text = Convert.ToString(ts.inputData.s);
+            textBox3.Text = Convert.ToString(ts.inputData.Kmv);
+            textBox4.Text = Convert.ToString(ts.inputData.Kpv);
+            textBox5.Text = Convert.ToString(ts.inputData.Kiv);
+            textBox6.Text = Convert.ToString(ts.inputData.Cv);
+            textBox7.Text = Convert.ToString(ts.inputData.xv);
+            textBox8.Text = Convert.ToString(ts.inputData.yv);
+            textBox9.Text = Convert.ToString(ts.inputData.mv);
+            textBox10.Text = Convert.ToString(ts.inputData.Cp);
+            textBox11.Text = Convert.ToString(ts.inputData.xp);
+            textBox12.Text = Convert.ToString(ts.inputData.yp);
+            textBox13.Text = Convert.ToString(ts.inputData.np);
+            textBox15.Text = Convert.ToString(ts.inputData.Kmp);
+            textBox16.Text = Convert.ToString(ts.inputData.D);
+            comboBox1.SelectedIndex = ts.cBoxIndex;
+            if (ts)
             {
 
-                textBox17.Text = Convert.ToString(s1.V());
-                textBox18.Text = Convert.ToString(s1.n());
-                textBox19.Text = Convert.ToString(s1.Pz());
-                textBox20.Text = Convert.ToString(s1.M());
-                textBox21.Text = Convert.ToString(s1.N());
+                textBox17.Text = Convert.ToString(ts.getV());
+                textBox18.Text = Convert.ToString(ts.getn());
+                textBox19.Text = Convert.ToString(ts.getPz());
+                textBox20.Text = Convert.ToString(ts.getM());
+                textBox21.Text = Convert.ToString(ts.getN());
             }
         }
 
@@ -1391,9 +1344,9 @@ namespace My_Cal
         {
             if (comboBox1.Text != "")
             {
-                s1.CBoxIndex = comboBox1.SelectedIndex;
+                ts.cBoxIndex = comboBox1.SelectedIndex;
                 textBox14.Text = comboBox1.Text;
-                s1.IData.T = Convert.ToSingle(comboBox1.Text);
+                ts.inputData.T = Convert.ToSingle(comboBox1.Text);
             }
         }
         /// <summary>
@@ -1407,53 +1360,27 @@ namespace My_Cal
 
             try
             {
-                s1.IData.D = Convert.ToSingle(textBox16.Text);
-                if (s1)
+                ts.inputData.D = Convert.ToSingle(textBox16.Text);
+                if (ts)
                 {
-                    textBox17.Text = Convert.ToString(s1.V());
-                    textBox18.Text = Convert.ToString(s1.n());
-                    textBox19.Text = Convert.ToString(s1.Pz());
-                    textBox20.Text = Convert.ToString(s1.M());
-                    textBox21.Text = Convert.ToString(s1.N());
+                    textBox17.Text = Convert.ToString(ts.getV());
+                    textBox18.Text = Convert.ToString(ts.getn());
+                    textBox19.Text = Convert.ToString(ts.getPz());
+                    textBox20.Text = Convert.ToString(ts.getM());
+                    textBox21.Text = Convert.ToString(ts.getN());
                 }
                 else
                 {
                     string str = "\n";
-                    if (s1.LCells.grid1.Cell == null)
+                    for (int i = 1; i < 9; i++)
                     {
-                        str = str + tabPage1.Text + "\n";
-                    }
-                    if (s1.LCells.grid2.Cell == null)
-                    {
-                        str = str + tabPage2.Text + "\n";
-                    }
-                    if (s1.LCells.grid3.Cell == null)
-                    {
-                        str = str + tabPage3.Text + "\n";
+                        if (ts.getLCell(i) == null)
+                        {
+                            str = str + ((TabPage)tabControl1.Controls.Find("tabPage" + i,false)[0]).Text;// 
+                        }
                     }
 
-                    if (s1.LCells.grid4.Cell == null)
-                    {
-                        str = str + tabPage4.Text + "\n";
-                    }
-                    if (s1.LCells.grid5.Cell == null)
-                    {
-                        str = str + tabPage5.Text + "\n";
-                    }
-                    if (s1.LCells.grid6.Cell == null)
-                    {
-                        str = str + tabPage6.Text + "\n";
-                    }
-                    if (s1.LCells.grid7.Cell == null)
-                    {
-                        str = str + tabPage7.Text + "\n";
-                    }
-                    if (s1.LCells.grid8.Cell == null)
-                    {
-                        str = str + tabPage8.Text + "\n";
-                    }
-
-                    if ((s1.IData.D == 0) || (s1.CBoxIndex == -1))
+                    if ((ts.inputData.D == 0) || (ts.cBoxIndex == -1))
                     {
                         str = str + tabPage9.Text + "\n";
                     }
@@ -1468,35 +1395,35 @@ namespace My_Cal
         }
 
 
-        private void comboBox1Frez_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboBox1Mill_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboBox1Frez.Text != "")
+            if (comboBox1Mill.Text != "")
             {
-                s3.CBoxIndex = comboBox1Frez.SelectedIndex;
-                s3.IData.T = Convert.ToSingle(comboBox1Frez.Text);
-                comboBox1Frez.SelectedIndex = s3.CBoxIndex;
+                ms.cBoxIndex = comboBox1Mill.SelectedIndex;
+                ms.inputData.T = Convert.ToSingle(comboBox1Mill.Text);
+                comboBox1Mill.SelectedIndex = ms.cBoxIndex;
             }
         }
 
-        private void button2Frez_Click(object sender, EventArgs e)
+        private void button2Mill_Click(object sender, EventArgs e)
         {
-            textBox1Frez.Text = textBox1Frez.Text.Replace(".", ",");
-            textBox2Frez.Text = textBox2Frez.Text.Replace(".", ",");
-            textBox3Frez.Text = textBox3Frez.Text.Replace(".", ",");
-            textBox10Frez.Text = textBox10Frez.Text.Replace(".", ",");
+            textBox1Mill.Text = textBox1Mill.Text.Replace(".", ",");
+            textBox2Mill.Text = textBox2Mill.Text.Replace(".", ",");
+            textBox3Mill.Text = textBox3Mill.Text.Replace(".", ",");
+            textBox10Mill.Text = textBox10Mill.Text.Replace(".", ",");
             try
             {
-                s3.IData.t = Convert.ToSingle(textBox1Frez.Text);
-                s3.IData.B = Convert.ToSingle(textBox2Frez.Text);
-                s3.IData.sz = Convert.ToSingle(textBox3Frez.Text);
-                s3.IData.D = Convert.ToSingle(textBox10Frez.Text);
+                ms.inputData.t = Convert.ToSingle(textBox1Mill.Text);
+                ms.inputData.B = Convert.ToSingle(textBox2Mill.Text);
+                ms.inputData.s = Convert.ToSingle(textBox3Mill.Text);
+                ms.inputData.D = Convert.ToSingle(textBox10Mill.Text);
             }
             catch (System.FormatException)
             {
-                textBox1Frez.Text = "";
-                textBox2Frez.Text = "";
-                textBox3Frez.Text = "";
-                textBox10Frez.Text = "";
+                textBox1Mill.Text = "";
+                textBox2Mill.Text = "";
+                textBox3Mill.Text = "";
+                textBox10Mill.Text = "";
                 MessageBox.Show("Ошибка ввода!\n");
             }
 
@@ -1510,47 +1437,40 @@ namespace My_Cal
             }
         }
 
-        private void tabPage7Frez_Enter(object sender, EventArgs e)
+        private void tabPage7Mill_Enter(object sender, EventArgs e)
         {
-            textBox22.Text = Convert.ToString(s3.IData.t);
-            textBox23.Text = Convert.ToString(s3.IData.B);
-            textBox24.Text = Convert.ToString(s3.IData.sz);
-            textBox25.Text = Convert.ToString(s3.IData.D);
-            textBox26.Text = Convert.ToString(s3.IData.T);
-            textBox27.Text = Convert.ToString(s3.IData.z);
-            textBox28.Text = Convert.ToString(s3.IData.Kv);
-            textBox29.Text = Convert.ToString(s3.IData.Kp);
-            textBox30.Text = Convert.ToString(s3.IData.mv);
-            textBox31.Text = Convert.ToString(s3.IData.pv);
-            textBox32.Text = Convert.ToString(s3.IData.uv);
-            textBox33.Text = Convert.ToString(s3.IData.yv);
-            textBox34.Text = Convert.ToString(s3.IData.xv);
-            textBox35.Text = Convert.ToString(s3.IData.qv);
-            textBox36.Text = Convert.ToString(s3.IData.Cv);
-            textBox38.Text = Convert.ToString(s3.IData.wp);
-            textBox39.Text = Convert.ToString(s3.IData.up);
-            textBox40.Text = Convert.ToString(s3.IData.yp);
-            textBox41.Text = Convert.ToString(s3.IData.xp);
-            textBox42.Text = Convert.ToString(s3.IData.qp);
-            textBox43.Text = Convert.ToString(s3.IData.Cp);
-            textBox4Frez.Text = Convert.ToString(s3.V());
-            textBox6Frez.Text = Convert.ToString(s3.M());
-            textBox7Frez.Text = Convert.ToString(s3.n());
-            textBox8Frez.Text = Convert.ToString(s3.Pz());
-            textBox9Frez.Text = Convert.ToString(s3.N());
-
+            textBox22.Text = Convert.ToString(ms.inputData.t);
+            textBox23.Text = Convert.ToString(ms.inputData.B);
+            textBox24.Text = Convert.ToString(ms.inputData.s);
+            textBox25.Text = Convert.ToString(ms.inputData.D);
+            textBox26.Text = Convert.ToString(ms.inputData.T);
+            textBox27.Text = Convert.ToString(ms.inputData.z);
+            textBox28.Text = Convert.ToString(ms.inputData.Kv);
+            textBox29.Text = Convert.ToString(ms.inputData.Kp);
+            textBox30.Text = Convert.ToString(ms.inputData.mv);
+            textBox31.Text = Convert.ToString(ms.inputData.pv);
+            textBox32.Text = Convert.ToString(ms.inputData.uv);
+            textBox33.Text = Convert.ToString(ms.inputData.yv);
+            textBox34.Text = Convert.ToString(ms.inputData.xv);
+            textBox35.Text = Convert.ToString(ms.inputData.qv);
+            textBox36.Text = Convert.ToString(ms.inputData.Cv);
+            textBox38.Text = Convert.ToString(ms.inputData.wp);
+            textBox39.Text = Convert.ToString(ms.inputData.up);
+            textBox40.Text = Convert.ToString(ms.inputData.yp);
+            textBox41.Text = Convert.ToString(ms.inputData.xp);
+            textBox42.Text = Convert.ToString(ms.inputData.qp);
+            textBox43.Text = Convert.ToString(ms.inputData.Cp);
+            textBox4Mill.Text = Convert.ToString(ms.getV());
+            textBox6Mill.Text = Convert.ToString(ms.getM());
+            textBox7Mill.Text = Convert.ToString(ms.getn());
+            textBox8Mill.Text = Convert.ToString(ms.getPz());
+            textBox9Mill.Text = Convert.ToString(ms.getN());
         }
 
 
-        void treeView1_NodeMouseClick(object sender, TreeNodeMouseClickEventArgs e)
-        {
-
-        }
         /// <summary>
         /// очистить операцию
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         //ToDoОчистка дерева 
         //i = 0;
@@ -1563,20 +1483,13 @@ namespace My_Cal
 
         private void button2_Click(object sender, EventArgs e)
         {
-
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
 
         }
-        public void MyRowSelector_4(CellContext context)
-        {
-            SourceGrid.Range r1_1 = new SourceGrid.Range(new Position(context.Position.Row, 4), new Position(context.Position.Row, context.Grid.Columns.Count));
-            SourceGrid.Range r2_2 = new SourceGrid.Range(new Position(0, 0), new Position(context.Grid.Rows.Count, context.Grid.Columns.Count));
-            context.Grid.Selection.SelectRange(r2_2, false);
-            context.Grid.Selection.SelectRange(r1_1, true);
-        }
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -1595,32 +1508,34 @@ namespace My_Cal
             treeView1.Nodes.Add("Переход" + i + " (токарный)");
             treeView1.Nodes[0].Expand();
             treeView1.EndUpdate();
-            Step_turning s2 = new Step_turning();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
+            TurningStep s = new TurningStep();
+            //Step_turning s2 = new Step_turning();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
             //текущий не трогаем(!) а подменяем его только при выборе!!
-            AList.Add(s2);
+            stepList.Add(s);
         }
 
-        private void makeFrezStepToolStripMenuItem_Click(object sender, EventArgs e)
+        private void makeMillStepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             i++;
             treeView1.BeginUpdate();
             treeView1.Nodes.Add("Переход" + i + " (фрезерный)");
             treeView1.Nodes[0].Expand();
             treeView1.EndUpdate();
-            Step_frez s2 = new Step_frez();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
+            MillingStep s = new MillingStep();
+            //Step_Mill s2 = new Step_Mill();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
             //текущий не трогаем(!) а подменяем его только при выборе!!
-            AList.Add(s2);
+            stepList.Add(s);
         }
 
         private void makeReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Проверка готовности записи в файл
             string str = "";
-            for (int i = 0; i < AList.Count; i++)
+            for (int i = 0; i < stepList.Count; i++)
             {
                 try
                 {
-                    if ((Step_turning)AList[i])//если объект ложный
+                    if ((Step_turning)stepList[i])//если объект ложный
                     {
 
                     }
@@ -1662,38 +1577,38 @@ namespace My_Cal
                 }
 
                 // Записываем в файл.
-                for (int i = 0; i < AList.Count; i++)
+                for (int i = 0; i < stepList.Count; i++)
                 {
                     try
                     {
                         try
                         {
-                            Convert.ToString(((Step_turning)AList[i]).V());
+                            Convert.ToString(((Step_turning)stepList[i]).V());
                             fstr_out.Write("\r\n           Переход №" + (i + 1) + " (токарный)\r\n");
                             fstr_out.Write("Скорость резания:   ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).V()) + " м/с\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).V()) + " м/с\r\n");
                             fstr_out.Write("Частота вращения:   ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).n()) + " об/мин\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).n()) + " об/мин\r\n");
                             fstr_out.Write("Мощность:           ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).N()) + " кВт\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).N()) + " кВт\r\n");
                             fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).Pz()) + " Н\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).Pz()) + " Н\r\n");
                             fstr_out.Write("Момент:             ");
-                            fstr_out.Write(Convert.ToString(((Step_turning)AList[i]).M()) + " Нм\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_turning)stepList[i]).M()) + " Нм\r\n");
                         }
                         catch (InvalidCastException)
                         {
                             fstr_out.Write("\r\n           Переход №" + (i + 1) + "(фрезерный)\r\n");
                             fstr_out.Write("Скорость резания:   ");
-                            fstr_out.Write(Convert.ToString(((Step_frez)AList[i]).V()) + " м/с\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).V()) + " м/с\r\n");
                             fstr_out.Write("Частота вращения:   ");
-                            fstr_out.Write(Convert.ToString(((Step_frez)AList[i]).n()) + " об/мин\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).n()) + " об/мин\r\n");
                             fstr_out.Write("Мощность:           ");
-                            fstr_out.Write(Convert.ToString(((Step_frez)AList[i]).N()) + " кВт\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).N()) + " кВт\r\n");
                             fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((Step_frez)AList[i]).Pz()) + " Н\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).Pz()) + " Н\r\n");
                             fstr_out.Write("Момент:             ");
-                            fstr_out.Write(Convert.ToString(((Step_frez)AList[i]).M()) + " Нм\r\n");
+                            fstr_out.Write(Convert.ToString(((Step_Mill)stepList[i]).M()) + " Нм\r\n");
                         }
                     }
                     catch (IOException exc)
@@ -1723,7 +1638,7 @@ namespace My_Cal
                     if (treeView1.GetNodeCount(true) == 0)
                     {
                         tabControl1.Visible = false;
-                        tabControl3.Visible = false;
+                        tabControl2.Visible = false;
                     }
                     else
                     {
@@ -1739,66 +1654,101 @@ namespace My_Cal
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             //e = (TreeNodeMouseClickEventArgs)e;
-
-            if ((true))
+            object s = stepList[e.Node.Index];
+            if (s is TurningStep)
             {
-                //Todo Сделать проверку типа
-                try
+                DoFullTab6();
+                TurningStep ts = (TurningStep)stepList[e.Node.Index];// stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+                tabControl2.Visible = false;
+                tabControl1.Visible = true;
+                tabControl3.Visible = false;
+                this.Text = "Калькулятор режимов резания: " + e.Node.Text;
+                comboBox1.SelectedIndex = -1;
+                if (tabControl1.SelectedIndex == 8)
                 {
-                    DoFullTab6();
-                    s1 = (Step_turning)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
-                    tabControl3.Visible = false;
-                    tabControl1.Visible = true;
-                    tabControl2.Visible = false;
-                    this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-                    comboBox1.SelectedIndex = -1;
-                    if (tabControl1.SelectedIndex == 8)
-                    {
-                        tabPage9_Enter(null, null);
-                    }
-                    ClearAllSelection();//почистить выделение всех ячеек всех гридов
-                    tabControl1.Visible = true;
-                    s1.ReturnSelect();
+                    tabPage9_Enter(null, null);
                 }
-
-                catch (InvalidCastException)
-                {
-                    try
-                    {
-                        s3 = (Step_frez)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
-                        tabControl3.Visible = true;
-                        tabControl1.Visible = false;
-                        tabControl2.Visible = false;
-                        this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-                        //comboBox1.SelectedIndex = -1;
-                        if (tabControl1.SelectedIndex == 8)
-                        {
-                            tabPage7Frez_Enter(null, null);
-                        }
-                        ClearAllSelectionFrez();//почистить выделение всех ячеек всех гридов
-                        //tabControl1.Visible = true;
-                        s3.ReturnSelect();
-                    }
-                    catch (InvalidCastException)
-                    {
-
-                        s4 = (Step_drill)AList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
-                        tabControl3.Visible = false;
-                        tabControl1.Visible = false;
-                        tabControl2.Visible = true;
-                        this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-                        //comboBox1.SelectedIndex = -1;
-                        //if (tabControl1.SelectedIndex == 8)
-                        //{
-                        //    tabPage7Frez_Enter(null, null);
-                        //}
-                        //ClearAllSelectionFrez();//почистить выделение всех ячеек всех гридов
-                        ////tabControl1.Visible = true;
-                        //s3.ReturnSelect();
-
-                    }
-                }
+                Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
+                tabControl1.Visible = true;
+                ts.ReturnSelect();
             }
+            if (s is MillingStep)
+            {
+                MillingStep ms = (MillingStep)s;
+                //s2 = (Step_Mill)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+                tabControl2.Visible = true;
+                tabControl1.Visible = false;
+                tabControl3.Visible = false;
+                this.Text = "Калькулятор режимов резания: " + e.Node.Text;
+                //comboBox1.SelectedIndex = -1;
+                if (tabControl1.SelectedIndex == 8)
+                {
+                    tabPage7Mill_Enter(null, null);
+                }
+                Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
+                ms.ReturnSelect();
+            }
+
+
+
+            //if ((true))
+            //{
+            //    //Todo Сделать проверку типа
+            //    try
+            //    {
+            //        DoFullTab6();
+            //        s1 = (Step_turning)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+            //        tabControl2.Visible = false;
+            //        tabControl1.Visible = true;
+            //        tabControl3.Visible = false;
+            //        this.Text = "Калькулятор режимов резания: " + e.Node.Text;
+            //        comboBox1.SelectedIndex = -1;
+            //        if (tabControl1.SelectedIndex == 8)
+            //        {
+            //            tabPage9_Enter(null, null);
+            //        }
+            //        Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
+            //        tabControl1.Visible = true;
+            //        s1.ReturnSelect();
+            //    }
+
+            //    catch (InvalidCastException)
+            //    {
+            //        try
+            //        {
+            //            s2 = (Step_Mill)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+            //            tabControl2.Visible = true;
+            //            tabControl1.Visible = false;
+            //            tabControl3.Visible = false;
+            //            this.Text = "Калькулятор режимов резания: " + e.Node.Text;
+            //            //comboBox1.SelectedIndex = -1;
+            //            if (tabControl1.SelectedIndex == 8)
+            //            {
+            //                tabPage7Mill_Enter(null, null);
+            //            }
+            //            Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
+            //            s2.ReturnSelect();
+            //        }
+            //        catch (InvalidCastException)
+            //        {
+
+            //            s3 = (Step_drill)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+            //            tabControl2.Visible = false;
+            //            tabControl1.Visible = false;
+            //            tabControl3.Visible = true;
+            //            this.Text = "Калькулятор режимов резания: " + e.Node.Text;
+            //            //comboBox1.SelectedIndex = -1;
+            //            //if (tabControl1.SelectedIndex == 8)
+            //            //{
+            //            //    tabPage7Mill_Enter(null, null);
+            //            //}
+            //            //ClearAllSelectionMill();//почистить выделение всех ячеек всех гридов
+            //            ////tabControl1.Visible = true;
+            //            //s3.ReturnSelect();
+
+            //        }
+            //    }
+            //}
         }
 
         private void создатьСверлильныйПереходToolStripMenuItem_Click(object sender, EventArgs e)
@@ -1810,7 +1760,7 @@ namespace My_Cal
             treeView1.EndUpdate();
             Step_drill s2 = new Step_drill();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
             //текущий не трогаем(!) а подменяем его только при выборе!!
-            AList.Add(s2);
+            stepList.Add(s2);
         }
     }
 }
