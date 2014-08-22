@@ -32,7 +32,13 @@ namespace My_Cal
         {
             if (context.Grid != null)
             {
-                SourceGrid.Range r1 = new SourceGrid.Range(new SourceGrid.Position(context.Position.Row, 2), new SourceGrid.Position(context.Position.Row, context.Grid.Columns.Count));
+                int c = 0;
+                for (c = 0; c < context.Grid.Columns.Count; c++)
+                {
+                    if (!(context.Grid.GetCell(context.Position.Row, c) is ColumnHeader || context.Grid.GetCell(context.Position.Row, c) is SourceGrid.Cells.RowHeader))
+                        break;
+                }
+                SourceGrid.Range r1 = new SourceGrid.Range(new SourceGrid.Position(context.Position.Row, c), new SourceGrid.Position(context.Position.Row, context.Grid.Columns.Count));
                 SourceGrid.Range r2 = new SourceGrid.Range(new SourceGrid.Position(0, 0), new SourceGrid.Position(context.Grid.Rows.Count, context.Grid.Columns.Count));
                 context.Grid.Selection.SelectRange(r2, false);
                 context.Grid.Selection.SelectRange(r1, true);

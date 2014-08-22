@@ -51,6 +51,8 @@ namespace My_Cal
             DoFullTab3_Drill();
             DoFullTab4_Drill();
             DoFullTab5_Drill();
+            DoFullTab6_Drill();
+            DoFullTab7_Drill();
             tabControl3.Visible = false;
         }
         private void CustomInitialization()
@@ -1184,9 +1186,10 @@ namespace My_Cal
             grid10[1, 3] = new SourceGrid.Cells.ColumnHeader("Рассверливание");
             grid10[1, 3].ColumnSpan = 2;
             grid10[2, 1] = new SourceGrid.Cells.ColumnHeader("Сталь");
-            grid10[2, 2] = new SourceGrid.Cells.ColumnHeader("Серый чугун");
+            grid10[2, 2] = new SourceGrid.Cells.ColumnHeader("Серый\nчугун");
+            grid10[2, 2].Row.Height = 30;
             grid10[2, 3] = new SourceGrid.Cells.ColumnHeader("Сталь");
-            grid10[2, 4] = new SourceGrid.Cells.ColumnHeader("Серый чугун");
+            grid10[2, 4] = new SourceGrid.Cells.ColumnHeader("Серый\nчугун");
             grid10[3, 1] = new SourceGrid.Cells.ColumnHeader("S, мм/об");
             grid10[3, 1].ColumnSpan = 4;
 
@@ -1292,7 +1295,7 @@ namespace My_Cal
             grid11.Redim(3, 2);
             SourceGrid.Cells.Views.Cell viewImage = new SourceGrid.Cells.Views.Cell();
             grid11[0, 0] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый материал");
-            grid11[0,0].Column.Width = 200;
+            grid11[0, 0].Column.Width = 200;
             grid11[0, 1] = new SourceGrid.Cells.ColumnHeader("Kмv");
             grid11[1, 0] = new SourceGrid.Cells.RowHeader("Сталь");
             grid11[2, 0] = new SourceGrid.Cells.RowHeader("Серый чугун");
@@ -1338,6 +1341,7 @@ namespace My_Cal
             grid12[0, 3].RowSpan = 2;
             grid12[1, 0] = new SourceGrid.Cells.ColumnHeader("Поковка");
             grid12[1, 1] = new SourceGrid.Cells.ColumnHeader("Отливка");
+            grid12[1, 1].Column.Width = 80;
             grid12[1, 2] = new SourceGrid.Cells.ColumnHeader("Прокат");
 
             {
@@ -1349,7 +1353,7 @@ namespace My_Cal
                     grid12[r, 2] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(2)));
                     grid12[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)));
                 }
-                for (int c=0;c<4;c++)
+                for (int c = 0; c < 4; c++)
                 {
                     grid12[r, c].AddController(cellpointer);//наведение
                     grid12[r, c].AddController(clickEvent);//клик мыши
@@ -1363,7 +1367,6 @@ namespace My_Cal
             sqlite_conn.Close();
             sqlite_conn.Close();
         }
-        #endregion
         private void DoFullTab5_Drill()
         {
             #region SQLite Connection
@@ -1385,19 +1388,19 @@ namespace My_Cal
             grid13[0, 5] = new SourceGrid.Cells.ColumnHeader(">60-80");
             grid13[1, 0] = new SourceGrid.Cells.ColumnHeader("Кг");
 
-            
+
             {
                 int r = 1;
                 if (sqlite_datareader.Read())
                 {
                     for (int c = 0; c < 5; c++)
                     {
-                        grid13[r, c+1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(c)));
-                        grid13[r, c+1].AddController(cellpointer);//наведение
-                        grid13[r, c+1].AddController(clickEvent);//клик мыши
+                        grid13[r, c + 1] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(c)));
+                        grid13[r, c + 1].AddController(cellpointer);//наведение
+                        grid13[r, c + 1].AddController(clickEvent);//клик мыши
                         //Editor.EnableEdit = false;
-                        grid13[r, c+1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                        grid13[r, c+1].AddController(new MyHelpRowTracking());//help row pointer
+                        grid13[r, c + 1].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid13[r, c + 1].AddController(new MyHelpRowTracking());//help row pointer
                     }
                 }
             }
@@ -1406,7 +1409,253 @@ namespace My_Cal
             sqlite_conn.Close();
             sqlite_conn.Close();
         }
-        
+        private void DoFullTab6_Drill()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open(); // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM drill_table9";// First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
+            #endregion
+            #region Код таблицы
+            grid14.BorderStyle = BorderStyle.FixedSingle;
+            grid14.Redim(22, 8);
+            SourceGrid.Cells.Views.Cell viewImage = new SourceGrid.Cells.Views.Cell();
+            grid14[0, 0] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый\nматериал");
+            grid14[0, 0].RowSpan = 2;
+            grid14[0, 0].Column.Width = 100;
+            grid14[0, 1] = new SourceGrid.Cells.ColumnHeader("Инструментальный\nматериал");
+            grid14[0, 1].RowSpan = 2;
+            grid14[0, 1].Column.Width = 140;
+            grid14[0, 2] = new SourceGrid.Cells.ColumnHeader("S, мм/об");
+            grid14[0, 2].RowSpan = 2;
+            grid14[0, 2].Column.Width = 60;
+            grid14[0, 3] = new SourceGrid.Cells.ColumnHeader("Cv");
+            grid14[0, 4] = new SourceGrid.Cells.ColumnHeader("q");
+            grid14[0, 5] = new SourceGrid.Cells.ColumnHeader("x");
+            grid14[0, 6] = new SourceGrid.Cells.ColumnHeader("y");
+            grid14[0, 7] = new SourceGrid.Cells.ColumnHeader("m");
+            grid14[1, 3] = new SourceGrid.Cells.ColumnHeader("Сверление");
+            grid14[1, 3].ColumnSpan = 5;
+            grid14[2, 0] = new SourceGrid.Cells.RowHeader("Сталь");
+            grid14[2, 0].RowSpan = 2;
+            grid14[2, 1] = new SourceGrid.Cells.RowHeader("Быстрорежущая\nсталь");
+            grid14[2, 1].RowSpan = 4;
+            grid14[4, 0] = new SourceGrid.Cells.RowHeader("Серый чугун");
+            grid14[4, 0].RowSpan = 3;
+            grid14[6, 1] = new SourceGrid.Cells.RowHeader("Твердый\nсплав");
+
+            for (int r = 2; r < 7; r++)
+            {
+
+                if (sqlite_datareader.Read())
+                {
+                    grid14[r, 2] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(2)));
+                    grid14[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)));
+                    grid14[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)));
+                    grid14[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)));
+                    grid14[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)));
+                    grid14[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(7)));
+
+                    for (int c = 2; c < 8; c++)
+                    {
+                        grid14[r, c].AddController(rowpointer);//наведение
+                        grid14[r, c].AddController(clickEvent);//клик мыши
+                        //Editor.EnableEdit = false;
+                        grid14[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid14[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    }
+                }
+            }
+            grid14[7, 0] = new SourceGrid.Cells.ColumnHeader("Рассверливание");
+            grid14[7, 0].ColumnSpan = 8;
+            grid14[8, 0] = new SourceGrid.Cells.RowHeader("Сталь");
+            grid14[8, 0].RowSpan = 2;
+            grid14[10, 0] = new SourceGrid.Cells.RowHeader("Серый чугун");
+            grid14[10, 0].RowSpan = 2;
+
+
+            for (int r = 8; r < 12; r++)
+            {
+
+                if (sqlite_datareader.Read())
+                {
+                    grid14[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(1)));
+                    grid14[r, 2] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(2)));
+                    grid14[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)));
+                    grid14[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)));
+                    grid14[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)));
+                    grid14[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)));
+                    grid14[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(7)));
+
+                    for (int c = 2; c < 8; c++)
+                    {
+                        grid14[r, c].AddController(rowpointer);//наведение
+                        grid14[r, c].AddController(clickEvent);//клик мыши
+                        //Editor.EnableEdit = false;
+                        grid14[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid14[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    }
+                }
+            }
+            grid14[12, 0] = new SourceGrid.Cells.ColumnHeader("Зенкерование");
+            grid14[12, 0].ColumnSpan = 8;
+            grid14[13, 0] = new SourceGrid.Cells.RowHeader("Сталь");
+            grid14[13, 0].RowSpan = 2;
+            grid14[15, 0] = new SourceGrid.Cells.RowHeader("Серый чугун");
+            grid14[15, 0].RowSpan = 2;
+
+
+            for (int r = 13; r < 17; r++)
+            {
+
+                if (sqlite_datareader.Read())
+                {
+                    grid14[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(1)));
+                    grid14[r, 2] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(2)));
+                    grid14[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)));
+                    grid14[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)));
+                    grid14[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)));
+                    grid14[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)));
+                    grid14[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(7)));
+
+                    for (int c = 2; c < 8; c++)
+                    {
+                        grid14[r, c].AddController(rowpointer);//наведение
+                        grid14[r, c].AddController(clickEvent);//клик мыши
+                        //Editor.EnableEdit = false;
+                        grid14[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid14[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    }
+                }
+            }
+            grid14[17, 0] = new SourceGrid.Cells.ColumnHeader("Развертывание");
+            grid14[17, 0].ColumnSpan = 8;
+            grid14[18, 0] = new SourceGrid.Cells.RowHeader("Сталь");
+            grid14[18, 0].RowSpan = 2;
+            grid14[20, 0] = new SourceGrid.Cells.RowHeader("Серый чугун");
+            grid14[20, 0].RowSpan = 2;
+
+
+            for (int r = 18; r < 22; r++)
+            {
+
+                if (sqlite_datareader.Read())
+                {
+                    grid14[r, 1] = new SourceGrid.Cells.RowHeader(Convert.ToString(sqlite_datareader.GetString(1)));
+                    grid14[r, 2] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(2)));
+                    grid14[r, 3] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(3)));
+                    grid14[r, 4] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(4)));
+                    grid14[r, 5] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(5)));
+                    grid14[r, 6] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(6)));
+                    grid14[r, 7] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(7)));
+
+                    for (int c = 2; c < 8; c++)
+                    {
+                        grid14[r, c].AddController(rowpointer);//наведение
+                        grid14[r, c].AddController(clickEvent);//клик мыши
+                        //Editor.EnableEdit = false;
+                        grid14[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid14[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    }
+                }
+            }
+
+            #endregion
+            sqlite_conn.Close();
+            sqlite_conn.Close();
+        }
+        private void DoFullTab7_Drill()
+        {
+            #region SQLite Connection
+            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
+            sqlite_conn.Open(); // open the connection:
+            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
+            sqlite_cmd.CommandText = "SELECT * FROM drill_table10";// First lets build a SQL-Query again
+            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
+            #endregion
+            #region Код таблицы
+            grid15.BorderStyle = BorderStyle.FixedSingle;
+            grid15.Redim(10, 11);
+            SourceGrid.Cells.Views.Cell viewImage = new SourceGrid.Cells.Views.Cell();
+            grid15[0, 0] = new SourceGrid.Cells.ColumnHeader("Обрабатываемый\nматериал");
+            grid15[0, 0].RowSpan = 4;
+            grid15[0, 0].Column.Width = 100;
+            grid15[0, 1] = new SourceGrid.Cells.ColumnHeader("Вид\nобработки");
+            grid15[0, 1].RowSpan = 4;
+            grid15[0, 1].Column.Width = 100;
+            grid15[0, 2] = new SourceGrid.Cells.ColumnHeader("Инструментальный\nматериал");
+            grid15[0, 2].RowSpan = 4;
+            grid15[0, 2].Column.Width = 100;
+            grid15[0, 3] = new SourceGrid.Cells.ColumnHeader("Расчетный параметр режима резания");
+            grid15[0, 3].ColumnSpan = 8;
+            grid15[1, 3] = new SourceGrid.Cells.ColumnHeader("Mкр");
+            grid15[1, 3].ColumnSpan = 4;
+            grid15[1, 7] = new SourceGrid.Cells.ColumnHeader("Po");
+            grid15[1, 7].ColumnSpan = 4;
+            grid15[2, 3] = new SourceGrid.Cells.ColumnHeader("Эмпирические константы");
+            grid15[2, 3].ColumnSpan = 8;
+            grid15[3, 3] = new SourceGrid.Cells.ColumnHeader("Cм");
+            grid15[3, 4] = new SourceGrid.Cells.ColumnHeader("q");
+            grid15[3, 5] = new SourceGrid.Cells.ColumnHeader("x");
+            grid15[3, 6] = new SourceGrid.Cells.ColumnHeader("y");
+            grid15[3, 7] = new SourceGrid.Cells.ColumnHeader("Co");
+            grid15[3, 8] = new SourceGrid.Cells.ColumnHeader("q");
+            grid15[3, 9] = new SourceGrid.Cells.ColumnHeader("x");
+            grid15[3, 10] = new SourceGrid.Cells.ColumnHeader("y");
+            grid15[4, 0] = new SourceGrid.Cells.RowHeader("Сталь");
+            grid15[4, 0].RowSpan = 2;
+            grid15[4, 1] = new SourceGrid.Cells.RowHeader("Сверление");
+            grid15[5, 1] = new SourceGrid.Cells.RowHeader("Рассверливание\nзенкерование\nразвертывание");
+            grid15[5, 1].Row.Height = 60;
+            grid15[4, 2] = new SourceGrid.Cells.RowHeader("Быстрорежущая сталь");
+            grid15[4, 2].RowSpan = 2;
+            grid15[6, 0] = new SourceGrid.Cells.RowHeader("Серый чугун");
+            grid15[6, 0].RowSpan = 4;
+            grid15[6, 1] = new SourceGrid.Cells.RowHeader("Сверление");
+            grid15[7, 1] = new SourceGrid.Cells.RowHeader("Рассверливание\nзенкерование\nразвертывание");
+            grid15[7, 1].Row.Height = 60;
+            grid15[6, 2] = new SourceGrid.Cells.RowHeader("Твердый сплав");
+            grid15[6, 2].RowSpan = 2;
+            grid15[8, 1] = new SourceGrid.Cells.RowHeader("Сверление");
+            grid15[9, 1] = new SourceGrid.Cells.RowHeader("Рассверливание\nзенкерование\nразвертывание");
+            grid15[9, 1].Row.Height = 60;
+            grid15[8, 2] = new SourceGrid.Cells.RowHeader("Быстрорежущая сталь");
+            grid15[8, 2].RowSpan = 2;
+
+
+            for (int r = 4; r < 10; r++)
+            {
+
+                if (sqlite_datareader.Read())
+                {
+                    for (int c = 3; c < 11; c++)
+                    {
+                        try
+                        {
+                            grid15[r, c] = new SourceGrid.Cells.Cell(Convert.ToSingle(sqlite_datareader.GetString(c)));
+                        }
+                        catch (Exception)
+                        {
+                            grid15[r, c] = new SourceGrid.Cells.Cell("-");
+                        }
+                        grid15[r, c].AddController(rowpointer);//наведение
+                        grid15[r, c].AddController(clickEvent);//клик мыши
+                        //Editor.EnableEdit = false;
+                        grid15[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
+                        grid15[r, c].AddController(new MyHelpRowTracking());//help row pointer
+                    }
+                }
+            }
+            
+            #endregion
+            sqlite_conn.Close();
+            sqlite_conn.Close();
+        }
+        #endregion
+
+
         /// <summary>
         /// Происходит при изменении значения ячейки
         /// нужен для задания значения шага при точении резьбы
@@ -1628,7 +1877,7 @@ namespace My_Cal
 
             //Выделение ячеек (они unselectable)
 
-            if ((context.Grid.Handle == grid6.Handle) | (context.Grid.Handle == grid7.Handle))
+            if ((context.Grid.Handle == grid6.Handle) | (context.Grid.Handle == grid7.Handle) | (context.Grid.Handle == grid14.Handle) | (context.Grid.Handle == grid15.Handle))
             {
                 Utils.RowSelector(context);
             }
@@ -1691,7 +1940,7 @@ namespace My_Cal
             {
                 Utils.RowSelector(context);
             }
-            if ((context.Grid.Handle != grid1Mill.Handle) && (context.Grid.Handle != grid5Mill.Handle) && (context.Grid.Handle != grid6.Handle) && (context.Grid.Handle != grid7.Handle))
+            if ((context.Grid.Handle != grid1Mill.Handle) && (context.Grid.Handle != grid5Mill.Handle) && (context.Grid.Handle != grid6.Handle) && (context.Grid.Handle != grid7.Handle) && (context.Grid.Handle != grid14.Handle) && (context.Grid.Handle != grid15.Handle))
             {
                 //следующий код необходим для верного выделения (click-drop) иначе 
                 //click на одной ячейке, select на другой.(+unselectable)
