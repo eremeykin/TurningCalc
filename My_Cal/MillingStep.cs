@@ -16,7 +16,7 @@ namespace My_Cal
         /// <summary>
         /// Поле для хранения выходных данных
         /// </summary>
-        public MillingOutputData outputData = new MillingOutputData();
+        public MillingOutputData mod = new MillingOutputData();
 
         /// <summary>
         /// Поле для хранения индекса ComboBox
@@ -37,7 +37,6 @@ namespace My_Cal
 
         protected override bool calc_all()
         {
-
             if (((float)(Math.Pow(inputData.T, inputData.mv)) * ((float)(Math.Pow(inputData.t, inputData.xv))) * ((float)(Math.Pow(inputData.s, inputData.yv)))) != 0 && (((float)Math.Pow(inputData.B, inputData.uv)) != 0))
             {
                 outputData.V = (inputData.Cv * inputData.Kv * (float)Math.Pow(inputData.D, inputData.qv)) / ((float)(Math.Pow(inputData.T, inputData.mv)) * ((float)(Math.Pow(inputData.t, inputData.xv))) * ((float)(Math.Pow(inputData.s, inputData.yv))) * ((float)(Math.Pow(inputData.B, inputData.uv))) * ((float)(Math.Pow(inputData.z, inputData.pv))));
@@ -45,59 +44,11 @@ namespace My_Cal
                 outputData.P = (10 * inputData.Cp * ((float)Math.Pow(inputData.t, inputData.xp)) * ((float)Math.Pow(inputData.s, inputData.yp)) * ((float)Math.Pow(inputData.B, inputData.up)) * inputData.z) / (((float)Math.Pow(inputData.D, inputData.qp)) * ((float)Math.Pow(outputData.n, inputData.wp)));
                 outputData.M = outputData.P * (inputData.D / 200);
                 outputData.N = (outputData.P * outputData.V) / (1020 * 60);
-                outputData.Sm = inputData.s * inputData.z * outputData.n;//s - подача на зуб!
+                mod.Sm = inputData.s * inputData.z * outputData.n;//s - подача на зуб!
                 return true;
             }
             else
                 return false;
-        }
-
-        public override float getV()
-        {
-            if (calc_all())
-                return outputData.V;
-            else
-                return 0;
-        }
-
-        public override float getM()
-        {
-            if (calc_all())
-                return outputData.M;
-            else return 0;
-
-        }
-
-        public override float getN()
-        {
-            if (calc_all())
-                return outputData.N;
-            else
-                return 0;
-        }
-
-        public override float getn()
-        {
-            if (calc_all())
-                return outputData.n;
-            else
-                return 0;
-        }
-
-        public override float getPz()
-        {
-            if (calc_all())
-                return outputData.P;
-            else
-                return 0;
-        }
-
-        public float getSm()
-        {
-            if (calc_all())
-                return outputData.Sm;
-            else
-                return 0;
         }
 
         public override void ReturnSelect()
@@ -200,10 +151,10 @@ namespace My_Cal
         }
 
         /// <summary>
-        /// Расширение OutputData для фрезерного перехода
+        /// Дополнительное поле для фрезерного перехода
         /// </summary>
         /// TODO заменить public на  private внутри
-        public class MillingOutputData : OutputData
+        public class MillingOutputData
         {
             /// <summary>
             /// минутная подача

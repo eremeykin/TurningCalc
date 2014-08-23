@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace My_Cal
 {
     public abstract class Step 
@@ -13,6 +14,10 @@ namespace My_Cal
         /// </summary>
         private SourceGrid.CellContext[] linkedCells = new SourceGrid.CellContext[9];
 
+        /// <summary>
+        /// Поле для хранения входных данных
+        /// </summary>
+        public OutputData outputData = new OutputData();
 
         /// <summary>
         /// Инкапсулирует получение связанных ячеек
@@ -53,31 +58,60 @@ namespace My_Cal
         /// </summary>
         public abstract void ReturnSelect();
 
+        /// <summary>
+        /// Возвращает скорость резания
+        /// </summary>
+        public float getV()
+        {
+            if (calc_all())
+                return outputData.V;
+            else
+                return 0;
+        }
 
         /// <summary>
         /// Возвращает момент на шпинделе
         /// </summary>
-        public abstract float getM();
+        public  float getM()
+        {
+
+            if (calc_all())
+                return outputData.M;
+            else return 0;
+        }
 
         /// <summary>
         /// Возвращает потребляемую мощность
         /// </summary>
-        public abstract float getN();
+        public  float getN()
+        {
+            if (calc_all())
+                return outputData.N;
+            else
+                return 0;
+        }
 
         /// <summary>
         /// Возвращает частоту вращения шпинделя
         /// </summary>
-        public abstract float getn();
-
-        /// <summary>
-        /// Возвращает скорость резания
-        /// </summary>
-        public abstract float getV();
+        public  float getn()
+        {
+            if (calc_all())
+                return outputData.n;
+            else
+                return 0;
+        }
 
         /// <summary>
         /// Возвращает силу резания
         /// </summary>
-        public abstract float getPz();
+        public float getP()
+        {
+            if (calc_all())
+                return outputData.P;
+            else
+                return 0;
+        }
 
         /// <summary>
         /// Класс для хранения входных данных
@@ -107,7 +141,7 @@ namespace My_Cal
         /// <summary>
         /// Класс для хранения выходных данных
         /// </summary>
-        public abstract class OutputData
+        public class OutputData
         {
             /// <summary>
             /// частота вращенния шпинделя
@@ -130,8 +164,6 @@ namespace My_Cal
             /// </summary>
             public float N;
         }
-
-
 
     }
 }

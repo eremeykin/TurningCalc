@@ -10,14 +10,9 @@ namespace My_Cal
     {
 
         /// <summary>
-        /// Поле для хранения входных данных
-        /// </summary>
-        public TurningInptuData inputData = new TurningInptuData();
-
-        /// <summary>
         /// Поле для хранения выходных данных
         /// </summary>
-        public TurningOutputData outputData = new TurningOutputData();
+        public TurningInptuData inputData = new TurningInptuData();
 
         /// <summary>
         /// Поле для хранения индекса ComboBox
@@ -58,46 +53,6 @@ namespace My_Cal
             }
             else
                 return false;
-        }
-
-        public override float getV()
-        {
-            if (calc_all())
-                return outputData.V;
-            else
-                return 0;
-        }
-
-        public override float getM()
-        {
-
-            if (calc_all())
-                return outputData.M;
-            else return 0;
-        }
-
-        public override float getN()
-        {
-            if (calc_all())
-                return outputData.N;
-            else
-                return 0;
-        }
-
-        public override float getn()
-        {
-            if (calc_all())
-                return outputData.n;
-            else
-                return 0;
-        }
-
-        public override float getPz()
-        {
-            if (calc_all())
-                return outputData.P;
-            else
-                return 0;
         }
 
         public override void ReturnSelect()

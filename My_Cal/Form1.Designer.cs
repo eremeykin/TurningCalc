@@ -51,69 +51,11 @@ namespace My_Cal
             this.grid12 = new SourceGrid.Grid();
             this.tabPage16 = new System.Windows.Forms.TabPage();
             this.grid13 = new SourceGrid.Grid();
+            this.tabPage17 = new System.Windows.Forms.TabPage();
+            this.grid14 = new SourceGrid.Grid();
+            this.tabPage18 = new System.Windows.Forms.TabPage();
+            this.grid15 = new SourceGrid.Grid();
             this.tabPage20 = new System.Windows.Forms.TabPage();
-            this.label59 = new System.Windows.Forms.Label();
-            this.label66 = new System.Windows.Forms.Label();
-            this.label67 = new System.Windows.Forms.Label();
-            this.label68 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.label75 = new System.Windows.Forms.Label();
-            this.textBox37 = new System.Windows.Forms.TextBox();
-            this.label76 = new System.Windows.Forms.Label();
-            this.textBox44 = new System.Windows.Forms.TextBox();
-            this.label77 = new System.Windows.Forms.Label();
-            this.textBox45 = new System.Windows.Forms.TextBox();
-            this.label78 = new System.Windows.Forms.Label();
-            this.textBox46 = new System.Windows.Forms.TextBox();
-            this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.textBox47 = new System.Windows.Forms.TextBox();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.textBox48 = new System.Windows.Forms.TextBox();
-            this.label81 = new System.Windows.Forms.Label();
-            this.textBox49 = new System.Windows.Forms.TextBox();
-            this.label82 = new System.Windows.Forms.Label();
-            this.textBox50 = new System.Windows.Forms.TextBox();
-            this.textBox51 = new System.Windows.Forms.TextBox();
-            this.textBox52 = new System.Windows.Forms.TextBox();
-            this.textBox53 = new System.Windows.Forms.TextBox();
-            this.textBox54 = new System.Windows.Forms.TextBox();
-            this.textBox55 = new System.Windows.Forms.TextBox();
-            this.textBox56 = new System.Windows.Forms.TextBox();
-            this.textBox57 = new System.Windows.Forms.TextBox();
-            this.textBox58 = new System.Windows.Forms.TextBox();
-            this.textBox59 = new System.Windows.Forms.TextBox();
-            this.textBox60 = new System.Windows.Forms.TextBox();
-            this.textBox61 = new System.Windows.Forms.TextBox();
-            this.textBox62 = new System.Windows.Forms.TextBox();
-            this.textBox63 = new System.Windows.Forms.TextBox();
-            this.label83 = new System.Windows.Forms.Label();
-            this.label84 = new System.Windows.Forms.Label();
-            this.label85 = new System.Windows.Forms.Label();
-            this.label86 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.label90 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label91 = new System.Windows.Forms.Label();
-            this.label92 = new System.Windows.Forms.Label();
-            this.label93 = new System.Windows.Forms.Label();
-            this.label94 = new System.Windows.Forms.Label();
-            this.label95 = new System.Windows.Forms.Label();
-            this.label96 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.pictureBox11 = new System.Windows.Forms.PictureBox();
-            this.pictureBox12 = new System.Windows.Forms.PictureBox();
-            this.pictureBox13 = new System.Windows.Forms.PictureBox();
-            this.pictureBox14 = new System.Windows.Forms.PictureBox();
-            this.pictureBox15 = new System.Windows.Forms.PictureBox();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grid1 = new SourceGrid.Grid();
@@ -297,10 +239,9 @@ namespace My_Cal
             this.deleteStepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tabPage17 = new System.Windows.Forms.TabPage();
-            this.grid14 = new SourceGrid.Grid();
-            this.tabPage18 = new System.Windows.Forms.TabPage();
-            this.grid15 = new SourceGrid.Grid();
+            this.grid16 = new SourceGrid.Grid();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.grid17 = new SourceGrid.Grid();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -311,14 +252,9 @@ namespace My_Cal
             this.tabPage14.SuspendLayout();
             this.tabPage15.SuspendLayout();
             this.tabPage16.SuspendLayout();
+            this.tabPage17.SuspendLayout();
+            this.tabPage18.SuspendLayout();
             this.tabPage20.SuspendLayout();
-            this.groupBox6.SuspendLayout();
-            this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -353,8 +289,10 @@ namespace My_Cal
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            this.tabPage17.SuspendLayout();
-            this.tabPage18.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -383,6 +321,7 @@ namespace My_Cal
             // treeView1
             // 
             this.treeView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.treeView1.HideSelection = false;
             this.treeView1.Location = new System.Drawing.Point(0, 0);
             this.treeView1.Margin = new System.Windows.Forms.Padding(2);
             this.treeView1.Name = "treeView1";
@@ -531,54 +470,57 @@ namespace My_Cal
             this.grid13.TabStop = true;
             this.grid13.ToolTipText = "";
             // 
+            // tabPage17
+            // 
+            this.tabPage17.Controls.Add(this.grid14);
+            this.tabPage17.Location = new System.Drawing.Point(4, 24);
+            this.tabPage17.Name = "tabPage17";
+            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage17.Size = new System.Drawing.Size(838, 593);
+            this.tabPage17.TabIndex = 13;
+            this.tabPage17.Text = "Эмпирические коэффициенты";
+            this.tabPage17.UseVisualStyleBackColor = true;
+            // 
+            // grid14
+            // 
+            this.grid14.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid14.EnableSort = false;
+            this.grid14.Location = new System.Drawing.Point(3, 3);
+            this.grid14.Name = "grid14";
+            this.grid14.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid14.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid14.Size = new System.Drawing.Size(832, 587);
+            this.grid14.TabIndex = 4;
+            this.grid14.TabStop = true;
+            this.grid14.ToolTipText = "";
+            // 
+            // tabPage18
+            // 
+            this.tabPage18.Controls.Add(this.grid15);
+            this.tabPage18.Location = new System.Drawing.Point(4, 24);
+            this.tabPage18.Name = "tabPage18";
+            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage18.Size = new System.Drawing.Size(838, 593);
+            this.tabPage18.TabIndex = 14;
+            this.tabPage18.Text = "Параметры режима резания";
+            this.tabPage18.UseVisualStyleBackColor = true;
+            // 
+            // grid15
+            // 
+            this.grid15.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid15.EnableSort = false;
+            this.grid15.Location = new System.Drawing.Point(3, 3);
+            this.grid15.Name = "grid15";
+            this.grid15.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid15.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid15.Size = new System.Drawing.Size(832, 587);
+            this.grid15.TabIndex = 5;
+            this.grid15.TabStop = true;
+            this.grid15.ToolTipText = "";
+            // 
             // tabPage20
             // 
-            this.tabPage20.Controls.Add(this.label59);
-            this.tabPage20.Controls.Add(this.label66);
-            this.tabPage20.Controls.Add(this.label67);
-            this.tabPage20.Controls.Add(this.label68);
-            this.tabPage20.Controls.Add(this.label69);
-            this.tabPage20.Controls.Add(this.label70);
-            this.tabPage20.Controls.Add(this.label71);
-            this.tabPage20.Controls.Add(this.label72);
-            this.tabPage20.Controls.Add(this.label73);
-            this.tabPage20.Controls.Add(this.label74);
-            this.tabPage20.Controls.Add(this.groupBox6);
-            this.tabPage20.Controls.Add(this.groupBox7);
-            this.tabPage20.Controls.Add(this.textBox51);
-            this.tabPage20.Controls.Add(this.textBox52);
-            this.tabPage20.Controls.Add(this.textBox53);
-            this.tabPage20.Controls.Add(this.textBox54);
-            this.tabPage20.Controls.Add(this.textBox55);
-            this.tabPage20.Controls.Add(this.textBox56);
-            this.tabPage20.Controls.Add(this.textBox57);
-            this.tabPage20.Controls.Add(this.textBox58);
-            this.tabPage20.Controls.Add(this.textBox59);
-            this.tabPage20.Controls.Add(this.textBox60);
-            this.tabPage20.Controls.Add(this.textBox61);
-            this.tabPage20.Controls.Add(this.textBox62);
-            this.tabPage20.Controls.Add(this.textBox63);
-            this.tabPage20.Controls.Add(this.label83);
-            this.tabPage20.Controls.Add(this.label84);
-            this.tabPage20.Controls.Add(this.label85);
-            this.tabPage20.Controls.Add(this.label86);
-            this.tabPage20.Controls.Add(this.label87);
-            this.tabPage20.Controls.Add(this.label88);
-            this.tabPage20.Controls.Add(this.label89);
-            this.tabPage20.Controls.Add(this.label90);
-            this.tabPage20.Controls.Add(this.button2);
-            this.tabPage20.Controls.Add(this.label91);
-            this.tabPage20.Controls.Add(this.label92);
-            this.tabPage20.Controls.Add(this.label93);
-            this.tabPage20.Controls.Add(this.label94);
-            this.tabPage20.Controls.Add(this.label95);
-            this.tabPage20.Controls.Add(this.label96);
-            this.tabPage20.Controls.Add(this.comboBox2);
-            this.tabPage20.Controls.Add(this.pictureBox11);
-            this.tabPage20.Controls.Add(this.pictureBox12);
-            this.tabPage20.Controls.Add(this.pictureBox13);
-            this.tabPage20.Controls.Add(this.pictureBox14);
-            this.tabPage20.Controls.Add(this.pictureBox15);
+            this.tabPage20.Controls.Add(this.splitContainer2);
             this.tabPage20.Location = new System.Drawing.Point(4, 24);
             this.tabPage20.Name = "tabPage20";
             this.tabPage20.Padding = new System.Windows.Forms.Padding(3);
@@ -586,623 +528,6 @@ namespace My_Cal
             this.tabPage20.TabIndex = 8;
             this.tabPage20.Text = "Результат";
             this.tabPage20.UseVisualStyleBackColor = true;
-            // 
-            // label59
-            // 
-            this.label59.AutoSize = true;
-            this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label59.Location = new System.Drawing.Point(716, 481);
-            this.label59.Name = "label59";
-            this.label59.Size = new System.Drawing.Size(31, 17);
-            this.label59.TabIndex = 62;
-            this.label59.Text = "кВт";
-            // 
-            // label66
-            // 
-            this.label66.AutoSize = true;
-            this.label66.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label66.Location = new System.Drawing.Point(716, 305);
-            this.label66.Name = "label66";
-            this.label66.Size = new System.Drawing.Size(18, 17);
-            this.label66.TabIndex = 61;
-            this.label66.Text = "Н";
-            // 
-            // label67
-            // 
-            this.label67.AutoSize = true;
-            this.label67.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label67.Location = new System.Drawing.Point(715, 214);
-            this.label67.Name = "label67";
-            this.label67.Size = new System.Drawing.Size(53, 17);
-            this.label67.TabIndex = 60;
-            this.label67.Text = "об/мин";
-            // 
-            // label68
-            // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label68.Location = new System.Drawing.Point(717, 393);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(27, 17);
-            this.label68.TabIndex = 59;
-            this.label68.Text = "Нм";
-            // 
-            // label69
-            // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F);
-            this.label69.Location = new System.Drawing.Point(716, 124);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(46, 17);
-            this.label69.TabIndex = 57;
-            this.label69.Text = "м/мин";
-            // 
-            // label70
-            // 
-            this.label70.AutoSize = true;
-            this.label70.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label70.Location = new System.Drawing.Point(424, 443);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(134, 17);
-            this.label70.TabIndex = 56;
-            this.label70.Text = "Мощность резания";
-            // 
-            // label71
-            // 
-            this.label71.AutoSize = true;
-            this.label71.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label71.Location = new System.Drawing.Point(424, 354);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(118, 17);
-            this.label71.TabIndex = 55;
-            this.label71.Text = "Момент резания";
-            // 
-            // label72
-            // 
-            this.label72.AutoSize = true;
-            this.label72.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label72.Location = new System.Drawing.Point(424, 264);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(100, 17);
-            this.label72.TabIndex = 54;
-            this.label72.Text = "Сила резания";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label73.Location = new System.Drawing.Point(424, 172);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(133, 17);
-            this.label73.TabIndex = 53;
-            this.label73.Text = "Частота вращения";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label74.Location = new System.Drawing.Point(424, 78);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(128, 17);
-            this.label74.TabIndex = 52;
-            this.label74.Text = "Скорость резания";
-            // 
-            // groupBox6
-            // 
-            this.groupBox6.Controls.Add(this.label75);
-            this.groupBox6.Controls.Add(this.textBox37);
-            this.groupBox6.Controls.Add(this.label76);
-            this.groupBox6.Controls.Add(this.textBox44);
-            this.groupBox6.Controls.Add(this.label77);
-            this.groupBox6.Controls.Add(this.textBox45);
-            this.groupBox6.Controls.Add(this.label78);
-            this.groupBox6.Controls.Add(this.textBox46);
-            this.groupBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox6.Location = new System.Drawing.Point(144, 309);
-            this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Size = new System.Drawing.Size(268, 212);
-            this.groupBox6.TabIndex = 47;
-            this.groupBox6.TabStop = false;
-            this.groupBox6.Text = "Эмпирические коэффициенты силы резания";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label75.Location = new System.Drawing.Point(42, 48);
-            this.label75.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(33, 17);
-            this.label75.TabIndex = 20;
-            this.label75.Text = "Cp=";
-            // 
-            // textBox37
-            // 
-            this.textBox37.Location = new System.Drawing.Point(82, 48);
-            this.textBox37.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox37.Name = "textBox37";
-            this.textBox37.Size = new System.Drawing.Size(131, 23);
-            this.textBox37.TabIndex = 21;
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label76.Location = new System.Drawing.Point(42, 87);
-            this.label76.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(22, 17);
-            this.label76.TabIndex = 22;
-            this.label76.Text = "x=";
-            // 
-            // textBox44
-            // 
-            this.textBox44.Location = new System.Drawing.Point(82, 88);
-            this.textBox44.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox44.Name = "textBox44";
-            this.textBox44.Size = new System.Drawing.Size(131, 23);
-            this.textBox44.TabIndex = 23;
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label77.Location = new System.Drawing.Point(42, 127);
-            this.label77.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(23, 17);
-            this.label77.TabIndex = 24;
-            this.label77.Text = "y=";
-            // 
-            // textBox45
-            // 
-            this.textBox45.Location = new System.Drawing.Point(82, 128);
-            this.textBox45.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox45.Name = "textBox45";
-            this.textBox45.Size = new System.Drawing.Size(131, 23);
-            this.textBox45.TabIndex = 25;
-            // 
-            // label78
-            // 
-            this.label78.AutoSize = true;
-            this.label78.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label78.Location = new System.Drawing.Point(42, 167);
-            this.label78.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(24, 17);
-            this.label78.TabIndex = 26;
-            this.label78.Text = "n=";
-            // 
-            // textBox46
-            // 
-            this.textBox46.Location = new System.Drawing.Point(82, 167);
-            this.textBox46.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox46.Name = "textBox46";
-            this.textBox46.Size = new System.Drawing.Size(131, 23);
-            this.textBox46.TabIndex = 27;
-            // 
-            // groupBox7
-            // 
-            this.groupBox7.Controls.Add(this.textBox47);
-            this.groupBox7.Controls.Add(this.label79);
-            this.groupBox7.Controls.Add(this.label80);
-            this.groupBox7.Controls.Add(this.textBox48);
-            this.groupBox7.Controls.Add(this.label81);
-            this.groupBox7.Controls.Add(this.textBox49);
-            this.groupBox7.Controls.Add(this.label82);
-            this.groupBox7.Controls.Add(this.textBox50);
-            this.groupBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.groupBox7.Location = new System.Drawing.Point(144, 75);
-            this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Size = new System.Drawing.Size(268, 219);
-            this.groupBox7.TabIndex = 46;
-            this.groupBox7.TabStop = false;
-            this.groupBox7.Text = "Эмпирические коэффициенты скорости резания";
-            // 
-            // textBox47
-            // 
-            this.textBox47.Location = new System.Drawing.Point(82, 53);
-            this.textBox47.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox47.Name = "textBox47";
-            this.textBox47.Size = new System.Drawing.Size(131, 23);
-            this.textBox47.TabIndex = 13;
-            // 
-            // label79
-            // 
-            this.label79.AutoSize = true;
-            this.label79.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label79.Location = new System.Drawing.Point(42, 52);
-            this.label79.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(32, 17);
-            this.label79.TabIndex = 12;
-            this.label79.Text = "Cv=";
-            // 
-            // label80
-            // 
-            this.label80.AutoSize = true;
-            this.label80.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label80.Location = new System.Drawing.Point(42, 92);
-            this.label80.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(22, 17);
-            this.label80.TabIndex = 14;
-            this.label80.Text = "x=";
-            // 
-            // textBox48
-            // 
-            this.textBox48.Location = new System.Drawing.Point(82, 93);
-            this.textBox48.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox48.Name = "textBox48";
-            this.textBox48.Size = new System.Drawing.Size(131, 23);
-            this.textBox48.TabIndex = 15;
-            // 
-            // label81
-            // 
-            this.label81.AutoSize = true;
-            this.label81.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label81.Location = new System.Drawing.Point(42, 132);
-            this.label81.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(23, 17);
-            this.label81.TabIndex = 16;
-            this.label81.Text = "y=";
-            // 
-            // textBox49
-            // 
-            this.textBox49.Location = new System.Drawing.Point(82, 133);
-            this.textBox49.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox49.Name = "textBox49";
-            this.textBox49.Size = new System.Drawing.Size(131, 23);
-            this.textBox49.TabIndex = 17;
-            // 
-            // label82
-            // 
-            this.label82.AutoSize = true;
-            this.label82.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label82.Location = new System.Drawing.Point(42, 172);
-            this.label82.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(27, 17);
-            this.label82.TabIndex = 18;
-            this.label82.Text = "m=";
-            // 
-            // textBox50
-            // 
-            this.textBox50.Location = new System.Drawing.Point(82, 172);
-            this.textBox50.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox50.Name = "textBox50";
-            this.textBox50.Size = new System.Drawing.Size(131, 23);
-            this.textBox50.TabIndex = 19;
-            // 
-            // textBox51
-            // 
-            this.textBox51.Location = new System.Drawing.Point(623, 481);
-            this.textBox51.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox51.Name = "textBox51";
-            this.textBox51.Size = new System.Drawing.Size(87, 20);
-            this.textBox51.TabIndex = 44;
-            // 
-            // textBox52
-            // 
-            this.textBox52.Location = new System.Drawing.Point(623, 393);
-            this.textBox52.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox52.Name = "textBox52";
-            this.textBox52.Size = new System.Drawing.Size(87, 20);
-            this.textBox52.TabIndex = 42;
-            // 
-            // textBox53
-            // 
-            this.textBox53.Location = new System.Drawing.Point(623, 304);
-            this.textBox53.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox53.Name = "textBox53";
-            this.textBox53.Size = new System.Drawing.Size(87, 20);
-            this.textBox53.TabIndex = 40;
-            // 
-            // textBox54
-            // 
-            this.textBox54.Location = new System.Drawing.Point(623, 215);
-            this.textBox54.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox54.Name = "textBox54";
-            this.textBox54.Size = new System.Drawing.Size(87, 20);
-            this.textBox54.TabIndex = 38;
-            // 
-            // textBox55
-            // 
-            this.textBox55.Location = new System.Drawing.Point(623, 124);
-            this.textBox55.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox55.Name = "textBox55";
-            this.textBox55.Size = new System.Drawing.Size(87, 20);
-            this.textBox55.TabIndex = 36;
-            // 
-            // textBox56
-            // 
-            this.textBox56.Location = new System.Drawing.Point(613, 14);
-            this.textBox56.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox56.Name = "textBox56";
-            this.textBox56.Size = new System.Drawing.Size(131, 20);
-            this.textBox56.TabIndex = 34;
-            // 
-            // textBox57
-            // 
-            this.textBox57.Location = new System.Drawing.Point(57, 430);
-            this.textBox57.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox57.Name = "textBox57";
-            this.textBox57.Size = new System.Drawing.Size(67, 20);
-            this.textBox57.TabIndex = 32;
-            // 
-            // textBox58
-            // 
-            this.textBox58.Location = new System.Drawing.Point(57, 501);
-            this.textBox58.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox58.Name = "textBox58";
-            this.textBox58.Size = new System.Drawing.Size(67, 20);
-            this.textBox58.TabIndex = 30;
-            // 
-            // textBox59
-            // 
-            this.textBox59.Location = new System.Drawing.Point(57, 359);
-            this.textBox59.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox59.Name = "textBox59";
-            this.textBox59.Size = new System.Drawing.Size(67, 20);
-            this.textBox59.TabIndex = 11;
-            // 
-            // textBox60
-            // 
-            this.textBox60.Location = new System.Drawing.Point(57, 288);
-            this.textBox60.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox60.Name = "textBox60";
-            this.textBox60.Size = new System.Drawing.Size(67, 20);
-            this.textBox60.TabIndex = 9;
-            // 
-            // textBox61
-            // 
-            this.textBox61.Location = new System.Drawing.Point(57, 217);
-            this.textBox61.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox61.Name = "textBox61";
-            this.textBox61.Size = new System.Drawing.Size(67, 20);
-            this.textBox61.TabIndex = 7;
-            // 
-            // textBox62
-            // 
-            this.textBox62.Location = new System.Drawing.Point(57, 146);
-            this.textBox62.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox62.Name = "textBox62";
-            this.textBox62.Size = new System.Drawing.Size(67, 20);
-            this.textBox62.TabIndex = 5;
-            // 
-            // textBox63
-            // 
-            this.textBox63.Location = new System.Drawing.Point(57, 75);
-            this.textBox63.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox63.Name = "textBox63";
-            this.textBox63.Size = new System.Drawing.Size(67, 20);
-            this.textBox63.TabIndex = 3;
-            // 
-            // label83
-            // 
-            this.label83.AutoSize = true;
-            this.label83.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label83.Location = new System.Drawing.Point(601, 483);
-            this.label83.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label83.Name = "label83";
-            this.label83.Size = new System.Drawing.Size(16, 17);
-            this.label83.TabIndex = 43;
-            this.label83.Text = "=";
-            // 
-            // label84
-            // 
-            this.label84.AutoSize = true;
-            this.label84.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label84.Location = new System.Drawing.Point(601, 395);
-            this.label84.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label84.Name = "label84";
-            this.label84.Size = new System.Drawing.Size(16, 17);
-            this.label84.TabIndex = 41;
-            this.label84.Text = "=";
-            // 
-            // label85
-            // 
-            this.label85.AutoSize = true;
-            this.label85.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label85.Location = new System.Drawing.Point(601, 306);
-            this.label85.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label85.Name = "label85";
-            this.label85.Size = new System.Drawing.Size(16, 17);
-            this.label85.TabIndex = 39;
-            this.label85.Text = "=";
-            // 
-            // label86
-            // 
-            this.label86.AutoSize = true;
-            this.label86.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label86.Location = new System.Drawing.Point(601, 217);
-            this.label86.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label86.Name = "label86";
-            this.label86.Size = new System.Drawing.Size(16, 17);
-            this.label86.TabIndex = 37;
-            this.label86.Text = "=";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label87.Location = new System.Drawing.Point(601, 126);
-            this.label87.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(16, 17);
-            this.label87.TabIndex = 35;
-            this.label87.Text = "=";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label88.Location = new System.Drawing.Point(432, 12);
-            this.label88.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(182, 17);
-            this.label88.TabIndex = 33;
-            this.label88.Text = "Введите диаметр детали=";
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label89.Location = new System.Drawing.Point(8, 430);
-            this.label89.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(44, 17);
-            this.label89.TabIndex = 31;
-            this.label89.Text = "Kmp=";
-            // 
-            // label90
-            // 
-            this.label90.AutoSize = true;
-            this.label90.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label90.Location = new System.Drawing.Point(18, 501);
-            this.label90.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label90.Name = "label90";
-            this.label90.Size = new System.Drawing.Size(25, 17);
-            this.label90.TabIndex = 29;
-            this.label90.Text = "T=";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(613, 40);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 33);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Расчитать";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label91
-            // 
-            this.label91.AutoSize = true;
-            this.label91.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label91.Location = new System.Drawing.Point(13, 359);
-            this.label91.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label91.Name = "label91";
-            this.label91.Size = new System.Drawing.Size(40, 17);
-            this.label91.TabIndex = 10;
-            this.label91.Text = "Kиv=";
-            // 
-            // label92
-            // 
-            this.label92.AutoSize = true;
-            this.label92.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label92.Location = new System.Drawing.Point(10, 288);
-            this.label92.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label92.Name = "label92";
-            this.label92.Size = new System.Drawing.Size(40, 17);
-            this.label92.TabIndex = 8;
-            this.label92.Text = "Kпv=";
-            // 
-            // label93
-            // 
-            this.label93.AutoSize = true;
-            this.label93.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label93.Location = new System.Drawing.Point(9, 217);
-            this.label93.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label93.Name = "label93";
-            this.label93.Size = new System.Drawing.Size(43, 17);
-            this.label93.TabIndex = 6;
-            this.label93.Text = "Kmv=";
-            // 
-            // label94
-            // 
-            this.label94.AutoSize = true;
-            this.label94.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label94.Location = new System.Drawing.Point(19, 146);
-            this.label94.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label94.Name = "label94";
-            this.label94.Size = new System.Drawing.Size(23, 17);
-            this.label94.TabIndex = 4;
-            this.label94.Text = "s=";
-            // 
-            // label95
-            // 
-            this.label95.AutoSize = true;
-            this.label95.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.label95.Location = new System.Drawing.Point(20, 75);
-            this.label95.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label95.Name = "label95";
-            this.label95.Size = new System.Drawing.Size(20, 17);
-            this.label95.TabIndex = 2;
-            this.label95.Text = "t=";
-            // 
-            // label96
-            // 
-            this.label96.AutoSize = true;
-            this.label96.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label96.Location = new System.Drawing.Point(5, 13);
-            this.label96.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label96.Name = "label96";
-            this.label96.Size = new System.Drawing.Size(257, 17);
-            this.label96.TabIndex = 1;
-            this.label96.Text = "Выбирете период стойкости резца T:";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "20",
-            "30",
-            "40",
-            "60",
-            "90",
-            "120"});
-            this.comboBox2.Location = new System.Drawing.Point(265, 14);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(147, 21);
-            this.comboBox2.TabIndex = 0;
-            // 
-            // pictureBox11
-            // 
-            this.pictureBox11.Image = global::My_Cal.Properties.Resources.N__2_;
-            this.pictureBox11.Location = new System.Drawing.Point(427, 473);
-            this.pictureBox11.Name = "pictureBox11";
-            this.pictureBox11.Size = new System.Drawing.Size(169, 49);
-            this.pictureBox11.TabIndex = 51;
-            this.pictureBox11.TabStop = false;
-            // 
-            // pictureBox12
-            // 
-            this.pictureBox12.Image = global::My_Cal.Properties.Resources.M;
-            this.pictureBox12.Location = new System.Drawing.Point(427, 388);
-            this.pictureBox12.Name = "pictureBox12";
-            this.pictureBox12.Size = new System.Drawing.Size(169, 43);
-            this.pictureBox12.TabIndex = 50;
-            this.pictureBox12.TabStop = false;
-            // 
-            // pictureBox13
-            // 
-            this.pictureBox13.Image = global::My_Cal.Properties.Resources.Pz;
-            this.pictureBox13.Location = new System.Drawing.Point(427, 302);
-            this.pictureBox13.Name = "pictureBox13";
-            this.pictureBox13.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox13.TabIndex = 49;
-            this.pictureBox13.TabStop = false;
-            // 
-            // pictureBox14
-            // 
-            this.pictureBox14.Image = global::My_Cal.Properties.Resources.n;
-            this.pictureBox14.Location = new System.Drawing.Point(427, 205);
-            this.pictureBox14.Name = "pictureBox14";
-            this.pictureBox14.Size = new System.Drawing.Size(169, 50);
-            this.pictureBox14.TabIndex = 48;
-            this.pictureBox14.TabStop = false;
-            // 
-            // pictureBox15
-            // 
-            this.pictureBox15.Image = global::My_Cal.Properties.Resources.V;
-            this.pictureBox15.Location = new System.Drawing.Point(427, 112);
-            this.pictureBox15.Name = "pictureBox15";
-            this.pictureBox15.Size = new System.Drawing.Size(169, 54);
-            this.pictureBox15.TabIndex = 45;
-            this.pictureBox15.TabStop = false;
             // 
             // tabControl1
             // 
@@ -3075,7 +2400,7 @@ namespace My_Cal
             this.makeDrillStepToolStripMenuItem.Name = "makeDrillStepToolStripMenuItem";
             this.makeDrillStepToolStripMenuItem.Size = new System.Drawing.Size(242, 22);
             this.makeDrillStepToolStripMenuItem.Text = "Создать сверлильный переход";
-            this.makeDrillStepToolStripMenuItem.Click += new System.EventHandler(this.создатьСверлильныйПереходToolStripMenuItem_Click);
+            this.makeDrillStepToolStripMenuItem.Click += new System.EventHandler(this.makeDrillStepToolStripMenuItem_Click);
             // 
             // deleteStepToolStripMenuItem
             // 
@@ -3098,53 +2423,50 @@ namespace My_Cal
             this.exitToolStripMenuItem.Text = "Выход";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // tabPage17
+            // grid16
             // 
-            this.tabPage17.Controls.Add(this.grid14);
-            this.tabPage17.Location = new System.Drawing.Point(4, 24);
-            this.tabPage17.Name = "tabPage17";
-            this.tabPage17.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage17.Size = new System.Drawing.Size(838, 593);
-            this.tabPage17.TabIndex = 13;
-            this.tabPage17.Text = "Эмпирические коэффициенты";
-            this.tabPage17.UseVisualStyleBackColor = true;
+            this.grid16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid16.EnableSort = false;
+            this.grid16.Location = new System.Drawing.Point(0, 0);
+            this.grid16.Margin = new System.Windows.Forms.Padding(5);
+            this.grid16.Name = "grid16";
+            this.grid16.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid16.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid16.Size = new System.Drawing.Size(277, 587);
+            this.grid16.TabIndex = 6;
+            this.grid16.TabStop = true;
+            this.grid16.ToolTipText = "";
             // 
-            // grid14
+            // splitContainer2
             // 
-            this.grid14.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid14.EnableSort = false;
-            this.grid14.Location = new System.Drawing.Point(3, 3);
-            this.grid14.Name = "grid14";
-            this.grid14.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
-            this.grid14.SelectionMode = SourceGrid.GridSelectionMode.Cell;
-            this.grid14.Size = new System.Drawing.Size(832, 587);
-            this.grid14.TabIndex = 4;
-            this.grid14.TabStop = true;
-            this.grid14.ToolTipText = "";
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
             // 
-            // tabPage18
+            // splitContainer2.Panel1
             // 
-            this.tabPage18.Controls.Add(this.grid15);
-            this.tabPage18.Location = new System.Drawing.Point(4, 24);
-            this.tabPage18.Name = "tabPage18";
-            this.tabPage18.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage18.Size = new System.Drawing.Size(838, 593);
-            this.tabPage18.TabIndex = 14;
-            this.tabPage18.Text = "Параметры режима резания";
-            this.tabPage18.UseVisualStyleBackColor = true;
+            this.splitContainer2.Panel1.Controls.Add(this.grid16);
             // 
-            // grid15
+            // splitContainer2.Panel2
             // 
-            this.grid15.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid15.EnableSort = false;
-            this.grid15.Location = new System.Drawing.Point(3, 3);
-            this.grid15.Name = "grid15";
-            this.grid15.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
-            this.grid15.SelectionMode = SourceGrid.GridSelectionMode.Cell;
-            this.grid15.Size = new System.Drawing.Size(832, 587);
-            this.grid15.TabIndex = 5;
-            this.grid15.TabStop = true;
-            this.grid15.ToolTipText = "";
+            this.splitContainer2.Panel2.Controls.Add(this.grid17);
+            this.splitContainer2.Size = new System.Drawing.Size(832, 587);
+            this.splitContainer2.SplitterDistance = 277;
+            this.splitContainer2.TabIndex = 7;
+            // 
+            // grid17
+            // 
+            this.grid17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid17.EnableSort = false;
+            this.grid17.Location = new System.Drawing.Point(0, 0);
+            this.grid17.Margin = new System.Windows.Forms.Padding(5);
+            this.grid17.Name = "grid17";
+            this.grid17.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid17.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid17.Size = new System.Drawing.Size(551, 587);
+            this.grid17.TabIndex = 7;
+            this.grid17.TabStop = true;
+            this.grid17.ToolTipText = "";
             // 
             // Form1
             // 
@@ -3169,17 +2491,9 @@ namespace My_Cal
             this.tabPage14.ResumeLayout(false);
             this.tabPage15.ResumeLayout(false);
             this.tabPage16.ResumeLayout(false);
+            this.tabPage17.ResumeLayout(false);
+            this.tabPage18.ResumeLayout(false);
             this.tabPage20.ResumeLayout(false);
-            this.tabPage20.PerformLayout();
-            this.groupBox6.ResumeLayout(false);
-            this.groupBox6.PerformLayout();
-            this.groupBox7.ResumeLayout(false);
-            this.groupBox7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox15)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -3222,8 +2536,10 @@ namespace My_Cal
             this.groupBox4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.tabPage17.ResumeLayout(false);
-            this.tabPage18.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -3236,8 +2552,6 @@ namespace My_Cal
         public SourceGrid.Cells.Controllers.CustomEvents clickEvent;
         public SourceGrid.Cells.Controllers.CustomEvents CellChangedEvent;
         public SQLiteConnection sqlite_conn;
-        public SQLiteCommand sqlite_cmd;
-        public SQLiteDataReader sqlite_datareader;
         private SplitContainer splitContainer1;
 
         public int i;
@@ -3442,68 +2756,6 @@ namespace My_Cal
         private TabPage tabPage13;
         private Grid grid10;
         private TabPage tabPage20;
-        private Label label59;
-        private Label label66;
-        private Label label67;
-        private Label label68;
-        private Label label69;
-        private Label label70;
-        private Label label71;
-        private Label label72;
-        private Label label73;
-        private Label label74;
-        private GroupBox groupBox6;
-        private Label label75;
-        private TextBox textBox37;
-        private Label label76;
-        private TextBox textBox44;
-        private Label label77;
-        private TextBox textBox45;
-        private Label label78;
-        private TextBox textBox46;
-        private GroupBox groupBox7;
-        private TextBox textBox47;
-        private Label label79;
-        private Label label80;
-        private TextBox textBox48;
-        private Label label81;
-        private TextBox textBox49;
-        private Label label82;
-        private TextBox textBox50;
-        private TextBox textBox51;
-        private TextBox textBox52;
-        private TextBox textBox53;
-        private TextBox textBox54;
-        private TextBox textBox55;
-        private TextBox textBox56;
-        private TextBox textBox57;
-        private TextBox textBox58;
-        private TextBox textBox59;
-        private TextBox textBox60;
-        private TextBox textBox61;
-        private TextBox textBox62;
-        private TextBox textBox63;
-        private Label label83;
-        private Label label84;
-        private Label label85;
-        private Label label86;
-        private Label label87;
-        private Label label88;
-        private Label label89;
-        private Label label90;
-        private Button button2;
-        private Label label91;
-        private Label label92;
-        private Label label93;
-        private Label label94;
-        private Label label95;
-        private Label label96;
-        private ComboBox comboBox2;
-        private PictureBox pictureBox11;
-        private PictureBox pictureBox12;
-        private PictureBox pictureBox13;
-        private PictureBox pictureBox14;
-        private PictureBox pictureBox15;
         private TabPage tabPage14;
         private Grid grid11;
         private TabPage tabPage15;
@@ -3514,6 +2766,9 @@ namespace My_Cal
         private Grid grid14;
         private TabPage tabPage18;
         private Grid grid15;
+        private Grid grid16;
+        private SplitContainer splitContainer2;
+        private Grid grid17;
     }
 }
 

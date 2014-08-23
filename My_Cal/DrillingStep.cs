@@ -18,11 +18,6 @@ namespace My_Cal
         public DrillingInptuData inputData = new DrillingInptuData();
 
         /// <summary>
-        /// Поле для хранения выходных данных
-        /// </summary>
-        public DrillingOutputData outputData = new DrillingOutputData();
-
-        /// <summary>
         /// Поле для хранения индекса ComboBox
         /// </summary>
         public int cBoxIndex = -1;
@@ -60,46 +55,6 @@ namespace My_Cal
             }
             else
                 return false;
-        }
-
-        public override float getV()
-        {
-            if (calc_all())
-                return outputData.V;
-            else
-                return 0;
-        }
-
-        public override float getM()
-        {
-
-            if (calc_all())
-                return outputData.M;
-            else return 0;
-        }
-
-        public override float getN()
-        {
-            if (calc_all())
-                return outputData.N;
-            else
-                return 0;
-        }
-
-        public override float getn()
-        {
-            if (calc_all())
-                return outputData.n;
-            else
-                return 0;
-        }
-
-        public override float getPz()
-        {
-            if (calc_all())
-                return outputData.P;
-            else
-                return 0;
         }
 
         public override void ReturnSelect()
@@ -206,13 +161,6 @@ namespace My_Cal
 
         }
 
-        /// <summary>
-        /// Расширение OutputData для сверлильного перехода
-        /// </summary>
-        /// TODO заменить public на  private внутри
-        public class DrillingOutputData : OutputData
-        {
-        }
     }
 }
 

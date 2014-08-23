@@ -14,6 +14,8 @@ using System.Collections;
 using System.IO;
 using System.Diagnostics;
 
+
+
 namespace My_Cal
 {
     public partial class Form1 : Form
@@ -53,6 +55,8 @@ namespace My_Cal
             DoFullTab5_Drill();
             DoFullTab6_Drill();
             DoFullTab7_Drill();
+            DoFullTab8_Drill();
+            DoFullTab9_Drill();
             tabControl3.Visible = false;
         }
         private void CustomInitialization()
@@ -80,13 +84,8 @@ namespace My_Cal
         #region DuFullTab
         private void DoFullTab1()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM external_turning";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("database.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("external_turning");
             #region Код таблицы 1 (Наружнее точение)
             grid1.BorderStyle = BorderStyle.FixedSingle;
             grid1.Redim(14, 4);
@@ -127,14 +126,7 @@ namespace My_Cal
                 }
             }
             #endregion
-            sqlite_conn.Close();
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");    // create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                               // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM boring";                                                        // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            sqlite_datareader = sqlReader.getReader("boring");
             #region Код таблицы 1 (растачивание)
             grid1[9, 0] = new SourceGrid.Cells.ColumnHeader("Растачивание");
             for (int r = 11; r < 15; r++)
@@ -168,18 +160,14 @@ namespace My_Cal
             grid1.EnableSort = false;
             grid1.Selection.EnableMultiSelection = false;
             #endregion
-            sqlite_conn.Close();
+
 
         }
         private void DoFullTab2()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM roughing";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();                                                     // The SQLiteDataReader allows us to run through the result lines
-            #endregion
+
+            SQLreader sqlReader = new SQLreader("database.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("roughing");
             #region Код таблицы 2(черновое точение)
             grid2.BorderStyle = BorderStyle.FixedSingle;
             grid2.Redim(19, 4);
@@ -218,14 +206,7 @@ namespace My_Cal
                 }
             }
             #endregion
-            sqlite_conn.Close();
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");    // create a new database connection
-            sqlite_conn.Open();                                                                                     // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                               // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM finish_turning";                                                // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();                                                         // The SQLiteDataReader allows us to run through the result lines
-            #endregion
+            sqlite_datareader = sqlReader.getReader("finish_turning");
             #region Код таблицы 3(получистовое и чистовое точение)
             grid2[9, 0] = new SourceGrid.Cells.ColumnHeader("Получистовое и чистовое точение");
             grid2[9, 0].ColumnSpan = 4;
@@ -268,17 +249,11 @@ namespace My_Cal
             grid2.EnableSort = false;
             grid2.Selection.EnableMultiSelection = false;
             #endregion
-            sqlite_conn.Close();// We are ready, now lets cleanup and close our connection
         }
         private void DoFullTab3()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM KMV";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            SQLreader sqlReader = new SQLreader("database.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader(" KMV");
             #region Код таблицы 4
             grid3.BorderStyle = BorderStyle.FixedSingle;
             grid3.Redim(3, 2);
@@ -309,17 +284,11 @@ namespace My_Cal
             grid3.EnableSort = false;
             grid3.Selection.EnableMultiSelection = false;
             #endregion
-            sqlite_conn.Close();
         }
         private void DoFullTab4()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM KpV";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            SQLreader sqlReader = new SQLreader("database.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader( "KpV");
             #region Код таблицы 5
             grid4.BorderStyle = BorderStyle.FixedSingle;
             grid4.Redim(4, 5);
@@ -352,17 +321,11 @@ namespace My_Cal
             grid4.EnableSort = false;
             grid4.Selection.EnableMultiSelection = false;
             #endregion
-            sqlite_conn.Close();
         }
         private void DoFullTab5()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM KiV_hard_alloy";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            SQLreader sqlReader = new SQLreader("database.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("KiV_hard_alloy");
             #region Код таблицы 6 (твердый сплав)
             grid5.BorderStyle = BorderStyle.FixedSingle;
             grid5.Redim(7, 7);
@@ -417,14 +380,7 @@ namespace My_Cal
                 }
             }
             #endregion
-            sqlite_conn.Close();
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM KiV_high_speed_steel";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            sqlite_datareader = sqlReader.getReader("KiV_high_speed_steel");
             #region Код таблицы 6 (быстрорежущая сталь)
 
             grid5[5, 0] = new SourceGrid.Cells.ColumnHeader("Материалы детали");
@@ -448,17 +404,11 @@ namespace My_Cal
             grid5.EnableSort = false;
             grid5.Selection.EnableMultiSelection = false;
             #endregion
-            sqlite_conn.Close();
         }
         private void DoFullTab6()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM EmpParamV";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            SQLreader sqlReader = new SQLreader("database.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("EmpParamV");
             #region Код таблицы 7 (СтУг)
             grid6.BorderStyle = BorderStyle.FixedSingle;
             grid6.Redim(15, 7);
@@ -559,18 +509,11 @@ namespace My_Cal
             grid6[14, 2].AddController(CellChangedEvent);
 
             #endregion
-            sqlite_conn.Close();
         }
         private void DoFullTab7()
         {
-            #region SQLite Connection
-
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM EmpParamPz";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            SQLreader sqlReader = new SQLreader("database.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("EmpParamPz");
             #region Код таблицы 8 (СтУг)
             grid7.BorderStyle = BorderStyle.FixedSingle;
             grid7.Redim(15, 6);
@@ -619,13 +562,7 @@ namespace My_Cal
 
             }
             #endregion
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM EmpParamPz";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            sqlite_datareader = sqlReader.getReader("EmpParamPz");
             #region Код таблицы 8 (СЧ)
             grid7[8, 0] = new SourceGrid.Cells.RowHeader("Наружнее точение \nРастачивание");
             grid7[8, 1] = new SourceGrid.Cells.RowHeader("Твердый сплав");
@@ -656,17 +593,11 @@ namespace My_Cal
             grid7.EnableSort = false;
             grid7.Selection.EnableMultiSelection = false;
             #endregion
-            sqlite_conn.Close();
         }
         private void DoFullTab8()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=database.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open();                                                                                 // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();                                                           // create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM KmP";                                                  // First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();
-            #endregion
+            SQLreader sqlReader = new SQLreader("database.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("KmP");
             #region Код таблицы 9
             grid8.BorderStyle = BorderStyle.FixedSingle;
             grid8.Redim(3, 2);
@@ -697,19 +628,13 @@ namespace My_Cal
             grid8.EnableSort = false;
             grid8.Selection.EnableMultiSelection = false;
             #endregion
-            sqlite_conn.Close();
         }
         #endregion
         #region Код М DoFullTab
         public void DoFullTab1_Mill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseF.sqlite;Version=3;New=True;Compress=True;");// create a new databaseF connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM FrEmpParamV";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseF.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("FrEmpParamV");
             #region Код таблицы 1 (твердый сплав)
             grid1Mill.BorderStyle = BorderStyle.FixedSingle;
             grid1Mill.Redim(15, 11);
@@ -793,7 +718,6 @@ namespace My_Cal
             grid1Mill.AutoSizeCells();
             grid1Mill.EnableSort = false;
             grid1Mill.Selection.EnableMultiSelection = false;
-            sqlite_conn.Close();
             #endregion
         }
         public void DoFullTab2_Mill()
@@ -840,13 +764,8 @@ namespace My_Cal
         }
         public void DoFullTab3_Mill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseF.sqlite;Version=3;New=True;Compress=True;");// create a new databaseF connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM FrParamKv";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseF.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("FrParamKv");
             #region Код таблицы 3 (Коэф. Kv)
             grid3Mill.BorderStyle = BorderStyle.FixedSingle;
             grid3Mill.Redim(7, 3);
@@ -882,18 +801,12 @@ namespace My_Cal
             grid3Mill.AutoSizeCells();
             grid3Mill.EnableSort = false;
             grid3Mill.Selection.EnableMultiSelection = false;
-            sqlite_conn.Close();
             #endregion
         }
         public void DoFullTab4_Mill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseF.sqlite;Version=3;New=True;Compress=True;");// create a new databaseF connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM FrParamKp";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseF.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("FrParamKp");
             #region Код таблицы 4 (Коэф. Kp)
             grid4Mill.BorderStyle = BorderStyle.FixedSingle;
             grid4Mill.Redim(3, 2);
@@ -917,18 +830,12 @@ namespace My_Cal
             grid4Mill.AutoSizeCells();
             grid4Mill.EnableSort = false;
             grid4Mill.Selection.EnableMultiSelection = false;
-            sqlite_conn.Close();
             #endregion
         }
         public void DoFullTab5_Mill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseF.sqlite;Version=3;New=True;Compress=True;");// create a new databaseF connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM FrParamPz";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseF.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("FrParamPz");
             #region Код таблицы 5 (Коэф. к ур. силы резания)
             grid5Mill.BorderStyle = BorderStyle.FixedSingle;
             grid5Mill.Redim(11, 8);
@@ -998,20 +905,14 @@ namespace My_Cal
             grid5Mill.AutoSizeCells();
             grid5Mill.EnableSort = false;
             grid5Mill.Selection.EnableMultiSelection = false;
-            sqlite_conn.Close();
             #endregion
         }
         #endregion
         #region Заполнение таблиц сверления
         private void DoFullTab1_Drill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table1";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseD.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("drill_table1");
             #region Код таблицы 1
             grid9.BorderStyle = BorderStyle.FixedSingle;
             grid9.Redim(10, 8);
@@ -1057,16 +958,7 @@ namespace My_Cal
             grid9[4, 5].AddController(new SourceGrid.Cells.Controllers.Unselectable());
             grid9[4, 5].AddController(new MyHelpRowTracking());//help row pointer
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
-
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table2";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            sqlite_datareader = sqlReader.getReader("drill_table2");
             #region Код таблицы 2
             grid9[5, 0] = new SourceGrid.Cells.ColumnHeader("Зенкерование");
             grid9[5, 0].ColumnSpan = 8;
@@ -1096,16 +988,7 @@ namespace My_Cal
             }
             //
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
-
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table2";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            sqlite_datareader = sqlReader.getReader("drill_table3");
             #region Код таблицы 3
             grid9[8, 0] = new SourceGrid.Cells.ColumnHeader("Развертывание");
             grid9[8, 0].ColumnSpan = 8;
@@ -1130,24 +1013,8 @@ namespace My_Cal
                     grid9[r, 5] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(4)));
                     grid9[r, 6] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(5)));
                     grid9[r, 7] = new SourceGrid.Cells.Cell(Convert.ToString(sqlite_datareader.GetString(6)));
-
                 }
-                //if (r > 1)
-                //{
-                //    for (int c = 1; c < 3; c++) //задание свойств ячеек
-                //    {
-                //        {
-                //            grid9[r, c].AddController(cellpointer);//наведение
-                //            grid9[r, c].AddController(clickEvent);//клик мыши
-                //            grid9[r, c].Editor.EnableEdit = false;
-                //            grid9[r, c].AddController(new SourceGrid.Cells.Controllers.Unselectable());
-                //            grid9[r, c].AddController(new MyHelpRowTracking());//help row pointer
-                //        }
-                //    }
-                //}
             }
-            //
-            #endregion
 
             for (int r = 7; r < 11; r = r + 3)
             {
@@ -1160,18 +1027,13 @@ namespace My_Cal
                     grid9[r, c].AddController(new MyHelpRowTracking());//help row pointer
                 }
             }
-            sqlite_conn.Close();
-            sqlite_conn.Close();
+            #endregion
         }
         private void DoFullTab2_Drill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table4";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+
+            SQLreader sqlReader = new SQLreader("databaseD.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("drill_table4");
             #region Код таблицы
             grid10.BorderStyle = BorderStyle.FixedSingle;
             grid10.Redim(19, 5);
@@ -1215,16 +1077,7 @@ namespace My_Cal
             }
 
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
-
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table5";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            sqlite_datareader = sqlReader.getReader("drill_table5");
             #region Код таблицы
             grid10[9, 0] = new SourceGrid.Cells.ColumnHeader("Зенкерование и развертывание");
             grid10[9, 0].ColumnSpan = 5;
@@ -1278,18 +1131,11 @@ namespace My_Cal
 
 
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
         }
         private void DoFullTab3_Drill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table6";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseD.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("drill_table6");
             #region Код таблицы
             grid11.BorderStyle = BorderStyle.FixedSingle;
             grid11.Redim(3, 2);
@@ -1317,18 +1163,11 @@ namespace My_Cal
             }
 
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
         }
         private void DoFullTab4_Drill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table7";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseD.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("drill_table7");
             #region Код таблицы
             grid12.BorderStyle = BorderStyle.FixedSingle;
             grid12.Redim(3, 4);
@@ -1364,18 +1203,11 @@ namespace My_Cal
             }
 
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
         }
         private void DoFullTab5_Drill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table8";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseD.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("drill_table8");
             #region Код таблицы
             grid13.BorderStyle = BorderStyle.FixedSingle;
             grid13.Redim(2, 6);
@@ -1406,18 +1238,11 @@ namespace My_Cal
             }
 
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
         }
         private void DoFullTab6_Drill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table9";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseD.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("drill_table9");
             #region Код таблицы
             grid14.BorderStyle = BorderStyle.FixedSingle;
             grid14.Redim(22, 8);
@@ -1563,18 +1388,11 @@ namespace My_Cal
             }
 
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
         }
         private void DoFullTab7_Drill()
         {
-            #region SQLite Connection
-            sqlite_conn = new SQLiteConnection("Data Source=databaseD.sqlite;Version=3;New=True;Compress=True;");// create a new database connection
-            sqlite_conn.Open(); // open the connection:
-            sqlite_cmd = sqlite_conn.CreateCommand();// create a new SQL command
-            sqlite_cmd.CommandText = "SELECT * FROM drill_table10";// First lets build a SQL-Query again
-            sqlite_datareader = sqlite_cmd.ExecuteReader();// The SQLiteDataReader allows us to run through the result lines 
-            #endregion
+            SQLreader sqlReader = new SQLreader("databaseD.sqlite");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("drill_table10");
             #region Код таблицы
             grid15.BorderStyle = BorderStyle.FixedSingle;
             grid15.Redim(10, 11);
@@ -1648,14 +1466,254 @@ namespace My_Cal
                     }
                 }
             }
-            
+
             #endregion
-            sqlite_conn.Close();
-            sqlite_conn.Close();
+        }
+        private void DoFullTab8_Drill()
+        {
+            #region Код таблицы
+            grid16.BorderStyle = BorderStyle.FixedSingle;
+            grid16.Redim(25, 4);
+            SourceGrid.Cells.Views.Cell viewImage = new SourceGrid.Cells.Views.Cell();
+            grid16[0, 0] = new SourceGrid.Cells.ColumnHeader("Входные параметры");
+            grid16[0, 0].ColumnSpan = 4;
+
+            grid16[1, 0] = new SourceGrid.Cells.RowHeader("Подача");
+            grid16[1, 1] = new SourceGrid.Cells.RowHeader("S");
+            grid16[1, 2] = new SourceGrid.Cells.Cell();
+            grid16[1, 3] = new SourceGrid.Cells.Cell("мм/об");
+            grid16[1, 0].Column.Width = 150;
+
+            grid16[2, 0] = new SourceGrid.Cells.RowHeader("Глубина резания");
+            grid16[2, 1] = new SourceGrid.Cells.RowHeader("t");
+            grid16[2, 2] = new SourceGrid.Cells.Cell();
+            grid16[2, 3] = new SourceGrid.Cells.Cell("мм");
+
+            grid16[3, 0] = new SourceGrid.Cells.RowHeader("Период стойкости резца");
+            grid16[3, 1] = new SourceGrid.Cells.RowHeader("T");
+            grid16[3, 2] = new SourceGrid.Cells.Cell();
+            grid16[3, 3] = new SourceGrid.Cells.Cell("мин");
+
+            SourceGrid.Cells.Editors.ComboBox cb = new SourceGrid.Cells.Editors.ComboBox(typeof(float), new float[] { 20, 30, 40, 60, 90, 120 }, false);
+            grid16[3, 2].Editor = cb;
+            grid16[3, 2].Editor.EditableMode = EditableMode.SingleClick;
+
+            grid16[4, 0] = new SourceGrid.Cells.RowHeader("Диаметр инструмента");
+            grid16[4, 1] = new SourceGrid.Cells.RowHeader("D");
+            grid16[4, 2] = new SourceGrid.Cells.Cell();
+            grid16[4, 3] = new SourceGrid.Cells.Cell("мм");
+
+            grid16[5, 0] = new SourceGrid.Cells.RowHeader("Диаметр исходного отверсития");
+            grid16[5, 1] = new SourceGrid.Cells.RowHeader("d");
+            grid16[5, 2] = new SourceGrid.Cells.Cell();
+            grid16[5, 3] = new SourceGrid.Cells.Cell("мм");
+
+            grid16[6, 0] = new SourceGrid.Cells.RowHeader("Поправка на обрабатываемый материал");
+            grid16[6, 1] = new SourceGrid.Cells.RowHeader("Kмv");
+            grid16[6, 2] = new SourceGrid.Cells.Cell();
+            grid16[6, 3] = new SourceGrid.Cells.Cell("б/р");
+
+            grid16[7, 0] = new SourceGrid.Cells.RowHeader("Поправка на состояние поверхности");
+            grid16[7, 1] = new SourceGrid.Cells.RowHeader("Kпv");
+            grid16[7, 2] = new SourceGrid.Cells.Cell();
+            grid16[7, 3] = new SourceGrid.Cells.Cell("б/р");
+
+            grid16[8, 0] = new SourceGrid.Cells.RowHeader("Поправка на глубину отверстия");
+            grid16[8, 1] = new SourceGrid.Cells.RowHeader("Kг");
+            grid16[8, 2] = new SourceGrid.Cells.Cell();
+            grid16[8, 3] = new SourceGrid.Cells.Cell("б/р");
+
+            grid16[9, 0] = new SourceGrid.Cells.ColumnHeader("Эмпирические коэффициенты скорости резания");
+            grid16[9, 0].ColumnSpan = 4;
+
+            grid16[10, 0] = new SourceGrid.Cells.ColumnHeader("Сv");
+            grid16[10, 0].ColumnSpan = 2;
+            grid16[10, 2] = new SourceGrid.Cells.Cell();
+            grid16[10, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[11, 0] = new SourceGrid.Cells.ColumnHeader("q");
+            grid16[11, 0].ColumnSpan = 2;
+            grid16[11, 2] = new SourceGrid.Cells.Cell();
+            grid16[11, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[12, 0] = new SourceGrid.Cells.ColumnHeader("x");
+            grid16[12, 0].ColumnSpan = 2;
+            grid16[12, 2] = new SourceGrid.Cells.Cell();
+            grid16[12, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[13, 0] = new SourceGrid.Cells.ColumnHeader("y");
+            grid16[13, 0].ColumnSpan = 2;
+            grid16[13, 2] = new SourceGrid.Cells.Cell();
+            grid16[13, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[14, 0] = new SourceGrid.Cells.ColumnHeader("m");
+            grid16[14, 0].ColumnSpan = 2;
+            grid16[14, 2] = new SourceGrid.Cells.Cell();
+            grid16[14, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[15, 0] = new SourceGrid.Cells.ColumnHeader("Эмпирические коэффициенты момента резания");
+            grid16[15, 0].ColumnSpan = 4;
+
+            grid16[16, 0] = new SourceGrid.Cells.ColumnHeader("См");
+            grid16[16, 0].ColumnSpan = 2;
+            grid16[16, 2] = new SourceGrid.Cells.Cell();
+            grid16[16, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[17, 0] = new SourceGrid.Cells.ColumnHeader("q");
+            grid16[17, 0].ColumnSpan = 2;
+            grid16[17, 2] = new SourceGrid.Cells.Cell();
+            grid16[17, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[18, 0] = new SourceGrid.Cells.ColumnHeader("x");
+            grid16[18, 0].ColumnSpan = 2;
+            grid16[18, 2] = new SourceGrid.Cells.Cell();
+            grid16[18, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[19, 0] = new SourceGrid.Cells.ColumnHeader("y");
+            grid16[19, 0].ColumnSpan = 2;
+            grid16[19, 2] = new SourceGrid.Cells.Cell();
+            grid16[19, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+
+            grid16[20, 0] = new SourceGrid.Cells.ColumnHeader("Эмпирические коэффициенты силы резания");
+            grid16[20, 0].ColumnSpan = 4;
+
+            grid16[21, 0] = new SourceGrid.Cells.ColumnHeader("Ср");
+            grid16[21, 0].ColumnSpan = 2;
+            grid16[21, 2] = new SourceGrid.Cells.Cell();
+            grid16[21, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[22, 0] = new SourceGrid.Cells.ColumnHeader("q");
+            grid16[22, 0].ColumnSpan = 2;
+            grid16[22, 2] = new SourceGrid.Cells.Cell();
+            grid16[22, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[23, 0] = new SourceGrid.Cells.ColumnHeader("x");
+            grid16[23, 0].ColumnSpan = 2;
+            grid16[23, 2] = new SourceGrid.Cells.Cell();
+            grid16[23, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            grid16[24, 0] = new SourceGrid.Cells.ColumnHeader("y");
+            grid16[24, 0].ColumnSpan = 2;
+            grid16[24, 2] = new SourceGrid.Cells.Cell();
+            grid16[24, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
+
+            //grid16[25, 0] = new SourceGrid.Cells.ColumnHeader("Выходные параметры");
+            //grid16[25, 0].ColumnSpan = 4;
+
+            //grid16[26, 0] = new SourceGrid.Cells.RowHeader("Подача");
+            //grid16[26, 1] = new SourceGrid.Cells.RowHeader("S");
+            //grid16[26, 2] = new SourceGrid.Cells.Cell();
+            //grid16[26, 3] = new SourceGrid.Cells.Cell("мм/об");
+            //grid16[26, 0].Column.Width = 150;
+
+            #endregion
+        }
+        private void DoFullTab9_Drill()
+        {
+            #region Код таблицы
+            grid17.BorderStyle = BorderStyle.FixedSingle;
+            grid17.Redim(6, 4);
+            grid17[0, 0] = new SourceGrid.Cells.ColumnHeader("Выходные параметры");
+            grid17[0, 0].ColumnSpan = 4;
+            grid17[0, 0].Column.Width = 120;
+
+            grid17[1, 0] = new SourceGrid.Cells.RowHeader("Скорость резания");
+            grid17[1, 1] = new SourceGrid.Cells.RowHeader();
+            grid17[1, 1].Column.Width = 70;
+
+            grid17[1, 1] = new SourceGrid.Cells.Cell();
+            grid17[1, 1].Image = Properties.Resources.V_Mill;
+            grid17[1, 1].Column.Width = 150;
+            grid17[1, 1].Row.Height = 70;
+
+            grid17[1, 2] = new SourceGrid.Cells.Cell();
+            grid17[1, 3] = new SourceGrid.Cells.Cell("м/мин");
+
+            grid17[2, 0] = new SourceGrid.Cells.RowHeader("Момент резания");
+            grid17[2, 1] = new SourceGrid.Cells.RowHeader();
+            grid17[2, 1].Column.Width = 70;
+
+            grid17[2, 1] = new SourceGrid.Cells.Cell();
+            grid17[2, 1].Image = Properties.Resources.V_Mill;
+            grid17[2, 1].Column.Width = 150;
+            grid17[2, 1].Row.Height = 70;
+
+            grid17[2, 2] = new SourceGrid.Cells.Cell();
+            grid17[2, 3] = new SourceGrid.Cells.Cell("Нм");
+
+            grid17[3, 0] = new SourceGrid.Cells.RowHeader("Сила резания");
+            grid17[3, 1] = new SourceGrid.Cells.RowHeader();
+            grid17[3, 1].Column.Width = 70;
+
+            grid17[3, 1] = new SourceGrid.Cells.Cell();
+            grid17[3, 1].Image = Properties.Resources.V_Mill;
+            grid17[3, 1].Column.Width = 150;
+            grid17[3, 1].Row.Height = 70;
+
+            grid17[3, 2] = new SourceGrid.Cells.Cell();
+            grid17[3, 3] = new SourceGrid.Cells.Cell("Н");
+
+
+
+            grid17[4, 0] = new SourceGrid.Cells.RowHeader("Потребляемая мощность");
+            grid17[4, 1] = new SourceGrid.Cells.RowHeader();
+            grid17[4, 1].Column.Width = 70;
+
+            grid17[4, 1] = new SourceGrid.Cells.Cell();
+            grid17[4, 1].Image = Properties.Resources.V_Mill;
+            grid17[4, 1].Column.Width = 150;
+            grid17[4, 1].Row.Height = 70;
+
+            grid17[4, 2] = new SourceGrid.Cells.Cell();
+            grid17[4, 3] = new SourceGrid.Cells.Cell("кВт");
+
+
+
+            grid17[5, 0] = new SourceGrid.Cells.RowHeader("Частота вращения шпинделя");
+            grid17[5, 1] = new SourceGrid.Cells.RowHeader();
+            grid17[5, 1].Column.Width = 70;
+
+            grid17[5, 1] = new SourceGrid.Cells.Cell();
+            grid17[5, 1].Image = Properties.Resources.V_Mill;
+            grid17[5, 1].Column.Width = 150;
+            grid17[5, 1].Row.Height = 70;
+
+            grid17[5, 2] = new SourceGrid.Cells.Cell();
+            grid17[5, 3] = new SourceGrid.Cells.Cell("об/мин");
+            #endregion
         }
         #endregion
 
-
+        private class SQLreader
+        {
+            private SQLiteConnection sqlite_conn = new SQLiteConnection();
+            public SQLreader(String source)
+            {
+                if (sqlite_conn.State!= ConnectionState.Open)
+                {
+                sqlite_conn = new SQLiteConnection("Data Source=" + source + ";Version=3;New=True;Compress=True;");
+                sqlite_conn.Open();
+                    }
+            }
+            public SQLiteDataReader getReader(String dataBaseName)
+            {
+                SQLiteCommand sqlite_cmd = sqlite_conn.CreateCommand();
+                sqlite_cmd.CommandText = "SELECT * FROM " + dataBaseName;
+                return sqlite_cmd.ExecuteReader();
+            }
+           
+            ~SQLreader()
+            {
+                try
+                {
+                    sqlite_conn.Close();
+                }
+                catch (Exception)
+                {
+                }
+            }
+        }
         /// <summary>
         /// Происходит при изменении значения ячейки
         /// нужен для задания значения шага при точении резьбы
@@ -1793,8 +1851,6 @@ namespace My_Cal
         /// <summary>
         /// Обработка нажатия Enter в textBox16
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void textBox16_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -1881,18 +1937,7 @@ namespace My_Cal
             {
                 Utils.RowSelector(context);
             }
-            //else
-            //{
-            //    //следующий код необходим для верного выделения (click-drop) иначе 
-            //    //click на одной ячейке, select на другой.(+unselectable)
-            //    //+решения проблеммы shift+arrow т.е. выделение только при событии click 
-            //    MyCellSelector(context);
-            //}
-            //
-            //
-            //!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            //
-            //
+
             if (context.Grid.Handle == grid1Mill.Handle)
             {
                 ms.inputData.Cv = Convert.ToSingle(grid1Mill[context.Position.Row, 4].Value);
@@ -1952,6 +1997,9 @@ namespace My_Cal
             }
         }
 
+        /// <summary>
+        /// Вход на вкладку "Результат" для токарного перехода
+        /// </summary>
         private void tabPage9_Enter(object sender, EventArgs e)
         {
             ClearTab9();
@@ -1980,14 +2028,14 @@ namespace My_Cal
 
                 textBox17.Text = Convert.ToString(ts.getV());
                 textBox18.Text = Convert.ToString(ts.getn());
-                textBox19.Text = Convert.ToString(ts.getPz());
+                textBox19.Text = Convert.ToString(ts.getP());
                 textBox20.Text = Convert.ToString(ts.getM());
                 textBox21.Text = Convert.ToString(ts.getN());
             }
         }
 
         /// <summary>
-        /// Сбрасывает все значения textBox на 9 вкладке
+        /// Сбрасывает все значения textBox на 9 вкладке для токарного перехода
         /// </summary>
         private void ClearTab9()
         {
@@ -2001,6 +2049,9 @@ namespace My_Cal
             }
         }
 
+        /// <summary>
+        /// Событие выбора периода стойкости резца для токарного перехода
+        /// </summary>
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1.Text != "")
@@ -2011,10 +2062,8 @@ namespace My_Cal
             }
         }
         /// <summary>
-        /// кнопка вычисления
+        /// Событие для нажатия на кнопку вычисления для токарного перехода
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
         private void button1_Click(object sender, EventArgs e)
         {
             textBox16.Text = textBox16.Text.Replace(".", ",");
@@ -2026,7 +2075,7 @@ namespace My_Cal
                 {
                     textBox17.Text = Convert.ToString(ts.getV());
                     textBox18.Text = Convert.ToString(ts.getn());
-                    textBox19.Text = Convert.ToString(ts.getPz());
+                    textBox19.Text = Convert.ToString(ts.getP());
                     textBox20.Text = Convert.ToString(ts.getM());
                     textBox21.Text = Convert.ToString(ts.getN());
                 }
@@ -2055,7 +2104,9 @@ namespace My_Cal
             }
         }
 
-
+        /// <summary>
+        /// Событие изменения пункта меню для выбора периода стойкости резца для фрезерного перехода
+        /// </summary>
         private void comboBox1Mill_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (comboBox1Mill.Text != "")
@@ -2066,6 +2117,9 @@ namespace My_Cal
             }
         }
 
+        /// <summary>
+        /// Событие нажатия на кнопку "Ввод данных" для фрезерного перехода
+        /// </summary>
         private void button2Mill_Click(object sender, EventArgs e)
         {
             textBox1Mill.Text = textBox1Mill.Text.Replace(".", ",");
@@ -2090,6 +2144,7 @@ namespace My_Cal
 
         }
 
+        // TODO Выяснить что это и зачем нужно. Похпже на нажатие Enter в каком-то TextBox
         private void textBox_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -2098,6 +2153,9 @@ namespace My_Cal
             }
         }
 
+        /// <summary>
+        /// Событие при входе на вкладку "Результат для фрезерного перехода"
+        /// </summary>
         private void tabPage7Mill_Enter(object sender, EventArgs e)
         {
             textBox22.Text = Convert.ToString(ms.inputData.t);
@@ -2124,44 +2182,33 @@ namespace My_Cal
             textBox4Mill.Text = Convert.ToString(ms.getV());
             textBox6Mill.Text = Convert.ToString(ms.getM());
             textBox7Mill.Text = Convert.ToString(ms.getn());
-            textBox8Mill.Text = Convert.ToString(ms.getPz());
+            textBox8Mill.Text = Convert.ToString(ms.getP());
             textBox9Mill.Text = Convert.ToString(ms.getN());
         }
 
-
-        /// <summary>
-        /// очистить операцию
-        /// </summary>
-        //!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        //ToDoОчистка дерева 
-        //i = 0;
-        //AList.Clear();
-        //treeView1.Nodes[0].Nodes.Clear();
-        //ClearAllSelection();
-        //ClearTab9();
-        //tabControl1.Visible = false;
-
-
+        // удалить
         private void button2_Click(object sender, EventArgs e)
         {
         }
-
+        // удалить
         private void button3_Click(object sender, EventArgs e)
         {
 
         }
-
-
+        // удалить
         private void button4_Click(object sender, EventArgs e)
         {
 
         }
-
+        // удалить
         private void menu1ToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
 
+        /// <summary>
+        /// Событие нажатия на пункт меню "Создать токарный переход."
+        /// </summary>
         private void makeTurningStepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             i++;
@@ -2175,6 +2222,9 @@ namespace My_Cal
             stepList.Add(s);
         }
 
+        /// <summary>
+        /// Событие нажатия на пункт меню "Создать фрезерный переход."
+        /// </summary>
         private void makeMillStepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             i++;
@@ -2188,6 +2238,23 @@ namespace My_Cal
             stepList.Add(s);
         }
 
+        /// <summary>
+        /// Событие при нажатии на пункт меню "Создать сверлильный переход"
+        /// </summary>
+        private void makeDrillStepToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            i++;
+            treeView1.BeginUpdate();
+            treeView1.Nodes.Add("Переход" + i + " (сверлильный)");
+            treeView1.Nodes[0].Expand();
+            treeView1.EndUpdate();
+            DrillingStep s = new DrillingStep();
+            stepList.Add(s);
+        }
+
+        /// <summary>
+        /// Событие при нажатии на пункт меню "Создать отчет"
+        /// </summary>
         private void makeReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //Проверка готовности записи в файл
@@ -2253,7 +2320,7 @@ namespace My_Cal
                             fstr_out.Write("Мощность:           ");
                             fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getN()) + " кВт\r\n");
                             fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getPz()) + " Н\r\n");
+                            fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getP()) + " Н\r\n");
                             fstr_out.Write("Момент:             ");
                             fstr_out.Write(Convert.ToString(((TurningStep)stepList[i]).getM()) + " Нм\r\n");
                         }
@@ -2267,7 +2334,7 @@ namespace My_Cal
                             fstr_out.Write("Мощность:           ");
                             fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getN()) + " кВт\r\n");
                             fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getPz()) + " Н\r\n");
+                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getP()) + " Н\r\n");
                             fstr_out.Write("Момент:             ");
                             fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getM()) + " Нм\r\n");
                         }
@@ -2283,11 +2350,18 @@ namespace My_Cal
             }
         }
 
+        /// <summary>
+        /// Событие при нажатии на пункт меню "Выход" 
+        /// </summary>
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
+        /// <summary>
+        /// Событие при нажатии на пункт меню "Удалить переход"
+        /// </summary>
+        /// TODO Проработать событие (временный код)
         private void deleteStepToolStripMenuItem_Click(object sender, EventArgs e)
         {
             foreach (TreeNode n in treeView1.Nodes)
@@ -2312,6 +2386,11 @@ namespace My_Cal
 
         }
 
+        /// <summary>
+        /// Событие после выбора пункта в treeView
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
             //e = (TreeNodeMouseClickEventArgs)e;
@@ -2358,79 +2437,7 @@ namespace My_Cal
                 Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
                 ds.ReturnSelect();
             }
-
-
-
-            //if ((true))
-            //{
-            //    //TODO Сделать проверку типа
-            //    try
-            //    {
-            //        DoFullTab6();
-            //        s1 = (Step_turning)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
-            //        tabControl2.Visible = false;
-            //        tabControl1.Visible = true;
-            //        tabControl3.Visible = false;
-            //        this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-            //        comboBox1.SelectedIndex = -1;
-            //        if (tabControl1.SelectedIndex == 8)
-            //        {
-            //            tabPage9_Enter(null, null);
-            //        }
-            //        Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
-            //        tabControl1.Visible = true;
-            //        s1.ReturnSelect();
-            //    }
-
-            //    catch (InvalidCastException)
-            //    {
-            //        try
-            //        {
-            //            s2 = (Step_Mill)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
-            //            tabControl2.Visible = true;
-            //            tabControl1.Visible = false;
-            //            tabControl3.Visible = false;
-            //            this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-            //            //comboBox1.SelectedIndex = -1;
-            //            if (tabControl1.SelectedIndex == 8)
-            //            {
-            //                tabPage7Mill_Enter(null, null);
-            //            }
-            //            Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
-            //            s2.ReturnSelect();
-            //        }
-            //        catch (InvalidCastException)
-            //        {
-
-            //            s3 = (Step_drill)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
-            //            tabControl2.Visible = false;
-            //            tabControl1.Visible = false;
-            //            tabControl3.Visible = true;
-            //            this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-            //            //comboBox1.SelectedIndex = -1;
-            //            //if (tabControl1.SelectedIndex == 8)
-            //            //{
-            //            //    tabPage7Mill_Enter(null, null);
-            //            //}
-            //            //ClearAllSelectionMill();//почистить выделение всех ячеек всех гридов
-            //            ////tabControl1.Visible = true;
-            //            //s3.ReturnSelect();
-
-            //        }
-            //    }
-            //}
         }
 
-        private void создатьСверлильныйПереходToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            i++;
-            treeView1.BeginUpdate();
-            treeView1.Nodes.Add("Переход" + i + " (сверлильный)");
-            treeView1.Nodes[0].Expand();
-            treeView1.EndUpdate();
-            DrillingStep s2 = new DrillingStep();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
-            //текущий не трогаем(!) а подменяем его только при выборе!!
-            stepList.Add(s2);
-        }
     }
 }
