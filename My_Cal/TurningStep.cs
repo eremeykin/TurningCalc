@@ -50,9 +50,9 @@ namespace My_Cal
             if (((float)(Math.Pow(inputData.T, inputData.mv)) * ((float)(Math.Pow(inputData.t, inputData.xv))) * ((float)(Math.Pow(inputData.s, inputData.yv)))) != 0 && (((float)Math.PI * inputData.D)) != 0)
             {
                 outputData.V = (inputData.Cv * inputData.Kmv * inputData.Kpv * inputData.Kiv) / ((float)(Math.Pow(inputData.T, inputData.mv)) * ((float)(Math.Pow(inputData.t, inputData.xv))) * ((float)(Math.Pow(inputData.s, inputData.yv))));
-                outputData.Pz = 10 * inputData.Cp * ((float)Math.Pow(inputData.t, inputData.xp)) * ((float)Math.Pow(inputData.s, inputData.yp)) * ((float)Math.Pow(outputData.V, inputData.np)) * inputData.Kmp;
-                outputData.M = outputData.Pz * (inputData.D / (2 * 1000));
-                outputData.N = (outputData.Pz * outputData.V) / (1020 * 60);
+                outputData.P = 10 * inputData.Cp * ((float)Math.Pow(inputData.t, inputData.xp)) * ((float)Math.Pow(inputData.s, inputData.yp)) * ((float)Math.Pow(outputData.V, inputData.np)) * inputData.Kmp;
+                outputData.M = outputData.P * (inputData.D / (2 * 1000));
+                outputData.N = (outputData.P * outputData.V) / (1020 * 60);
                 outputData.n = (1000 * outputData.V) / ((float)Math.PI * inputData.D);
                 return true;
             }
@@ -95,7 +95,7 @@ namespace My_Cal
         public override float getPz()
         {
             if (calc_all())
-                return outputData.Pz;
+                return outputData.P;
             else
                 return 0;
         }

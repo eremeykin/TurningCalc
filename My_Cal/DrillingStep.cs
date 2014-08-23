@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace My_Cal
 {
     //TODO класс заполнен временно просто копированием TurningStep.
@@ -14,12 +15,12 @@ namespace My_Cal
         /// <summary>
         /// Поле для хранения входных данных
         /// </summary>
-        public TurningInptuData inputData = new TurningInptuData();
+        public DrillingInptuData inputData = new DrillingInptuData();
 
         /// <summary>
         /// Поле для хранения выходных данных
         /// </summary>
-        public TurningOutputData outputData = new TurningOutputData();
+        public DrillingOutputData outputData = new DrillingOutputData();
 
         /// <summary>
         /// Поле для хранения индекса ComboBox
@@ -28,34 +29,33 @@ namespace My_Cal
 
         public static bool operator true(DrillingStep st)
         {
-            for (int i = 1; i < 9; i++)
-            {
-                if (st.getLCell(i) == null)
-                    return false;
-            }
-            if (st.inputData.D == 0 || st.inputData.T == 0)
-                return false;
-            return true;
+            // TODO Написать содержимое
+            return false;
         }
 
         public static bool operator false(DrillingStep st)
         {
-            if (st)
-            {
-                return true;
-            }
-            return false;
+            // TODO Написать содержимое
+            return true;
         }
 
         protected override bool calc_all()
         {
-            if (((float)(Math.Pow(inputData.T, inputData.mv)) * ((float)(Math.Pow(inputData.t, inputData.xv))) * ((float)(Math.Pow(inputData.s, inputData.yv)))) != 0 && (((float)Math.PI * inputData.D)) != 0)
+            //Если никакой из знаменателей не равен нулю
+            if (inputData.T != 0 && inputData.t != 0 && inputData.s != 0)
             {
-                outputData.V = (inputData.Cv * inputData.Kmv * inputData.Kpv * inputData.Kiv) / ((float)(Math.Pow(inputData.T, inputData.mv)) * ((float)(Math.Pow(inputData.t, inputData.xv))) * ((float)(Math.Pow(inputData.s, inputData.yv))));
-                outputData.Pz = 10 * inputData.Cp * ((float)Math.Pow(inputData.t, inputData.xp)) * ((float)Math.Pow(inputData.s, inputData.yp)) * ((float)Math.Pow(outputData.V, inputData.np)) * inputData.Kmp;
-                outputData.M = outputData.Pz * (inputData.D / (2 * 1000));
-                outputData.N = (outputData.Pz * outputData.V) / (1020 * 60);
+                outputData.V = (inputData.Cv * (float)Math.Pow(inputData.D, inputData.qv) * inputData.Kmv * inputData.Kpv * inputData.Kg) / ((float)Math.Pow(inputData.T, inputData.mv) * (float)Math.Pow(inputData.t, inputData.xv) * (float)Math.Pow(inputData.s, inputData.yv));
                 outputData.n = (1000 * outputData.V) / ((float)Math.PI * inputData.D);
+                //если сверление простое т.е. без d
+                outputData.M = 10 * inputData.Cm * (float)Math.Pow(inputData.D, inputData.qm) * (float)Math.Pow(inputData.s, inputData.ym) * inputData.Kmp;
+                outputData.P = 10 * inputData.Cp * (float)Math.Pow(inputData.D, inputData.qp) * (float)Math.Pow(inputData.s, inputData.yp) * inputData.Kmp;
+                // если учитывается d
+                if (!inputData.isDrilling)
+                {
+                    outputData.M = outputData.M * (float)Math.Pow(inputData.t,inputData.xm);
+                    outputData.P = outputData.P * (float)Math.Pow(inputData.t, inputData.xp);
+                }
+                outputData.N = (outputData.M * outputData.n) / 9750;
                 return true;
             }
             else
@@ -97,7 +97,7 @@ namespace My_Cal
         public override float getPz()
         {
             if (calc_all())
-                return outputData.Pz;
+                return outputData.P;
             else
                 return 0;
         }
@@ -116,23 +116,27 @@ namespace My_Cal
                     if (checkLCell(i))
                     {
                         Utils.RowSelector(getLCell(i));
-                        if (getLCell(i).Position.Row == 7 || getLCell(i).Position.Row == 8 || getLCell(i).Position.Row == 14)
-                        {
-                            SourceGrid.Position P = new SourceGrid.Position(getLCell(i).Position.Row, 2);
-                            ((SourceGrid.Cells.Cell)getLCell(i).Grid.GetCell(P)).Value = inputData.s_rezba;
-                        }
                     }
                 }
             }
         }
 
         /// <summary>
-        /// Расширение InputData для токарного перехода
+        /// Расширение InputData для сверлильного перехода
         /// </summary>
-        public class TurningInptuData : InputData
+        public class DrillingInptuData : InputData
         {
             /// <summary>
-            /// поправка на материал детали
+            /// TODO Уточнить откуда брать этот коэффициент! Временно присвоено 1. 
+            /// </summary>
+            public float Kmp = 1;
+            /// <summary>
+            /// Используется для обозначения если операция сверлильная
+            /// в этом случае не используется поле d
+            /// </summary>
+            public bool isDrilling;
+            /// <summary>
+            /// поправка на обрабатываемый материал
             /// </summary>
             public float Kmv;
             /// <summary>
@@ -140,13 +144,21 @@ namespace My_Cal
             /// </summary>
             public float Kpv;
             /// <summary>
-            /// поправка на инструментальный материал
+            /// поправка на глубину резания
             /// </summary>
-            public float Kiv;
+            public float Kg;
+            /// <summary>
+            /// Диаметр исходного отверстия (для растачивания, зенкерования, рассверливания)
+            /// </summary>
+            public float d;
             /// <summary>
             /// эмпирический коэффициент параметра V
             /// </summary>
             public float Cv;
+            /// <summary>
+            /// эмпирический коэффициент параметра V
+            /// </summary>
+            public float qv;
             /// <summary>
             /// эмпирический коэффициент параметра V
             /// </summary>
@@ -160,37 +172,45 @@ namespace My_Cal
             /// </summary>
             public float mv;
             /// <summary>
-            /// эмпирический коэффициент параметра Pz
+            /// эмпирический коэффициент параметра Mкр
+            /// </summary>
+            public float Cm;
+            /// <summary>
+            /// эмпирический коэффициент параметра Mкр
+            /// </summary>
+            public float qm;
+            /// <summary>
+            /// эмпирический коэффициент параметра Mкр
+            /// </summary>
+            public float xm;
+            /// <summary>
+            /// эмпирический коэффициент параметра Mкр
+            /// </summary>
+            public float ym;
+            /// <summary>
+            /// эмпирический коэффициент параметра Po
             /// </summary>
             public float Cp;
             /// <summary>
-            /// эмпирический коэффициент параметра Pz
+            /// эмпирический коэффициент параметра Po
+            /// </summary>
+            public float qp;
+            /// <summary>
+            /// эмпирический коэффициент параметра Po
             /// </summary>
             public float xp;
             /// <summary>
-            /// эмпирический коэффициент параметра Pz
+            /// эмпирический коэффициент параметра Po
             /// </summary>
             public float yp;
-            /// <summary>
-            /// эмпирический коэффициент параметра Pz
-            /// </summary>
-            public float np;
-            /// <summary>
-            /// поправка на обрабатываемый материал
-            /// </summary>
-            public float Kmp;
-            /// <summary>
-            /// подача при нарезании резьбы
-            /// </summary>
-            public float s_rezba = 0;
 
         }
 
         /// <summary>
-        /// Расширение OutputData для токарного перехода
+        /// Расширение OutputData для сверлильного перехода
         /// </summary>
         /// TODO заменить public на  private внутри
-        public class TurningOutputData : OutputData
+        public class DrillingOutputData : OutputData
         {
         }
     }

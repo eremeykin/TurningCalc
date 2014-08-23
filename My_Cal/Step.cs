@@ -13,6 +13,7 @@ namespace My_Cal
         /// </summary>
         private SourceGrid.CellContext[] linkedCells = new SourceGrid.CellContext[9];
 
+
         /// <summary>
         /// Инкапсулирует получение связанных ячеек
         /// </summary>
@@ -119,7 +120,7 @@ namespace My_Cal
             /// <summary>
             /// сила резания
             /// </summary>
-            public float Pz;
+            public float P;
             /// <summary>
             /// момент резания
             /// </summary>

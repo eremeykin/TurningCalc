@@ -42,9 +42,9 @@ namespace My_Cal
             {
                 outputData.V = (inputData.Cv * inputData.Kv * (float)Math.Pow(inputData.D, inputData.qv)) / ((float)(Math.Pow(inputData.T, inputData.mv)) * ((float)(Math.Pow(inputData.t, inputData.xv))) * ((float)(Math.Pow(inputData.s, inputData.yv))) * ((float)(Math.Pow(inputData.B, inputData.uv))) * ((float)(Math.Pow(inputData.z, inputData.pv))));
                 outputData.n = (1000 * outputData.V) / ((float)Math.PI * inputData.D);
-                outputData.Pz = (10 * inputData.Cp * ((float)Math.Pow(inputData.t, inputData.xp)) * ((float)Math.Pow(inputData.s, inputData.yp)) * ((float)Math.Pow(inputData.B, inputData.up)) * inputData.z) / (((float)Math.Pow(inputData.D, inputData.qp)) * ((float)Math.Pow(outputData.n, inputData.wp)));
-                outputData.M = outputData.Pz * (inputData.D / 200);
-                outputData.N = (outputData.Pz * outputData.V) / (1020 * 60);
+                outputData.P = (10 * inputData.Cp * ((float)Math.Pow(inputData.t, inputData.xp)) * ((float)Math.Pow(inputData.s, inputData.yp)) * ((float)Math.Pow(inputData.B, inputData.up)) * inputData.z) / (((float)Math.Pow(inputData.D, inputData.qp)) * ((float)Math.Pow(outputData.n, inputData.wp)));
+                outputData.M = outputData.P * (inputData.D / 200);
+                outputData.N = (outputData.P * outputData.V) / (1020 * 60);
                 outputData.Sm = inputData.s * inputData.z * outputData.n;//s - подача на зуб!
                 return true;
             }
@@ -87,7 +87,7 @@ namespace My_Cal
         public override float getPz()
         {
             if (calc_all())
-                return outputData.Pz;
+                return outputData.P;
             else
                 return 0;
         }
