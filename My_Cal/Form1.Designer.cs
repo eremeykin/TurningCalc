@@ -37,7 +37,6 @@ namespace My_Cal
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.treeView1 = new System.Windows.Forms.TreeView();
             this.tabControl3 = new System.Windows.Forms.TabControl();
@@ -56,6 +55,9 @@ namespace My_Cal
             this.tabPage18 = new System.Windows.Forms.TabPage();
             this.grid15 = new SourceGrid.Grid();
             this.tabPage20 = new System.Windows.Forms.TabPage();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.grid16 = new SourceGrid.Grid();
+            this.grid17 = new SourceGrid.Grid();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.grid1 = new SourceGrid.Grid();
@@ -131,11 +133,6 @@ namespace My_Cal
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage1Mill = new System.Windows.Forms.TabPage();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
@@ -163,11 +160,6 @@ namespace My_Cal
             this.tabPage6Mill = new System.Windows.Forms.TabPage();
             this.grid5Mill = new SourceGrid.Grid();
             this.tabPage7Mill = new System.Windows.Forms.TabPage();
-            this.pictureBox10 = new System.Windows.Forms.PictureBox();
-            this.pictureBox9 = new System.Windows.Forms.PictureBox();
-            this.pictureBox8 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.label58 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label60 = new System.Windows.Forms.Label();
@@ -239,9 +231,6 @@ namespace My_Cal
             this.deleteStepToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.makeReportToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.grid16 = new SourceGrid.Grid();
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.grid17 = new SourceGrid.Grid();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -255,6 +244,10 @@ namespace My_Cal
             this.tabPage17.SuspendLayout();
             this.tabPage18.SuspendLayout();
             this.tabPage20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
+            this.splitContainer2.Panel1.SuspendLayout();
+            this.splitContainer2.Panel2.SuspendLayout();
+            this.splitContainer2.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -267,11 +260,6 @@ namespace My_Cal
             this.tabPage9.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabControl2.SuspendLayout();
             this.tabPage1Mill.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -281,18 +269,9 @@ namespace My_Cal
             this.tabPage5Mill.SuspendLayout();
             this.tabPage6Mill.SuspendLayout();
             this.tabPage7Mill.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox5.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
-            this.splitContainer2.Panel1.SuspendLayout();
-            this.splitContainer2.Panel2.SuspendLayout();
-            this.splitContainer2.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -528,6 +507,52 @@ namespace My_Cal
             this.tabPage20.TabIndex = 8;
             this.tabPage20.Text = "Результат";
             this.tabPage20.UseVisualStyleBackColor = true;
+            this.tabPage20.Enter += new System.EventHandler(this.tabPage20_Enter);
+            // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.grid16);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.grid17);
+            this.splitContainer2.Size = new System.Drawing.Size(832, 587);
+            this.splitContainer2.SplitterDistance = 277;
+            this.splitContainer2.TabIndex = 7;
+            // 
+            // grid16
+            // 
+            this.grid16.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid16.EnableSort = false;
+            this.grid16.Location = new System.Drawing.Point(0, 0);
+            this.grid16.Margin = new System.Windows.Forms.Padding(5);
+            this.grid16.Name = "grid16";
+            this.grid16.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid16.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid16.Size = new System.Drawing.Size(277, 587);
+            this.grid16.TabIndex = 6;
+            this.grid16.TabStop = true;
+            this.grid16.ToolTipText = "";
+            // 
+            // grid17
+            // 
+            this.grid17.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.grid17.EnableSort = false;
+            this.grid17.Location = new System.Drawing.Point(0, 0);
+            this.grid17.Margin = new System.Windows.Forms.Padding(5);
+            this.grid17.Name = "grid17";
+            this.grid17.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
+            this.grid17.SelectionMode = SourceGrid.GridSelectionMode.Cell;
+            this.grid17.Size = new System.Drawing.Size(551, 587);
+            this.grid17.TabIndex = 7;
+            this.grid17.TabStop = true;
+            this.grid17.ToolTipText = "";
             // 
             // tabControl1
             // 
@@ -789,11 +814,6 @@ namespace My_Cal
             this.tabPage9.Controls.Add(this.label2);
             this.tabPage9.Controls.Add(this.label1);
             this.tabPage9.Controls.Add(this.comboBox1);
-            this.tabPage9.Controls.Add(this.pictureBox5);
-            this.tabPage9.Controls.Add(this.pictureBox4);
-            this.tabPage9.Controls.Add(this.pictureBox3);
-            this.tabPage9.Controls.Add(this.pictureBox2);
-            this.tabPage9.Controls.Add(this.pictureBox1);
             this.tabPage9.Location = new System.Drawing.Point(4, 24);
             this.tabPage9.Name = "tabPage9";
             this.tabPage9.Padding = new System.Windows.Forms.Padding(3);
@@ -1378,60 +1398,15 @@ namespace My_Cal
             this.comboBox1.TabIndex = 0;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::My_Cal.Properties.Resources.N__2_;
-            this.pictureBox5.Location = new System.Drawing.Point(427, 473);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(169, 49);
-            this.pictureBox5.TabIndex = 51;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::My_Cal.Properties.Resources.M;
-            this.pictureBox4.Location = new System.Drawing.Point(427, 388);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(169, 43);
-            this.pictureBox4.TabIndex = 50;
-            this.pictureBox4.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = global::My_Cal.Properties.Resources.Pz;
-            this.pictureBox3.Location = new System.Drawing.Point(427, 302);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(169, 35);
-            this.pictureBox3.TabIndex = 49;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Image = global::My_Cal.Properties.Resources.n;
-            this.pictureBox2.Location = new System.Drawing.Point(427, 205);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(169, 50);
-            this.pictureBox2.TabIndex = 48;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::My_Cal.Properties.Resources.V;
-            this.pictureBox1.Location = new System.Drawing.Point(427, 112);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(169, 54);
-            this.pictureBox1.TabIndex = 45;
-            this.pictureBox1.TabStop = false;
-            // 
             // tabControl2
             // 
+            this.tabControl2.Controls.Add(this.tabPage7Mill);
             this.tabControl2.Controls.Add(this.tabPage1Mill);
             this.tabControl2.Controls.Add(this.tabPage2Mill);
             this.tabControl2.Controls.Add(this.tabPage3Mill);
             this.tabControl2.Controls.Add(this.tabPage4Mill);
             this.tabControl2.Controls.Add(this.tabPage5Mill);
             this.tabControl2.Controls.Add(this.tabPage6Mill);
-            this.tabControl2.Controls.Add(this.tabPage7Mill);
             this.tabControl2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tabControl2.Location = new System.Drawing.Point(0, 0);
             this.tabControl2.Name = "tabControl2";
@@ -1715,11 +1690,6 @@ namespace My_Cal
             // 
             // tabPage7Mill
             // 
-            this.tabPage7Mill.Controls.Add(this.pictureBox10);
-            this.tabPage7Mill.Controls.Add(this.pictureBox9);
-            this.tabPage7Mill.Controls.Add(this.pictureBox8);
-            this.tabPage7Mill.Controls.Add(this.pictureBox7);
-            this.tabPage7Mill.Controls.Add(this.pictureBox6);
             this.tabPage7Mill.Controls.Add(this.label58);
             this.tabPage7Mill.Controls.Add(this.groupBox5);
             this.tabPage7Mill.Controls.Add(this.groupBox4);
@@ -1762,51 +1732,6 @@ namespace My_Cal
             this.tabPage7Mill.Text = "Результат";
             this.tabPage7Mill.UseVisualStyleBackColor = true;
             this.tabPage7Mill.Enter += new System.EventHandler(this.tabPage7Mill_Enter);
-            // 
-            // pictureBox10
-            // 
-            this.pictureBox10.Image = global::My_Cal.Properties.Resources.NN_Mill;
-            this.pictureBox10.Location = new System.Drawing.Point(545, 285);
-            this.pictureBox10.Name = "pictureBox10";
-            this.pictureBox10.Size = new System.Drawing.Size(85, 37);
-            this.pictureBox10.TabIndex = 42;
-            this.pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            this.pictureBox9.Image = global::My_Cal.Properties.Resources.Pz_Mill;
-            this.pictureBox9.Location = new System.Drawing.Point(545, 205);
-            this.pictureBox9.Name = "pictureBox9";
-            this.pictureBox9.Size = new System.Drawing.Size(137, 49);
-            this.pictureBox9.TabIndex = 41;
-            this.pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            this.pictureBox8.Image = global::My_Cal.Properties.Resources.n_Mill;
-            this.pictureBox8.Location = new System.Drawing.Point(545, 144);
-            this.pictureBox8.Name = "pictureBox8";
-            this.pictureBox8.Size = new System.Drawing.Size(85, 32);
-            this.pictureBox8.TabIndex = 40;
-            this.pictureBox8.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(545, 82);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(65, 39);
-            this.pictureBox7.TabIndex = 39;
-            this.pictureBox7.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::My_Cal.Properties.Resources.V_Mill;
-            this.pictureBox6.Location = new System.Drawing.Point(545, 24);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(148, 48);
-            this.pictureBox6.TabIndex = 38;
-            this.pictureBox6.TabStop = false;
             // 
             // label58
             // 
@@ -2423,51 +2348,6 @@ namespace My_Cal
             this.exitToolStripMenuItem.Text = "Выход";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
-            // grid16
-            // 
-            this.grid16.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid16.EnableSort = false;
-            this.grid16.Location = new System.Drawing.Point(0, 0);
-            this.grid16.Margin = new System.Windows.Forms.Padding(5);
-            this.grid16.Name = "grid16";
-            this.grid16.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
-            this.grid16.SelectionMode = SourceGrid.GridSelectionMode.Cell;
-            this.grid16.Size = new System.Drawing.Size(277, 587);
-            this.grid16.TabIndex = 6;
-            this.grid16.TabStop = true;
-            this.grid16.ToolTipText = "";
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer2.Location = new System.Drawing.Point(3, 3);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.grid16);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.grid17);
-            this.splitContainer2.Size = new System.Drawing.Size(832, 587);
-            this.splitContainer2.SplitterDistance = 277;
-            this.splitContainer2.TabIndex = 7;
-            // 
-            // grid17
-            // 
-            this.grid17.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.grid17.EnableSort = false;
-            this.grid17.Location = new System.Drawing.Point(0, 0);
-            this.grid17.Margin = new System.Windows.Forms.Padding(5);
-            this.grid17.Name = "grid17";
-            this.grid17.OptimizeMode = SourceGrid.CellOptimizeMode.ForRows;
-            this.grid17.SelectionMode = SourceGrid.GridSelectionMode.Cell;
-            this.grid17.Size = new System.Drawing.Size(551, 587);
-            this.grid17.TabIndex = 7;
-            this.grid17.TabStop = true;
-            this.grid17.ToolTipText = "";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2494,6 +2374,10 @@ namespace My_Cal
             this.tabPage17.ResumeLayout(false);
             this.tabPage18.ResumeLayout(false);
             this.tabPage20.ResumeLayout(false);
+            this.splitContainer2.Panel1.ResumeLayout(false);
+            this.splitContainer2.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
+            this.splitContainer2.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
@@ -2509,11 +2393,6 @@ namespace My_Cal
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabControl2.ResumeLayout(false);
             this.tabPage1Mill.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
@@ -2525,21 +2404,12 @@ namespace My_Cal
             this.tabPage6Mill.ResumeLayout(false);
             this.tabPage7Mill.ResumeLayout(false);
             this.tabPage7Mill.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.splitContainer2.Panel1.ResumeLayout(false);
-            this.splitContainer2.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
-            this.splitContainer2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2550,6 +2420,7 @@ namespace My_Cal
         public MyCellTracking cellpointer;
         public MyRowTrecking rowpointer;
         public SourceGrid.Cells.Controllers.CustomEvents clickEvent;
+        public SourceGrid.Cells.Controllers.CustomEvents CellChangedEvent_rezba;
         public SourceGrid.Cells.Controllers.CustomEvents CellChangedEvent;
         public SQLiteConnection sqlite_conn;
         private SplitContainer splitContainer1;
@@ -2652,11 +2523,6 @@ namespace My_Cal
         private TextBox textBox24;
         private TextBox textBox23;
         private TextBox textBox22;
-        private PictureBox pictureBox10;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox7;
-        private PictureBox pictureBox6;
         private TabControl tabControl1;
         private TabPage tabPage1;
         private Grid grid1;
@@ -2732,11 +2598,6 @@ namespace My_Cal
         private Label label2;
         private Label label1;
         private ComboBox comboBox1;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem menu1ToolStripMenuItem;
         private ToolStripMenuItem makeTurningStepToolStripMenuItem;

@@ -11,6 +11,7 @@ namespace My_Cal
     //Исправить!!!
     class DrillingStep : Step
     {
+        public enum drillingKind { PRELIMINARY, FINAL, NONE }
 
         /// <summary>
         /// Поле для хранения входных данных
@@ -36,6 +37,16 @@ namespace My_Cal
 
         protected override bool calc_all()
         {
+            if (inputData.dk == drillingKind.PRELIMINARY)
+            {
+                inputData.d = (float)0.45 * inputData.D;
+                inputData.t = (float)0.5 * (inputData.D - inputData.d);
+            }
+            if (inputData.dk == drillingKind.FINAL)
+            {
+                inputData.d = (float)0.85 * inputData.D;
+                inputData.t = (float)0.5 * (inputData.D - inputData.d);
+            }
             //Если никакой из знаменателей не равен нулю
             if (inputData.T != 0 && inputData.t != 0 && inputData.s != 0)
             {
@@ -81,6 +92,8 @@ namespace My_Cal
         /// </summary>
         public class DrillingInptuData : InputData
         {
+
+            public drillingKind dk=drillingKind.NONE;
             /// <summary>
             /// TODO Уточнить откуда брать этот коэффициент! Временно присвоено 1. 
             /// </summary>

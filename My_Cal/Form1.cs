@@ -67,6 +67,10 @@ namespace My_Cal
             rowpointer = new MyRowTrecking();
             clickEvent = new SourceGrid.Cells.Controllers.CustomEvents();
             clickEvent.Click += new EventHandler(clickEvent_Click);
+            // Для резьбы
+            CellChangedEvent_rezba = new SourceGrid.Cells.Controllers.CustomEvents();
+            CellChangedEvent_rezba.EditEnded += new EventHandler(CellEvent_Changed_rezba);
+            // Для вкладки результат
             CellChangedEvent = new SourceGrid.Cells.Controllers.CustomEvents();
             CellChangedEvent.EditEnded += new EventHandler(CellEvent_Changed);
             foreach (SourceGrid.Grid GRID in tabControl1.Controls.Find("grid", true))//выставить выравнивание по центру для всех ячеек
@@ -288,7 +292,7 @@ namespace My_Cal
         private void DoFullTab4()
         {
             SQLreader sqlReader = new SQLreader("database.sqlite");
-            SQLiteDataReader sqlite_datareader = sqlReader.getReader( "KpV");
+            SQLiteDataReader sqlite_datareader = sqlReader.getReader("KpV");
             #region Код таблицы 5
             grid4.BorderStyle = BorderStyle.FixedSingle;
             grid4.Redim(4, 5);
@@ -504,9 +508,9 @@ namespace My_Cal
             grid6.Selection.EnableMultiSelection = false;
             //
 
-            grid6[7, 2].AddController(CellChangedEvent);
-            grid6[8, 2].AddController(CellChangedEvent);
-            grid6[14, 2].AddController(CellChangedEvent);
+            grid6[7, 2].AddController(CellChangedEvent_rezba);
+            grid6[8, 2].AddController(CellChangedEvent_rezba);
+            grid6[14, 2].AddController(CellChangedEvent_rezba);
 
             #endregion
         }
@@ -1475,6 +1479,9 @@ namespace My_Cal
             grid16.BorderStyle = BorderStyle.FixedSingle;
             grid16.Redim(25, 4);
             SourceGrid.Cells.Views.Cell viewImage = new SourceGrid.Cells.Views.Cell();
+            SourceGrid.Cells.Editors.TextBox tb = new SourceGrid.Cells.Editors.TextBox(typeof(float));
+            SourceGrid.Cells.Editors.ComboBox cb = new SourceGrid.Cells.Editors.ComboBox(typeof(float), new float[] { 20, 30, 40, 60, 90, 120 }, false);
+
             grid16[0, 0] = new SourceGrid.Cells.ColumnHeader("Входные параметры");
             grid16[0, 0].ColumnSpan = 4;
 
@@ -1492,11 +1499,12 @@ namespace My_Cal
             grid16[3, 0] = new SourceGrid.Cells.RowHeader("Период стойкости резца");
             grid16[3, 1] = new SourceGrid.Cells.RowHeader("T");
             grid16[3, 2] = new SourceGrid.Cells.Cell();
+            grid16[3, 2].AddController(CellChangedEvent);
             grid16[3, 3] = new SourceGrid.Cells.Cell("мин");
 
-            SourceGrid.Cells.Editors.ComboBox cb = new SourceGrid.Cells.Editors.ComboBox(typeof(float), new float[] { 20, 30, 40, 60, 90, 120 }, false);
             grid16[3, 2].Editor = cb;
             grid16[3, 2].Editor.EditableMode = EditableMode.SingleClick;
+
 
             grid16[4, 0] = new SourceGrid.Cells.RowHeader("Диаметр инструмента");
             grid16[4, 1] = new SourceGrid.Cells.RowHeader("D");
@@ -1598,14 +1606,18 @@ namespace My_Cal
             grid16[24, 2] = new SourceGrid.Cells.Cell();
             grid16[24, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
 
-            //grid16[25, 0] = new SourceGrid.Cells.ColumnHeader("Выходные параметры");
-            //grid16[25, 0].ColumnSpan = 4;
+            // Добавляем возможность редактировать и указываем событие при изменении значения
+            for (int r = 1; r < 25; r++)
+            {
+                if (r != 3 && r != 9 && r != 15 && r != 20)
+                {
+                    grid16[r, 2].Editor = tb;
+                    grid16[r, 2].AddController(CellChangedEvent);
+                    grid16[r, 2].AddController(new MyCellTracking());//наведение
+                    grid16[r, 2].AddController(new MyHelpRowTracking());//help row pointer
+                }
+            }
 
-            //grid16[26, 0] = new SourceGrid.Cells.RowHeader("Подача");
-            //grid16[26, 1] = new SourceGrid.Cells.RowHeader("S");
-            //grid16[26, 2] = new SourceGrid.Cells.Cell();
-            //grid16[26, 3] = new SourceGrid.Cells.Cell("мм/об");
-            //grid16[26, 0].Column.Width = 150;
 
             #endregion
         }
@@ -1616,54 +1628,42 @@ namespace My_Cal
             grid17.Redim(6, 4);
             grid17[0, 0] = new SourceGrid.Cells.ColumnHeader("Выходные параметры");
             grid17[0, 0].ColumnSpan = 4;
-            grid17[0, 0].Column.Width = 120;
 
             grid17[1, 0] = new SourceGrid.Cells.RowHeader("Скорость резания");
             grid17[1, 1] = new SourceGrid.Cells.RowHeader();
-            grid17[1, 1].Column.Width = 70;
 
             grid17[1, 1] = new SourceGrid.Cells.Cell();
-            grid17[1, 1].Image = Properties.Resources.V_Mill;
-            grid17[1, 1].Column.Width = 150;
-            grid17[1, 1].Row.Height = 70;
+            //Properties.Resources.V2.SetResolution((float)(Properties.Resources.V2.HorizontalResolution * 0.3), (float)(Properties.Resources.V2.VerticalResolution * 0.3));
+            grid17[1, 1].Image = Properties.Resources.V2;
 
             grid17[1, 2] = new SourceGrid.Cells.Cell();
             grid17[1, 3] = new SourceGrid.Cells.Cell("м/мин");
 
             grid17[2, 0] = new SourceGrid.Cells.RowHeader("Момент резания");
             grid17[2, 1] = new SourceGrid.Cells.RowHeader();
-            grid17[2, 1].Column.Width = 70;
 
             grid17[2, 1] = new SourceGrid.Cells.Cell();
-            grid17[2, 1].Image = Properties.Resources.V_Mill;
-            grid17[2, 1].Column.Width = 150;
-            grid17[2, 1].Row.Height = 70;
+            Bitmap bm = new Bitmap(Properties.Resources.M2);
+            bm.SetResolution(96.0F, 96.0F);
+            grid17[2, 1].Image = bm;//Properties.Resources.M2;
 
             grid17[2, 2] = new SourceGrid.Cells.Cell();
             grid17[2, 3] = new SourceGrid.Cells.Cell("Нм");
 
             grid17[3, 0] = new SourceGrid.Cells.RowHeader("Сила резания");
             grid17[3, 1] = new SourceGrid.Cells.RowHeader();
-            grid17[3, 1].Column.Width = 70;
 
             grid17[3, 1] = new SourceGrid.Cells.Cell();
-            grid17[3, 1].Image = Properties.Resources.V_Mill;
-            grid17[3, 1].Column.Width = 150;
-            grid17[3, 1].Row.Height = 70;
+            grid17[3, 1].Image = Properties.Resources.P2;
 
             grid17[3, 2] = new SourceGrid.Cells.Cell();
             grid17[3, 3] = new SourceGrid.Cells.Cell("Н");
 
-
-
             grid17[4, 0] = new SourceGrid.Cells.RowHeader("Потребляемая мощность");
             grid17[4, 1] = new SourceGrid.Cells.RowHeader();
-            grid17[4, 1].Column.Width = 70;
 
             grid17[4, 1] = new SourceGrid.Cells.Cell();
-            grid17[4, 1].Image = Properties.Resources.V_Mill;
-            grid17[4, 1].Column.Width = 150;
-            grid17[4, 1].Row.Height = 70;
+            grid17[4, 1].Image = Properties.Resources.N2;
 
             grid17[4, 2] = new SourceGrid.Cells.Cell();
             grid17[4, 3] = new SourceGrid.Cells.Cell("кВт");
@@ -1672,29 +1672,83 @@ namespace My_Cal
 
             grid17[5, 0] = new SourceGrid.Cells.RowHeader("Частота вращения шпинделя");
             grid17[5, 1] = new SourceGrid.Cells.RowHeader();
-            grid17[5, 1].Column.Width = 70;
 
             grid17[5, 1] = new SourceGrid.Cells.Cell();
-            grid17[5, 1].Image = Properties.Resources.V_Mill;
-            grid17[5, 1].Column.Width = 150;
-            grid17[5, 1].Row.Height = 70;
+            grid17[5, 1].Image = Properties.Resources.n_2_2;
 
             grid17[5, 2] = new SourceGrid.Cells.Cell();
             grid17[5, 3] = new SourceGrid.Cells.Cell("об/мин");
+
+            grid17.Columns[0].Width = 130;
+            grid17.Columns[1].Width = 350;
+            grid17.Columns[2].Width = 70;
+            grid17.Columns[3].Width = 70;
+
+            grid17.Rows[0].Height = 36;
+            grid17.Rows[1].Height = 60;
+            grid17.Rows[2].Height = 60;
+            grid17.Rows[3].Height = 60;
+            grid17.Rows[4].Height = 60;
+            grid17.Rows[5].Height = 60;
+
+
+
             #endregion
         }
         #endregion
+        private void DoFullGrid16_Drill()
+        {
+            grid16[1, 2].Value = ds.inputData.s;
+            grid16[2, 2].Value = ds.inputData.t;
+            grid16[3, 2].Value = ds.inputData.T;
+            grid16[4, 2].Value = ds.inputData.D;
+            grid16[5, 2].Value = ds.inputData.d;
+            grid16[6, 2].Value = ds.inputData.Kmv;
+            grid16[7, 2].Value = ds.inputData.Kpv;
+            grid16[8, 2].Value = ds.inputData.Kg;
 
+            grid16[10, 2].Value = ds.inputData.Cv;
+            grid16[11, 2].Value = ds.inputData.qv;
+            grid16[12, 2].Value = ds.inputData.xv;
+            grid16[13, 2].Value = ds.inputData.yv;
+            grid16[14, 2].Value = ds.inputData.mv;
+
+            grid16[16, 2].Value = ds.inputData.Cm;
+            grid16[17, 2].Value = ds.inputData.qm;
+            grid16[18, 2].Value = ds.inputData.xm;
+            grid16[19, 2].Value = ds.inputData.ym;
+
+            grid16[21, 2].Value = ds.inputData.Cp;
+            grid16[22, 2].Value = ds.inputData.qp;
+            grid16[23, 2].Value = ds.inputData.xp;
+            grid16[24, 2].Value = ds.inputData.yp;
+
+
+        }
+        private void DoFullGrid17_Drill()
+        {
+            grid17[1, 2].Value = ds.getV();
+            grid17[2, 2].Value = ds.getM();
+            grid17[3, 2].Value = ds.getP();
+            grid17[4, 2].Value = ds.getN();
+            grid17[5, 2].Value = ds.getn();
+            grid16[5, 2].Value = ds.inputData.d;
+            grid16[2, 2].Value = ds.inputData.t;
+
+        }
+        /// <summary>
+        /// Класс для SQLite соединения
+        /// </summary>
         private class SQLreader
         {
             private SQLiteConnection sqlite_conn = new SQLiteConnection();
             public SQLreader(String source)
             {
-                if (sqlite_conn.State!= ConnectionState.Open)
+                if (sqlite_conn.State != ConnectionState.Open)
                 {
-                sqlite_conn = new SQLiteConnection("Data Source=" + source + ";Version=3;New=True;Compress=True;");
-                sqlite_conn.Open();
-                    }
+                    sqlite_conn = new SQLiteConnection("Data Source=" + source + ";Version=3;New=True;Compress=True;");
+                    sqlite_conn.Open();
+                }
             }
             public SQLiteDataReader getReader(String dataBaseName)
             {
@@ -1702,7 +1756,7 @@ namespace My_Cal
                 sqlite_cmd.CommandText = "SELECT * FROM " + dataBaseName;
                 return sqlite_cmd.ExecuteReader();
             }
-           
+
             ~SQLreader()
             {
                 try
@@ -1715,10 +1769,10 @@ namespace My_Cal
             }
         }
         /// <summary>
-        /// Происходит при изменении значения ячейки
+        /// Событие происходит при изменении значения ячейки
         /// нужен для задания значения шага при точении резьбы
         /// </summary>
-        private void CellEvent_Changed(object sender, EventArgs e)
+        private void CellEvent_Changed_rezba(object sender, EventArgs e)
         {
             SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
             try
@@ -1735,6 +1789,91 @@ namespace My_Cal
                 grid6[7, 2].Value = "s=p";
             }
 
+        }
+
+        /// <summary>
+        /// Событие происходит при изменении значения ячейки во вкладке "Результат"
+        /// </summary>
+        private void CellEvent_Changed(object sender, EventArgs e)
+        {
+            SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
+            // Если это вкладка "Результат" для сверления
+            if (tabControl3.Controls.Find(context.Grid.Name, true).Length != 0)
+                drillingResultCell_Chenged(context, e);
+        }
+
+        /// <summary>
+        /// Вызывается когда изменена ячейка на вкладке "Результат" для сверлильного перехода
+        /// </summary>
+        private void drillingResultCell_Chenged(SourceGrid.CellContext context, EventArgs e)
+        {
+            switch (context.Position.Row)
+            {
+                case 1:
+                    ds.inputData.s = (float)context.Value;
+                    break;
+                case 2:
+                    ds.inputData.t = (float)context.Value;
+                    break;
+                case 3:
+                    ds.inputData.T = (float)context.Value;
+                    break;
+                case 4:
+                    ds.inputData.D = (float)context.Value;
+                    break;
+                case 5:
+                    ds.inputData.d = (float)context.Value;
+                    break;
+                case 6:
+                    ds.inputData.Kmv = (float)context.Value;
+                    break;
+                case 7:
+                    ds.inputData.Kpv = (float)context.Value;
+                    break;
+                case 8:
+                    ds.inputData.Kg = (float)context.Value;
+                    break;
+                case 10:
+                    ds.inputData.Cv = (float)context.Value;
+                    break;
+                case 11:
+                    ds.inputData.qv = (float)context.Value;
+                    break;
+                case 12:
+                    ds.inputData.xv = (float)context.Value;
+                    break;
+                case 13:
+                    ds.inputData.yv = (float)context.Value;
+                    break;
+                case 14:
+                    ds.inputData.mv = (float)context.Value;
+                    break;
+                case 16:
+                    ds.inputData.Cm = (float)context.Value;
+                    break;
+                case 17:
+                    ds.inputData.qm = (float)context.Value;
+                    break;
+                case 18:
+                    ds.inputData.xm = (float)context.Value;
+                    break;
+                case 19:
+                    ds.inputData.ym = (float)context.Value;
+                    break;
+                case 21:
+                    ds.inputData.Cp = (float)context.Value;
+                    break;
+                case 22:
+                    ds.inputData.qp = (float)context.Value;
+                    break;
+                case 23:
+                    ds.inputData.xp = (float)context.Value;
+                    break;
+                case 24:
+                    ds.inputData.yp = (float)context.Value;
+                    break;
+            }
+            DoFullGrid17_Drill();
         }
 
         /// <summary>
@@ -1865,7 +2004,18 @@ namespace My_Cal
         private void clickEvent_Click(object sender, EventArgs e)
         {
             SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
-
+            if (context.Grid.Parent.Parent == this.tabControl1)
+                turningCellClick(context, e);
+            if (context.Grid.Parent.Parent == this.tabControl2)
+                millingCellClick(context, e);
+            if (context.Grid.Parent.Parent == this.tabControl3)
+                drillingCellClick(context, e);
+        }
+        /// <summary>
+        /// Нажатие на ячейку для точения
+        /// </summary>
+        private void turningCellClick(CellContext context, EventArgs e)
+        {
             if (context.Grid.Handle == grid1.Handle)
             {
                 ts.inputData.t = Convert.ToSingle(context.Value);
@@ -1937,6 +2087,12 @@ namespace My_Cal
             {
                 Utils.RowSelector(context);
             }
+        }
+        /// <summary>
+        /// Нажатие на ячейку для фрезерования
+        /// </summary>
+        private void millingCellClick(CellContext context, EventArgs e)
+        {
 
             if (context.Grid.Handle == grid1Mill.Handle)
             {
@@ -1996,6 +2152,88 @@ namespace My_Cal
                 }
             }
         }
+        /// <summary>
+        /// Нажатие на ячейку для сверления
+        /// </summary>
+        private void drillingCellClick(CellContext context, EventArgs e)
+        {
+            if (context.Grid.Handle == grid9.Handle)
+            {
+                if (context.Position.Row == 3 || context.Position.Row == 4)
+                {
+                    if (context.Position.Row == 3)
+                    {
+                        ds.inputData.dk = My_Cal.DrillingStep.drillingKind.PRELIMINARY;
+                        ds.setLCell(1, context);
+                    }
+                    if (context.Position.Row == 4)
+                    {
+                        ds.inputData.dk = My_Cal.DrillingStep.drillingKind.FINAL;
+                        ds.setLCell(1, context);
+                    }
+                }
+                else
+                {
+                    ds.inputData.dk = DrillingStep.drillingKind.NONE;
+                    ds.inputData.t = Convert.ToSingle(context.Value);
+                    ds.setLCell(1, context);
+                }
+                Utils.CellSelector(context);
+            }
+            if (context.Grid.Handle == grid10.Handle)
+            {
+                ds.inputData.s = Convert.ToSingle(context.Value);
+                ds.setLCell(2, context);
+                Utils.CellSelector(context);
+            }
+            if (context.Grid.Handle == grid11.Handle)
+            {
+                ds.inputData.Kmv = Convert.ToSingle(context.Value);
+                ds.setLCell(3, context);
+                Utils.CellSelector(context);
+            }
+            if (context.Grid.Handle == grid12.Handle)
+            {
+                ds.inputData.Kpv = Convert.ToSingle(context.Value);
+                ds.setLCell(4, context);
+                Utils.CellSelector(context);
+            }
+            if (context.Grid.Handle == grid13.Handle)
+            {
+                ds.inputData.Kg = Convert.ToSingle(context.Value);
+                ds.setLCell(5, context);
+                Utils.CellSelector(context);
+            }
+            if (context.Grid.Handle == grid14.Handle)
+            {
+                ds.inputData.Cv = Convert.ToSingle(grid14[context.Position.Row, 3].Value);
+                ds.inputData.qv = Convert.ToSingle(grid14[context.Position.Row, 4].Value);
+                ds.inputData.xv = Convert.ToSingle(grid14[context.Position.Row, 5].Value);
+                ds.inputData.yv = Convert.ToSingle(grid14[context.Position.Row, 6].Value);
+                ds.inputData.mv = Convert.ToSingle(grid14[context.Position.Row, 7].Value);
+                ds.setLCell(6, context);
+                Utils.RowSelector(context);
+            }
+            if (context.Grid.Handle == grid15.Handle)
+            {
+                ds.inputData.Cm = Convert.ToSingle(grid15[context.Position.Row, 3].Value);
+                ds.inputData.qm = Convert.ToSingle(grid15[context.Position.Row, 4].Value);
+                try
+                {
+                    ds.inputData.xm = Convert.ToSingle(grid15[context.Position.Row, 5].Value);
+                    ds.inputData.xp = Convert.ToSingle(grid15[context.Position.Row, 9].Value);
+                }
+                catch (Exception)
+                {
+                }
+                ds.inputData.ym = Convert.ToSingle(grid15[context.Position.Row, 6].Value);
+                ds.inputData.Cp = Convert.ToSingle(grid15[context.Position.Row, 7].Value);
+                ds.inputData.qp = Convert.ToSingle(grid15[context.Position.Row, 8].Value);
+                ds.inputData.yp = Convert.ToSingle(grid15[context.Position.Row, 10].Value);
+                ds.setLCell(7, context);
+                Utils.RowSelector(context);
+            }
+        }
 
         /// <summary>
         /// Вход на вкладку "Результат" для токарного перехода
@@ -2025,7 +2263,6 @@ namespace My_Cal
             comboBox1.SelectedIndex = ts.cBoxIndex;
             if (ts)
             {
-
                 textBox17.Text = Convert.ToString(ts.getV());
                 textBox18.Text = Convert.ToString(ts.getn());
                 textBox19.Text = Convert.ToString(ts.getP());
@@ -2431,12 +2668,21 @@ namespace My_Cal
             if (s is DrillingStep)
             {
                 ds = (DrillingStep)s;
+                DoFullGrid16_Drill();
+                DoFullGrid17_Drill();
                 tabControl2.Visible = false;
                 tabControl1.Visible = false;
                 tabControl3.Visible = true;
                 Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
                 ds.ReturnSelect();
             }
+        }
+
+        private void tabPage20_Enter(object sender, EventArgs e)
+        {
+
+            DoFullGrid16_Drill();
+            DoFullGrid17_Drill();
         }
 
     }

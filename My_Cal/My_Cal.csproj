@@ -26,6 +26,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -36,15 +37,17 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x86</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="SourceGrid">
@@ -124,6 +127,26 @@
     <None Include="Resources\n.jpg" />
     <None Include="Resources\M.jpg" />
     <None Include="Resources\Pz.gif" />
+    <None Include="Resources\V_Mill.jpg" />
+    <None Include="Resources\Pz_Mill.jpg" />
+    <None Include="Resources\NN_Mill.jpg" />
+    <None Include="Resources\n_Mill.jpg" />
+    <None Include="Resources\latex\Turning\V.gif" />
+    <None Include="Resources\latex\Turning\P.gif" />
+    <None Include="Resources\latex\Turning\N.gif" />
+    <None Include="Resources\latex\Turning\n%282%29.gif" />
+    <None Include="Resources\latex\Turning\M.gif" />
+    <None Include="Resources\latex\Milling\V.gif" />
+    <None Include="Resources\latex\Milling\P.gif" />
+    <None Include="Resources\latex\Milling\N.gif" />
+    <None Include="Resources\latex\Milling\n%282%29.gif" />
+    <None Include="Resources\latex\Milling\M.gif" />
+    <None Include="Resources\latex\Drilling\V.gif" />
+    <None Include="Resources\latex\Drilling\P.gif" />
+    <None Include="Resources\latex\Drilling\N.gif" />
+    <None Include="Resources\latex\Drilling\n%282%29.gif" />
+    <None Include="Resources\latex\Drilling\M.gif" />
+    <None Include="Resources\latex\Turning\latex.txt" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
