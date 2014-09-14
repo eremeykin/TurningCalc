@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,7 +12,7 @@ namespace My_Cal
     //Исправить!!!
     class DrillingStep : Step
     {
-        public enum drillingKind { PRELIMINARY, FINAL, NONE }
+        public enum drillingKind { DRILLING, PRELIMINARY, FINAL, NONE }
 
         /// <summary>
         /// Поле для хранения входных данных
@@ -47,6 +48,10 @@ namespace My_Cal
                 inputData.d = (float)0.85 * inputData.D;
                 inputData.t = (float)0.5 * (inputData.D - inputData.d);
             }
+            if (inputData.dk == drillingKind.DRILLING)
+            {
+                inputData.t = (float)0.5 * (inputData.D);
+            }
             //Если никакой из знаменателей не равен нулю
             if (inputData.T != 0 && inputData.t != 0 && inputData.s != 0)
             {
@@ -56,9 +61,9 @@ namespace My_Cal
                 outputData.M = 10 * inputData.Cm * (float)Math.Pow(inputData.D, inputData.qm) * (float)Math.Pow(inputData.s, inputData.ym) * inputData.Kmp;
                 outputData.P = 10 * inputData.Cp * (float)Math.Pow(inputData.D, inputData.qp) * (float)Math.Pow(inputData.s, inputData.yp) * inputData.Kmp;
                 // если учитывается d
-                if (!inputData.isDrilling)
+                if (inputData.dk != drillingKind.DRILLING)
                 {
-                    outputData.M = outputData.M * (float)Math.Pow(inputData.t,inputData.xm);
+                    outputData.M = outputData.M * (float)Math.Pow(inputData.t, inputData.xm);
                     outputData.P = outputData.P * (float)Math.Pow(inputData.t, inputData.xp);
                 }
                 outputData.N = (outputData.M * outputData.n) / 9750;
@@ -93,16 +98,11 @@ namespace My_Cal
         public class DrillingInptuData : InputData
         {
 
-            public drillingKind dk=drillingKind.NONE;
+            public drillingKind dk = drillingKind.NONE;
             /// <summary>
             /// TODO Уточнить откуда брать этот коэффициент! Временно присвоено 1. 
             /// </summary>
             public float Kmp = 1;
-            /// <summary>
-            /// Используется для обозначения если операция сверлильная
-            /// в этом случае не используется поле d
-            /// </summary>
-            public bool isDrilling;
             /// <summary>
             /// поправка на обрабатываемый материал
             /// </summary>
@@ -172,8 +172,9 @@ namespace My_Cal
             /// </summary>
             public float yp;
 
-        }
 
+
+        }
     }
 }
 

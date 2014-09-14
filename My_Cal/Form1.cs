@@ -13,6 +13,8 @@ using SourceGrid.Selection;
 using System.Collections;
 using System.IO;
 using System.Diagnostics;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 
 
@@ -62,6 +64,28 @@ namespace My_Cal
             DoFullRusultTab1_Drill();
             DoFullResultTab2_Drill();
             tabControl3.Visible = false;
+            #region Изменение шрифта
+            foreach (Control contr in this.Controls)
+            {
+                contr.Font = new Font("Microsoft Sans Serif", 10);
+            }
+            foreach (TabPage page in tabControl1.Controls)
+            {
+                foreach (Control grid in page.Controls)
+                    grid.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            foreach (TabPage page in tabControl2.Controls)
+            {
+                foreach (Control grid in page.Controls)
+                    grid.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            foreach (TabPage page in tabControl3.Controls)
+            {
+                foreach (Control grid in page.Controls)
+                    grid.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            this.tabControl2.Font = new Font("Microsoft Sans Serif", 8);
+            #endregion
         }
         private void CustomInitialization()
         {
@@ -77,7 +101,7 @@ namespace My_Cal
             // Для вкладки результат 
             CellChangedEvent = new SourceGrid.Cells.Controllers.CustomEvents();
             CellChangedEvent.EditEnded += new EventHandler(CellEvent_Changed);
-            
+
             foreach (SourceGrid.Grid GRID in tabControl1.Controls.Find("grid", true))//выставить выравнивание по центру для всех ячеек
             {
                 for (int r = 0; r < GRID.Rows.Count; r++)
@@ -170,7 +194,12 @@ namespace My_Cal
             grid1.Selection.EnableMultiSelection = false;
             #endregion
 
+            foreach (SourceGrid.GridColumn col in grid1.Columns)
+                col.Width=100;
+            grid1.Columns[2].Width = 150;
 
+            foreach (SourceGrid.GridRow row in grid1.Rows)
+                row.Height = 25;
         }
         private void DoFullTab2()
         {
@@ -258,6 +287,13 @@ namespace My_Cal
             grid2.EnableSort = false;
             grid2.Selection.EnableMultiSelection = false;
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid2.Columns)
+                col.Width = 100;
+            grid2.Columns[2].Width = 150;
+
+            foreach (SourceGrid.GridRow row in grid2.Rows)
+                row.Height = 25;
         }
         private void DoFullTab3()
         {
@@ -293,6 +329,12 @@ namespace My_Cal
             grid3.EnableSort = false;
             grid3.Selection.EnableMultiSelection = false;
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid3.Columns)
+                col.Width = 100;
+            grid3.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid3.Rows)
+                row.Height = 25;
         }
         private void DoFullTab4()
         {
@@ -330,6 +372,11 @@ namespace My_Cal
             grid4.EnableSort = false;
             grid4.Selection.EnableMultiSelection = false;
             #endregion
+            foreach (SourceGrid.GridColumn col in grid4.Columns)
+                col.Width = 100;
+            grid4.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid4.Rows)
+                row.Height = 25;
         }
         private void DoFullTab5()
         {
@@ -413,6 +460,12 @@ namespace My_Cal
             grid5.EnableSort = false;
             grid5.Selection.EnableMultiSelection = false;
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid5.Columns)
+                col.Width = 100;
+            grid5.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid5.Rows)
+                row.Height = 25;
         }
         private void DoFullTab6()
         {
@@ -518,6 +571,12 @@ namespace My_Cal
             grid6[14, 2].AddController(CellChangedEvent_rezba);
 
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid6.Columns)
+                col.Width = 100;
+            grid6.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid6.Rows)
+                row.Height = 25;
         }
         private void DoFullTab7()
         {
@@ -602,9 +661,16 @@ namespace My_Cal
             grid7.EnableSort = false;
             grid7.Selection.EnableMultiSelection = false;
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid7.Columns)
+                col.Width = 100;
+            grid7.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid7.Rows)
+                row.Height = 25;
         }
         private void DoFullTab8()
         {
+
             SQLreader sqlReader = new SQLreader("database.sqlite");
             SQLiteDataReader sqlite_datareader = sqlReader.getReader("KmP");
             #region Код таблицы 9
@@ -637,6 +703,13 @@ namespace My_Cal
             grid8.EnableSort = false;
             grid8.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid8.Columns)
+                col.Width = 100;
+            grid8.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid8.Rows)
+                row.Height = 25;
         }
 
         private void DoFullRusultTab1_Turning()
@@ -654,19 +727,19 @@ namespace My_Cal
             grid18[row, 0] = new SourceGrid.Cells.RowHeader("Подача");
             grid18[row, 1] = new SourceGrid.Cells.RowHeader("S");
             grid18[row, 2] = new SourceGrid.Cells.Cell();
-            grid18[row, 3] = new SourceGrid.Cells.Cell("мм/об");
+            grid18[row, 3] = new SourceGrid.Cells.ColumnHeader("мм/об");
             grid18[row, 0].Column.Width = 150;
             row++;
             grid18[row, 0] = new SourceGrid.Cells.RowHeader("Глубина резания");
             grid18[row, 1] = new SourceGrid.Cells.RowHeader("t");
             grid18[row, 2] = new SourceGrid.Cells.Cell();
-            grid18[row, 3] = new SourceGrid.Cells.Cell("мм");
+            grid18[row, 3] = new SourceGrid.Cells.ColumnHeader("мм");
             row++;
             grid18[row, 0] = new SourceGrid.Cells.RowHeader("Период стойкости резца");
             grid18[row, 1] = new SourceGrid.Cells.RowHeader("T");
             grid18[row, 2] = new SourceGrid.Cells.Cell();
             grid18[row, 2].AddController(CellChangedEvent);
-            grid18[row, 3] = new SourceGrid.Cells.Cell("мин");
+            grid18[row, 3] = new SourceGrid.Cells.ColumnHeader("мин");
 
             grid18[row, 2].Editor = cb;
             grid18[row, 2].Editor.EditableMode = EditableMode.SingleClick;
@@ -675,31 +748,31 @@ namespace My_Cal
             grid18[row, 0] = new SourceGrid.Cells.RowHeader("Диаметр инструмента");
             grid18[row, 1] = new SourceGrid.Cells.RowHeader("D");
             grid18[row, 2] = new SourceGrid.Cells.Cell();
-            grid18[row, 3] = new SourceGrid.Cells.Cell("мм");
+            grid18[row, 3] = new SourceGrid.Cells.ColumnHeader("мм");
             row++;
 
             grid18[row, 0] = new SourceGrid.Cells.RowHeader("Поправка на инструментальный материал");
             grid18[row, 1] = new SourceGrid.Cells.RowHeader("Киv");
             grid18[row, 2] = new SourceGrid.Cells.Cell();
-            grid18[row, 3] = new SourceGrid.Cells.Cell("мм");
+            grid18[row, 3] = new SourceGrid.Cells.ColumnHeader("мм");
             row++;
 
             grid18[row, 0] = new SourceGrid.Cells.RowHeader("Поправка на обрабатываемый материал");
             grid18[row, 1] = new SourceGrid.Cells.RowHeader("Kмv");
             grid18[row, 2] = new SourceGrid.Cells.Cell();
-            grid18[row, 3] = new SourceGrid.Cells.Cell("б/р");
+            grid18[row, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
             row++;
 
             grid18[row, 0] = new SourceGrid.Cells.RowHeader("Поправка на состояние поверхности");
             grid18[row, 1] = new SourceGrid.Cells.RowHeader("Kпv");
             grid18[row, 2] = new SourceGrid.Cells.Cell();
-            grid18[row, 3] = new SourceGrid.Cells.Cell("б/р");
+            grid18[row, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
             row++;
 
             grid18[row, 0] = new SourceGrid.Cells.RowHeader("Поправка на глубину отверстия");
             grid18[row, 1] = new SourceGrid.Cells.RowHeader("Kмp");
             grid18[row, 2] = new SourceGrid.Cells.Cell();
-            grid18[row, 3] = new SourceGrid.Cells.Cell("б/р");
+            grid18[row, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
             row++;
 
             grid18[row, 0] = new SourceGrid.Cells.ColumnHeader("Эмпирические коэффициенты скорости резания");
@@ -761,17 +834,24 @@ namespace My_Cal
             // Добавляем возможность редактировать и указываем событие при изменении значения
             for (int r = 1; r < grid18.RowsCount; r++)
             {
-                if (r!=3 && r!=9 && r!=14)
+                if (r != 3 && r != 9 && r != 14)
                 {
                     grid18[r, 2].Editor = tb;
                     grid18[r, 2].AddController(CellChangedEvent);
                     grid18[r, 2].AddController(new MyCellTracking());//наведение
-                    grid18[r, 2].AddController(new MyHelpRowTracking());//help row pointer
+                    //grid18[r, 2].AddController(new MyHelpRowTracking());//help row pointer
                 }
             }
 
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid18.Columns)
+                col.Width = 80;
+            grid18.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid18.Rows)
+                r.Height = 25;
         }
         private void DoFullResultTab2_Turning()
         {
@@ -812,7 +892,7 @@ namespace My_Cal
 
             grid19[row, 2] = new SourceGrid.Cells.Cell();
             grid19[row, 3] = new SourceGrid.Cells.Cell("Нм");
-            
+
             row++;
             grid19[row, 0] = new SourceGrid.Cells.RowHeader("Потребляемая мощность");
             grid19[row, 1] = new SourceGrid.Cells.RowHeader();
@@ -835,7 +915,7 @@ namespace My_Cal
             grid19[row, 3] = new SourceGrid.Cells.Cell("об/мин");
 
             grid19.Columns[0].Width = 130;
-            grid19.Columns[1].Width = 350;
+            grid19.Columns[1].Width = 210;
             grid19.Columns[2].Width = 70;
             grid19.Columns[3].Width = 70;
 
@@ -971,6 +1051,13 @@ namespace My_Cal
             grid1Mill.EnableSort = false;
             grid1Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid1Mill.Columns)
+                col.Width = 60;
+            grid1Mill.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid1Mill.Rows)
+                row.Height = 25;
         }
         public void DoFullTab2_Mill()
         {
@@ -1013,6 +1100,12 @@ namespace My_Cal
             grid2Mill.EnableSort = false;
             grid2Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid2Mill.Columns)
+                col.Width = 100;
+            foreach (SourceGrid.GridRow row in grid2Mill.Rows)
+                row.Height = 25;
         }
         public void DoFullTab3_Mill()
         {
@@ -1054,6 +1147,13 @@ namespace My_Cal
             grid3Mill.EnableSort = false;
             grid3Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid3Mill.Columns)
+                col.Width = 150;
+            grid3Mill.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow row in grid3Mill.Rows)
+                row.Height = 25;
         }
         public void DoFullTab4_Mill()
         {
@@ -1083,6 +1183,13 @@ namespace My_Cal
             grid4Mill.EnableSort = false;
             grid4Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid4Mill.Columns)
+                col.Width = 100;
+            grid4Mill.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow row in grid4Mill.Rows)
+                row.Height = 25;
         }
         public void DoFullTab5_Mill()
         {
@@ -1158,6 +1265,13 @@ namespace My_Cal
             grid5Mill.EnableSort = false;
             grid5Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid5Mill.Columns)
+                col.Width = 100;
+            grid5Mill.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow row in grid5Mill.Rows)
+                row.Height = 25;
         }
         #endregion
 
@@ -1176,19 +1290,19 @@ namespace My_Cal
             grid20[row, 0] = new SourceGrid.Cells.RowHeader("Подача");
             grid20[row, 1] = new SourceGrid.Cells.RowHeader("S");
             grid20[row, 2] = new SourceGrid.Cells.Cell();
-            grid20[row, 3] = new SourceGrid.Cells.Cell("мм/об");
+            grid20[row, 3] = new SourceGrid.Cells.ColumnHeader("мм/об");
             grid20[row, 0].Column.Width = 150;
             row++;
             grid20[row, 0] = new SourceGrid.Cells.RowHeader("Глубина резания");
             grid20[row, 1] = new SourceGrid.Cells.RowHeader("t");
             grid20[row, 2] = new SourceGrid.Cells.Cell();
-            grid20[row, 3] = new SourceGrid.Cells.Cell("мм");
+            grid20[row, 3] = new SourceGrid.Cells.ColumnHeader("мм");
             row++;
             grid20[row, 0] = new SourceGrid.Cells.RowHeader("Период стойкости резца");
             grid20[row, 1] = new SourceGrid.Cells.RowHeader("T");
             grid20[row, 2] = new SourceGrid.Cells.Cell();
             grid20[row, 2].AddController(CellChangedEvent);
-            grid20[row, 3] = new SourceGrid.Cells.Cell("мин");
+            grid20[row, 3] = new SourceGrid.Cells.ColumnHeader("мин");
 
             grid20[row, 2].Editor = cb;
             grid20[row, 2].Editor.EditableMode = EditableMode.SingleClick;
@@ -1197,31 +1311,31 @@ namespace My_Cal
             grid20[row, 0] = new SourceGrid.Cells.RowHeader("Диаметр инструмента");
             grid20[row, 1] = new SourceGrid.Cells.RowHeader("D");
             grid20[row, 2] = new SourceGrid.Cells.Cell();
-            grid20[row, 3] = new SourceGrid.Cells.Cell("мм");
+            grid20[row, 3] = new SourceGrid.Cells.ColumnHeader("мм");
             row++;
 
             grid20[row, 0] = new SourceGrid.Cells.RowHeader("Количество зубьев фрезы");
             grid20[row, 1] = new SourceGrid.Cells.RowHeader("z");
             grid20[row, 2] = new SourceGrid.Cells.Cell();
-            grid20[row, 3] = new SourceGrid.Cells.Cell("шт");
+            grid20[row, 3] = new SourceGrid.Cells.ColumnHeader("шт");
             row++;
 
             grid20[row, 0] = new SourceGrid.Cells.RowHeader("Ширина фрезы");
             grid20[row, 1] = new SourceGrid.Cells.RowHeader("B");
             grid20[row, 2] = new SourceGrid.Cells.Cell();
-            grid20[row, 3] = new SourceGrid.Cells.Cell("мм");
+            grid20[row, 3] = new SourceGrid.Cells.ColumnHeader("мм");
             row++;
 
             grid20[row, 0] = new SourceGrid.Cells.RowHeader("Поправка на обрабатываемый материал");
             grid20[row, 1] = new SourceGrid.Cells.RowHeader("Kv");
             grid20[row, 2] = new SourceGrid.Cells.Cell();
-            grid20[row, 3] = new SourceGrid.Cells.Cell("б/р");
+            grid20[row, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
             row++;
 
             grid20[row, 0] = new SourceGrid.Cells.RowHeader("Поправка на обрабатываемый материал");
             grid20[row, 1] = new SourceGrid.Cells.RowHeader("Kp");
             grid20[row, 2] = new SourceGrid.Cells.Cell();
-            grid20[row, 3] = new SourceGrid.Cells.Cell("б/р");
+            grid20[row, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
             row++;
 
             grid20[row, 0] = new SourceGrid.Cells.ColumnHeader("Эмпирические коэффициенты скорости резания");
@@ -1312,17 +1426,24 @@ namespace My_Cal
             // Добавляем возможность редактировать и указываем событие при изменении значения
             for (int r = 1; r < grid20.RowsCount; r++)
             {
-                if (r != 3 && r != 9 && r != 14)
+                if (r != 3 && r != 9 && r!=17)
                 {
                     grid20[r, 2].Editor = tb;
                     grid20[r, 2].AddController(CellChangedEvent);
                     grid20[r, 2].AddController(new MyCellTracking());//наведение
-                    grid20[r, 2].AddController(new MyHelpRowTracking());//help row pointer
+                    //grid20[r, 2].AddController(new MyHelpRowTracking());//help row pointer
                 }
             }
 
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid20.Columns)
+                col.Width = 80;
+            grid20.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid20.Rows)
+                r.Height = 25;
         }
         private void DoFullResultTab2_Milling()
         {
@@ -1386,7 +1507,7 @@ namespace My_Cal
             grid21[row, 3] = new SourceGrid.Cells.Cell("об/мин");
 
             grid21.Columns[0].Width = 130;
-            grid21.Columns[1].Width = 350;
+            grid21.Columns[1].Width = 210;
             grid21.Columns[2].Width = 70;
             grid21.Columns[3].Width = 70;
 
@@ -1396,7 +1517,7 @@ namespace My_Cal
             grid21.Rows[3].Height = 60;
             grid21.Rows[4].Height = 60;
             grid21.Rows[5].Height = 60;
-            
+
             #endregion
         }
         private void DoFullGrid20_Milling()
@@ -1421,10 +1542,10 @@ namespace My_Cal
             grid20[18, 2].Value = ms.inputData.Cp;
             grid20[19, 2].Value = ms.inputData.qp;
             grid20[20, 2].Value = ms.inputData.xp;
-            grid20[21, 2].Value = ms.inputData.yp; 
+            grid20[21, 2].Value = ms.inputData.yp;
             grid20[22, 2].Value = ms.inputData.up;
             grid20[23, 2].Value = ms.inputData.wp;
-            
+
 
         }
         private void DoFullGrid21_Milling()
@@ -1557,6 +1678,13 @@ namespace My_Cal
                 }
             }
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid9.Columns)
+                col.Width = 100;
+            grid9.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid9.Rows)
+                r.Height = 25;
         }
         private void DoFullTab2_Drill()
         {
@@ -1660,6 +1788,13 @@ namespace My_Cal
 
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid10.Columns)
+                col.Width = 100;
+            grid10.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid10.Rows)
+                r.Height = 25;
         }
         private void DoFullTab3_Drill()
         {
@@ -1692,6 +1827,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid11.Columns)
+                col.Width = 100;
+            grid11.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid11.Rows)
+                r.Height = 25;
         }
         private void DoFullTab4_Drill()
         {
@@ -1732,6 +1874,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid12.Columns)
+                col.Width = 100;
+            grid12.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid12.Rows)
+                r.Height = 25;
         }
         private void DoFullTab5_Drill()
         {
@@ -1767,6 +1916,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid13.Columns)
+                col.Width = 100;
+            grid13.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid13.Rows)
+                r.Height = 25;
         }
         private void DoFullTab6_Drill()
         {
@@ -1917,6 +2073,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid14.Columns)
+                col.Width = 80;
+            grid14.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid14.Rows)
+                r.Height = 25;
         }
         private void DoFullTab7_Drill()
         {
@@ -1997,6 +2160,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid15.Columns)
+                col.Width = 80;
+            grid15.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid15.Rows)
+                r.Height = 25;
         }
         private void DoFullRusultTab1_Drill()
         {
@@ -2013,19 +2183,19 @@ namespace My_Cal
             grid16[1, 0] = new SourceGrid.Cells.RowHeader("Подача");
             grid16[1, 1] = new SourceGrid.Cells.RowHeader("S");
             grid16[1, 2] = new SourceGrid.Cells.Cell();
-            grid16[1, 3] = new SourceGrid.Cells.Cell("мм/об");
+            grid16[1, 3] = new SourceGrid.Cells.ColumnHeader("мм/об");
             grid16[1, 0].Column.Width = 150;
 
             grid16[2, 0] = new SourceGrid.Cells.RowHeader("Глубина резания");
             grid16[2, 1] = new SourceGrid.Cells.RowHeader("t");
             grid16[2, 2] = new SourceGrid.Cells.Cell();
-            grid16[2, 3] = new SourceGrid.Cells.Cell("мм");
+            grid16[2, 3] = new SourceGrid.Cells.ColumnHeader("мм");
 
             grid16[3, 0] = new SourceGrid.Cells.RowHeader("Период стойкости резца");
             grid16[3, 1] = new SourceGrid.Cells.RowHeader("T");
             grid16[3, 2] = new SourceGrid.Cells.Cell();
             grid16[3, 2].AddController(CellChangedEvent);
-            grid16[3, 3] = new SourceGrid.Cells.Cell("мин");
+            grid16[3, 3] = new SourceGrid.Cells.ColumnHeader("мин");
 
             grid16[3, 2].Editor = cb;
             grid16[3, 2].Editor.EditableMode = EditableMode.SingleClick;
@@ -2034,27 +2204,27 @@ namespace My_Cal
             grid16[4, 0] = new SourceGrid.Cells.RowHeader("Диаметр инструмента");
             grid16[4, 1] = new SourceGrid.Cells.RowHeader("D");
             grid16[4, 2] = new SourceGrid.Cells.Cell();
-            grid16[4, 3] = new SourceGrid.Cells.Cell("мм");
+            grid16[4, 3] = new SourceGrid.Cells.ColumnHeader("мм");
 
             grid16[5, 0] = new SourceGrid.Cells.RowHeader("Диаметр исходного отверсития");
             grid16[5, 1] = new SourceGrid.Cells.RowHeader("d");
             grid16[5, 2] = new SourceGrid.Cells.Cell();
-            grid16[5, 3] = new SourceGrid.Cells.Cell("мм");
+            grid16[5, 3] = new SourceGrid.Cells.ColumnHeader("мм");
 
             grid16[6, 0] = new SourceGrid.Cells.RowHeader("Поправка на обрабатываемый материал");
             grid16[6, 1] = new SourceGrid.Cells.RowHeader("Kмv");
             grid16[6, 2] = new SourceGrid.Cells.Cell();
-            grid16[6, 3] = new SourceGrid.Cells.Cell("б/р");
+            grid16[6, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
 
             grid16[7, 0] = new SourceGrid.Cells.RowHeader("Поправка на состояние поверхности");
             grid16[7, 1] = new SourceGrid.Cells.RowHeader("Kпv");
             grid16[7, 2] = new SourceGrid.Cells.Cell();
-            grid16[7, 3] = new SourceGrid.Cells.Cell("б/р");
+            grid16[7, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
 
             grid16[8, 0] = new SourceGrid.Cells.RowHeader("Поправка на глубину отверстия");
             grid16[8, 1] = new SourceGrid.Cells.RowHeader("Kг");
             grid16[8, 2] = new SourceGrid.Cells.Cell();
-            grid16[8, 3] = new SourceGrid.Cells.Cell("б/р");
+            grid16[8, 3] = new SourceGrid.Cells.ColumnHeader("б/р");
 
             grid16[9, 0] = new SourceGrid.Cells.ColumnHeader("Эмпирические коэффициенты скорости резания");
             grid16[9, 0].ColumnSpan = 4;
@@ -2139,12 +2309,16 @@ namespace My_Cal
                     grid16[r, 2].Editor = tb;
                     grid16[r, 2].AddController(CellChangedEvent);
                     grid16[r, 2].AddController(new MyCellTracking());//наведение
-                    grid16[r, 2].AddController(new MyHelpRowTracking());//help row pointer
+                    //grid16[r, 2].AddController(new MyHelpRowTracking());//help row pointer
                 }
             }
-
-
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid16.Columns)
+                col.Width = 80;
+            grid16.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid16.Rows)
+                r.Height = 25;
         }
         private void DoFullResultTab2_Drill()
         {
@@ -2205,7 +2379,7 @@ namespace My_Cal
             grid17[5, 3] = new SourceGrid.Cells.Cell("об/мин");
 
             grid17.Columns[0].Width = 130;
-            grid17.Columns[1].Width = 350;
+            grid17.Columns[1].Width = 210;
             grid17.Columns[2].Width = 70;
             grid17.Columns[3].Width = 70;
 
@@ -2302,7 +2476,6 @@ namespace My_Cal
             SourceGrid.CellContext context = (SourceGrid.CellContext)sender;
             try
             {
-
                 ts.inputData.s_rezba = Convert.ToSingle(context.Value);
                 context.Value = Convert.ToString(ts.inputData.s_rezba);
                 context.Invalidate();
@@ -2313,7 +2486,6 @@ namespace My_Cal
                 grid6[8, 2].Value = "s=p";
                 grid6[7, 2].Value = "s=p";
             }
-
         }
 
         /// <summary>
@@ -2326,6 +2498,9 @@ namespace My_Cal
             // Если это вкладка "Результат" для точения
             if (tabControl1.Controls.Find(context.Grid.Name, true).Length != 0)
                 turningResultCell_Chenged(context, e);
+            // Если это вкладка "Результат" для фрезерования
+            if (tabControl2.Controls.Find(context.Grid.Name, true).Length != 0)
+                millingResultCell_Chenged(context, e);
             // Если это вкладка "Результат" для сверления
             if (tabControl3.Controls.Find(context.Grid.Name, true).Length != 0)
                 drillingResultCell_Chenged(context, e);
@@ -2336,7 +2511,6 @@ namespace My_Cal
         /// </summary>
         private void turningResultCell_Chenged(SourceGrid.CellContext context, EventArgs e)
         {
-            MessageBox.Show("Точение");
             switch (context.Position.Row)
             {
                 case 1:
@@ -2396,7 +2570,6 @@ namespace My_Cal
         /// </summary>
         private void millingResultCell_Chenged(SourceGrid.CellContext context, EventArgs e)
         {
-            MessageBox.Show("Фрезззззаа!!!");
             switch (context.Position.Row)
             {
                 case 1:
@@ -2444,7 +2617,7 @@ namespace My_Cal
                 case 16:
                     ms.inputData.mv = (float)context.Value;
                     break;
-                
+
                 case 18:
                     ms.inputData.Cp = (float)context.Value;
                     break;
@@ -2464,7 +2637,7 @@ namespace My_Cal
                     ms.inputData.wp = (float)context.Value;
                     break;
             }
-            DoFullGrid19_Turning();
+            DoFullGrid21_Milling();
         }
 
         /// <summary>
@@ -2472,7 +2645,6 @@ namespace My_Cal
         /// </summary>
         private void drillingResultCell_Chenged(SourceGrid.CellContext context, EventArgs e)
         {
-            MessageBox.Show("Это сверление!!!");
             switch (context.Position.Row)
             {
                 case 1:
@@ -2654,17 +2826,6 @@ namespace My_Cal
         }
 
         /// <summary>
-        /// Обработка нажатия Enter в textBox16
-        /// </summary>
-        //private void textBox16_KeyUp(object sender, KeyEventArgs e)
-        //{
-        //    if (e.KeyCode == Keys.Enter)
-        //    {
-        //        button1_Click(null, null);
-        //    }
-        //}
-
-        /// <summary>
         /// Обработчик события клика на ячейку
         /// </summary>
         private void clickEvent_Click(object sender, EventArgs e)
@@ -2753,7 +2914,8 @@ namespace My_Cal
             {
                 Utils.RowSelector(context);
             }
-            else {
+            else
+            {
                 Utils.CellSelector(context);
             }
         }
@@ -2843,8 +3005,7 @@ namespace My_Cal
                 }
                 else
                 {
-                    ds.inputData.dk = DrillingStep.drillingKind.NONE;
-                    ds.inputData.t = Convert.ToSingle(context.Value);
+                    ds.inputData.dk = DrillingStep.drillingKind.DRILLING;
                     ds.setLCell(1, context);
                 }
                 Utils.CellSelector(context);
@@ -2911,106 +3072,8 @@ namespace My_Cal
         {
             DoFullGrid18_Turning();
             DoFullGrid19_Turning();
-            //ClearTab9();
-            //if (ts.inputData.s_rezba != 0)
-            //{
-            //    ts.inputData.s = ts.inputData.s_rezba;
-            //}
-            //textBox1.Text = Convert.ToString(ts.inputData.t);
-            //textBox2.Text = Convert.ToString(ts.inputData.s);
-            //textBox3.Text = Convert.ToString(ts.inputData.Kmv);
-            //textBox4.Text = Convert.ToString(ts.inputData.Kpv);
-            //textBox5.Text = Convert.ToString(ts.inputData.Kiv);
-            //textBox6.Text = Convert.ToString(ts.inputData.Cv);
-            //textBox7.Text = Convert.ToString(ts.inputData.xv);
-            //textBox8.Text = Convert.ToString(ts.inputData.yv);
-            //textBox9.Text = Convert.ToString(ts.inputData.mv);
-            //textBox10.Text = Convert.ToString(ts.inputData.Cp);
-            //textBox11.Text = Convert.ToString(ts.inputData.xp);
-            //textBox12.Text = Convert.ToString(ts.inputData.yp);
-            //textBox13.Text = Convert.ToString(ts.inputData.np);
-            //textBox15.Text = Convert.ToString(ts.inputData.Kmp);
-            //textBox16.Text = Convert.ToString(ts.inputData.D);
-            //comboBox1.SelectedIndex = ts.cBoxIndex;
-            //if (ts)
-            //{
-            //    textBox17.Text = Convert.ToString(ts.getV());
-            //    textBox18.Text = Convert.ToString(ts.getn());
-            //    textBox19.Text = Convert.ToString(ts.getP());
-            //    textBox20.Text = Convert.ToString(ts.getM());
-            //    textBox21.Text = Convert.ToString(ts.getN());
-            //}
         }
 
-        /// <summary>
-        /// Сбрасывает все значения textBox на 9 вкладке для токарного перехода
-        /// </summary>
-        //private void ClearTab9()
-        //{
-        //    comboBox1.SelectedIndex = -1;
-        //    for (int i = 0; i < tabPage9.Controls.Count; i++)
-        //    {
-        //        foreach (TextBox TBox in tabPage9.Controls.Find("textBox" + i, false))
-        //        {
-        //            TBox.Text = "";
-        //        }
-        //    }
-        //}
-
-        /// <summary>
-        /// Событие выбора периода стойкости резца для токарного перехода
-        /// </summary>
-        //private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    if (comboBox1.Text != "")
-        //    {
-        //        ts.cBoxIndex = comboBox1.SelectedIndex;
-        //        textBox14.Text = comboBox1.Text;
-        //        ts.inputData.T = Convert.ToSingle(comboBox1.Text);
-        //    }
-        //}
-        /// <summary>
-        /// Событие для нажатия на кнопку вычисления для токарного перехода
-        /// </summary>
-        //private void button1_Click(object sender, EventArgs e)
-        //{
-        //    textBox16.Text = textBox16.Text.Replace(".", ",");
-
-        //    try
-        //    {
-        //        ts.inputData.D = Convert.ToSingle(textBox16.Text);
-        //        if (ts)
-        //        {
-        //            textBox17.Text = Convert.ToString(ts.getV());
-        //            textBox18.Text = Convert.ToString(ts.getn());
-        //            textBox19.Text = Convert.ToString(ts.getP());
-        //            textBox20.Text = Convert.ToString(ts.getM());
-        //            textBox21.Text = Convert.ToString(ts.getN());
-        //        }
-        //        else
-        //        {
-        //            string str = "\n";
-        //            for (int i = 1; i < 9; i++)
-        //            {
-        //                if (ts.getLCell(i) == null)
-        //                {
-        //                    str = str + ((TabPage)tabControl1.Controls.Find("tabPage" + i, false)[0]).Text;// 
-        //                }
-        //            }
-
-        //            if ((ts.inputData.D == 0) || (ts.cBoxIndex == -1))
-        //            {
-        //                str = str + tabPage9.Text + "\n";
-        //            }
-        //            MessageBox.Show("Не все данные выбраны!\nПроверьте вкладки:" + str);
-        //        }
-        //    }
-        //    catch (System.FormatException)
-        //    {
-        //        textBox16.Text = "";
-        //        MessageBox.Show("Ошибка ввода!\n");
-        //    }
-        //}
 
         /// <summary>
         /// Событие изменения пункта меню для выбора периода стойкости резца для фрезерного перехода
@@ -3052,8 +3115,7 @@ namespace My_Cal
 
         }
 
-        // TODO Выяснить что это и зачем нужно. Похпже на нажатие Enter в каком-то TextBox
-        // Так.. это старое наверное уже. Удалил я почти все текстбоксы
+        // удалить
         private void textBox_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -3101,9 +3163,8 @@ namespace My_Cal
             treeView1.Nodes.Add("Переход" + i + " (токарный)");
             treeView1.Nodes[0].Expand();
             treeView1.EndUpdate();
-            TurningStep s = new TurningStep();
-            //Step_turning s2 = new Step_turning();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
-            //текущий не трогаем(!) а подменяем его только при выборе!!
+            TurningStep s = new TurningStep();//Создаем ещё один объект и помещаем его в коллекцию
+            //текущий не трогаем, а подменяем его только при выборе
             stepList.Add(s);
         }
 
@@ -3118,8 +3179,6 @@ namespace My_Cal
             treeView1.Nodes[0].Expand();
             treeView1.EndUpdate();
             MillingStep s = new MillingStep();
-            //Step_Mill s2 = new Step_Mill();//Создаем ЕЩЁ(!) один объект и помещаем его в коллекцию
-            //текущий не трогаем(!) а подменяем его только при выборе!!
             stepList.Add(s);
         }
 
@@ -3142,30 +3201,6 @@ namespace My_Cal
         /// </summary>
         private void makeReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Проверка готовности записи в файл
-            string str = "";
-            for (int i = 0; i < stepList.Count; i++)
-            {
-                try
-                {
-                    if ((TurningStep)stepList[i])//если объект ложный
-                    {
-
-                    }
-                    else
-                    {
-                        str = str + treeView1.Nodes[i].Text + "\n";
-                    }
-                }
-                catch
-                {
-                }
-            }
-            if (str != "")
-            {
-                MessageBox.Show("Не все переходы рассчитаны\nПроверьте переходы:\n" + str);
-            }
-            else
             {
 
                 saveFileDialog1.AddExtension = true;
@@ -3211,17 +3246,35 @@ namespace My_Cal
                         }
                         catch (InvalidCastException)
                         {
-                            fstr_out.Write("\r\n           Переход №" + (i + 1) + "(фрезерный)\r\n");
-                            fstr_out.Write("Скорость резания:   ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getV()) + " м/с\r\n");
-                            fstr_out.Write("Частота вращения:   ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getn()) + " об/мин\r\n");
-                            fstr_out.Write("Мощность:           ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getN()) + " кВт\r\n");
-                            fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getP()) + " Н\r\n");
-                            fstr_out.Write("Момент:             ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getM()) + " Нм\r\n");
+                            try
+                            {
+                                Convert.ToString(((TurningStep)stepList[i]).getV());
+                                fstr_out.Write("\r\n           Переход №" + (i + 1) + "(фрезерный)\r\n");
+                                fstr_out.Write("Скорость резания:   ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getV()) + " м/с\r\n");
+                                fstr_out.Write("Частота вращения:   ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getn()) + " об/мин\r\n");
+                                fstr_out.Write("Мощность:           ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getN()) + " кВт\r\n");
+                                fstr_out.Write("Сила резания:       ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getP()) + " Н\r\n");
+                                fstr_out.Write("Момент:             ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getM()) + " Нм\r\n");
+                            }
+                            catch (InvalidCastException)
+                            {
+                                fstr_out.Write("\r\n           Переход №" + (i + 1) + "(сверлильный)\r\n");
+                                fstr_out.Write("Скорость резания:   ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getV()) + " м/с\r\n");
+                                fstr_out.Write("Частота вращения:   ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getn()) + " об/мин\r\n");
+                                fstr_out.Write("Мощность:           ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getN()) + " кВт\r\n");
+                                fstr_out.Write("Сила резания:       ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getP()) + " Н\r\n");
+                                fstr_out.Write("Момент:             ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getM()) + " Нм\r\n");
+                            }
                         }
                     }
                     catch (IOException exc)
@@ -3278,12 +3331,11 @@ namespace My_Cal
         /// <param name="e"></param>
         private void treeView1_AfterSelect(object sender, TreeViewEventArgs e)
         {
-            //e = (TreeNodeMouseClickEventArgs)e;
             object s = stepList[e.Node.Index];
             if (s is TurningStep)
             {
                 DoFullTab6();
-                ts = (TurningStep)stepList[e.Node.Index];// stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE 
+                ts = (TurningStep)stepList[e.Node.Index];//подмена тем значением который записан в Alist на индексе соответствующем, индексу NODE 
 
                 DoFullGrid18_Turning();
                 DoFullGrid19_Turning();
@@ -3292,7 +3344,6 @@ namespace My_Cal
                 tabControl1.Visible = true;
                 tabControl3.Visible = false;
                 this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-                //comboBox1.SelectedIndex = -1;
                 if (tabControl1.SelectedIndex == 8)
                 {
                     tabPage9_Enter(null, null);
@@ -3304,7 +3355,6 @@ namespace My_Cal
             if (s is MillingStep)
             {
                 ms = (MillingStep)s;
-                //s2 = (Step_Mill)stepList[e.Node.Index];//подмена s1 тем значением который записан в Alist на индексе соответствующем, индексу NODE
 
                 DoFullGrid20_Milling();
                 DoFullGrid21_Milling();
@@ -3313,7 +3363,6 @@ namespace My_Cal
                 tabControl1.Visible = false;
                 tabControl3.Visible = false;
                 this.Text = "Калькулятор режимов резания: " + e.Node.Text;
-                //comboBox1.SelectedIndex = -1;
                 if (tabControl1.SelectedIndex == 8)
                 {
                     tabPage7Mill_Enter(null, null);
@@ -3329,6 +3378,8 @@ namespace My_Cal
                 tabControl2.Visible = false;
                 tabControl1.Visible = false;
                 tabControl3.Visible = true;
+
+                this.Text = "Калькулятор режимов резания: " + e.Node.Text;
                 Utils.ClearAllSelection(this);//почистить выделение всех ячеек всех гридов
                 ds.ReturnSelect();
             }
@@ -3342,4 +3393,5 @@ namespace My_Cal
         }
 
     }
+
 }

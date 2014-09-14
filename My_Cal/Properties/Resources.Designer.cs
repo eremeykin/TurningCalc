@@ -61,15 +61,12 @@ namespace My_Cal.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to \huge $V=\frac{С_{V}}{T^{m}t^{x}s^{y}}K_{МV}K_{ПV}K_{ИV}$
-        ///\huge   $n=\frac{1000V}{\pi D}$
-        ///\huge $P_{z}=10C_{P}t^{x}s^{y}V^{n}K_{MP}$
-        ///\huge $M=\frac{P_{z}D}{200}$
-        ///\huge $N=\frac{P_{z}V}{1020 \cdot 60}$.
+        ///   Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
         /// </summary>
-        internal static string latex {
+        internal static System.Drawing.Icon calculator {
             get {
-                return ResourceManager.GetString("latex", resourceCulture);
+                object obj = ResourceManager.GetObject("calculator", resourceCulture);
+                return ((System.Drawing.Icon)(obj));
             }
         }
         

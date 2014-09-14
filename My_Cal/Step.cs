@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,6 +11,7 @@ namespace My_Cal
 {
     public abstract class Step 
     {
+       
         /// <summary>
         ///  
         /// </summary>
@@ -24,14 +27,14 @@ namespace My_Cal
         /// </summary>
         public SourceGrid.CellContext getLCell(int i)
         {
-                return (SourceGrid.CellContext)this.linkedCells[i];
+            return (SourceGrid.CellContext)this.linkedCells[i];
         }
 
         public bool checkLCell(int i)
         {
             try
             {
-                SourceGrid.CellContext c =(SourceGrid.CellContext)this.linkedCells[i];
+                SourceGrid.CellContext c = (SourceGrid.CellContext)this.linkedCells[i];
                 return true;
             }
             catch (ArgumentOutOfRangeException)
@@ -72,7 +75,7 @@ namespace My_Cal
         /// <summary>
         /// Возвращает момент на шпинделе
         /// </summary>
-        public  float getM()
+        public float getM()
         {
 
             if (calc_all())
@@ -83,7 +86,7 @@ namespace My_Cal
         /// <summary>
         /// Возвращает потребляемую мощность
         /// </summary>
-        public  float getN()
+        public float getN()
         {
             if (calc_all())
                 return outputData.N;
@@ -94,7 +97,7 @@ namespace My_Cal
         /// <summary>
         /// Возвращает частоту вращения шпинделя
         /// </summary>
-        public  float getn()
+        public float getn()
         {
             if (calc_all())
                 return outputData.n;
@@ -118,7 +121,7 @@ namespace My_Cal
         /// </summary>
         /// TODO заменить public на  private внутри
         /// 
-        public abstract class InputData
+        public abstract class InputData 
         {
             /// <summary>
             /// диаметр поверхности
@@ -141,7 +144,8 @@ namespace My_Cal
         /// <summary>
         /// Класс для хранения выходных данных
         /// </summary>
-        public class OutputData
+        [Serializable]
+        public class OutputData 
         {
             /// <summary>
             /// частота вращенния шпинделя
@@ -164,6 +168,5 @@ namespace My_Cal
             /// </summary>
             public float N;
         }
-
     }
 }
