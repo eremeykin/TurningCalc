@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>calculator.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="SourceGrid">
       <HintPath>..\SourceGrid_4_40_bin\SourceGrid\Release\SourceGrid.dll</HintPath>
@@ -75,6 +78,11 @@
   <ItemGroup>
     <Compile Include="DrillingStep.cs" />
     <Compile Include="MillingStep.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Step.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -92,14 +100,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="ClassDiagram2.cd" />
     <None Include="ClassDiagram3.cd" />
     <None Include="packages.config" />
@@ -148,6 +151,52 @@
     <None Include="Resources\latex\Drilling\n%282%29.gif" />
     <None Include="Resources\latex\Drilling\M.gif" />
     <None Include="Resources\latex\Turning\latex.txt" />
+    <None Include="test\Turning\V.gif" />
+    <None Include="test\Turning\P.gif" />
+    <None Include="test\Turning\N.gif" />
+    <None Include="test\Turning\n%282%29.gif" />
+    <None Include="test\Turning\M.gif" />
+    <None Include="test\Milling\V.gif" />
+    <None Include="test\Milling\P.gif" />
+    <None Include="test\Milling\N.gif" />
+    <None Include="test\Milling\n%282%29.gif" />
+    <None Include="test\Milling\M.gif" />
+    <None Include="test\Drilling\V.gif" />
+    <None Include="test\Drilling\P.gif" />
+    <None Include="test\Drilling\N.gif" />
+    <None Include="test\Drilling\n%282%29.gif" />
+    <None Include="test\Drilling\M.gif" />
+    <None Include="res\Turning\V.gif" />
+    <None Include="res\Turning\P.gif" />
+    <None Include="res\Turning\N.gif" />
+    <None Include="res\Turning\n%282%29.gif" />
+    <None Include="res\Turning\M.gif" />
+    <None Include="res\Milling\P.gif" />
+    <None Include="res\Milling\N.gif" />
+    <None Include="res\Milling\n%282%29.gif" />
+    <None Include="res\Milling\M.gif" />
+    <None Include="res\Drilling\V.gif" />
+    <None Include="res\Drilling\P.gif" />
+    <None Include="res\Drilling\N.gif" />
+    <None Include="res\Drilling\n%282%29.gif" />
+    <None Include="res\Drilling\M.gif" />
+    <None Include="Resources\Turning\V.gif" />
+    <None Include="Resources\Turning\P.gif" />
+    <None Include="Resources\Turning\N.gif" />
+    <None Include="Resources\Turning\n%282%29.gif" />
+    <None Include="Resources\Turning\M.gif" />
+    <None Include="Resources\Milling\V.gif" />
+    <None Include="Resources\Milling\P.gif" />
+    <None Include="Resources\Milling\N.gif" />
+    <None Include="Resources\Milling\n%282%29.gif" />
+    <None Include="Resources\Milling\M.gif" />
+    <None Include="Resources\Drilling\V.gif" />
+    <None Include="Resources\Drilling\P.gif" />
+    <None Include="Resources\Drilling\N.gif" />
+    <None Include="Resources\Drilling\n%282%29.gif" />
+    <None Include="Resources\Drilling\M.gif" />
+    <None Include="Resources\calculator.ico" />
+    <Content Include="calculator.ico" />
     <Content Include="x64\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
