@@ -1,0 +1,20 @@
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\bin\Release\My_Cal.exe.config
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Release\My_Cal.csprojResolveAssemblyReference.cache
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Release\My_Cal.Form1.resources
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Release\My_Cal.Properties.Resources.resources
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Release\My_Cal.csproj.GenerateResource.Cache
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\My_Cal.exe.config
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Release\My_Cal.csprojResolveAssemblyReference.cache
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Release\My_Cal.Form1.resources
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Release\My_Cal.Properties.Resources.resources
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Release\My_Cal.csproj.GenerateResource.Cache
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\x64\SQLite.Interop.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\x86\SQLite.Interop.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\My_Cal.exe
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\My_Cal.pdb
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\SourceGrid.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\System.Data.SQLite.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\System.Data.SQLite.Linq.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Release\SourceGrid.xml
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Release\My_Cal.exe
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Release\My_Cal.pdb

@@ -1,0 +1,644 @@
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\bin\Debug\My_Cal.exe.config
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\obj\Debug\My_Cal.Form1.resources
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\bin\Debug\My_Cal.exe
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\bin\Debug\My_Cal.pdb
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\bin\Debug\SourceGrid.dll
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\bin\Debug\SourceGrid.xml
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\obj\Debug\My_Cal.exe
+c:\users\vohelem\documents\visual studio 2012\Projects\My_Cal\My_Cal\obj\Debug\My_Cal.pdb
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\bin\Debug\My_Cal.exe.config
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\obj\Debug\My_Cal.exe
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\obj\Debug\My_Cal.pdb
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\obj\Debug\My_Cal.Form1.resources
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\bin\Debug\My_Cal.exe
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\bin\Debug\My_Cal.pdb
+C:\Users\Vohelem\Dropbox\курсач\My_Cal\My_Cal\bin\Debug\SourceGrid.xml
+D:\My_Cal\My_Cal\bin\Debug\My_Cal.exe.config
+D:\My_Cal\My_Cal\obj\Debug\My_Cal.exe
+D:\My_Cal\My_Cal\obj\Debug\My_Cal.pdb
+D:\My_Cal\My_Cal\bin\Debug\My_Cal.exe
+D:\My_Cal\My_Cal\bin\Debug\My_Cal.pdb
+D:\My_Cal\My_Cal\bin\Debug\SourceGrid.xml
+D:\My_Cal\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+D:\My_Cal\My_Cal\obj\Debug\My_Cal.Form1.resources
+D:\My_Cal\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+D:\My_Cal\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+D:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.exe.config
+D:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.exe
+D:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.pdb
+D:\My_Cal(0)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+D:\My_Cal(0)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+D:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.exe
+D:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.pdb
+D:\My_Cal(0)\My_Cal\bin\Debug\System.Data.SQLite.dll
+D:\My_Cal(0)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+D:\My_Cal(0)\My_Cal\bin\Debug\SourceGrid.xml
+D:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+D:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.Form1.resources
+D:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+D:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(0)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(0)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(0)\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(0)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(0)\My_Cal\bin\Debug\SourceGrid.xml
+F:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(0)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(0)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(0)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(0)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(0)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(0)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(0)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\bin\Debug\My_Cal.exe.config
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\obj\Debug\My_Cal.exe
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\obj\Debug\My_Cal.pdb
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\bin\Debug\My_Cal.exe
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\bin\Debug\My_Cal.pdb
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\bin\Debug\System.Data.SQLite.dll
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\bin\Debug\SourceGrid.xml
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\obj\Debug\My_Cal.Form1.resources
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+C:\Users\Pete\SkyDrive\My_Cal(0)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(27.10.13)все таблицы\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(27.10.13)все таблицы\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)все таблицы\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)все таблицы\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(27.10.13)все таблицы\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(27.10.13)все таблицы\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)все таблицы\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)все таблицы\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(27.10.13)все таблицы\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(27.10.13)все таблицы\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(27.10.13)все таблицы\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(27.10.13)все таблицы\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(27.10.13)все таблицы\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(27.10.13)все таблицы\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(27.10.13)все таблицы+rowpointer\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(27.10.13)все таблицы+rowpointer+rowselecter\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(27.10.13)(подготовка к ядру)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(27.10.13)(полная отладка)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(27.10.13)(отладка)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(27.10.13)(отладка)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)(отладка)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)(отладка)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(27.10.13)(отладка)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(27.10.13)(отладка)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)(отладка)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)(отладка)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(27.10.13)(отладка)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(27.10.13)(отладка)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(27.10.13)(отладка)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(27.10.13)(отладка)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(27.10.13)(отладка)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(27.10.13)(отладка)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(27.10.13)(готовый для перехода)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(30.10.13)начало работы\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(30.10.13)начало работы\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(30.10.13)начало работы\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(30.10.13)начало работы\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(30.10.13)начало работы\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(30.10.13)начало работы\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(30.10.13)начало работы\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(30.10.13)начало работы\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(30.10.13)начало работы\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(30.10.13)начало работы\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(30.10.13)начало работы\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(30.10.13)начало работы\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(30.10.13)начало работы\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(30.10.13)начало работы\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(30.10.13)stage2\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(30.10.13)stage2\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(30.10.13)stage2\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(30.10.13)stage2\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(30.10.13)stage2\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(30.10.13)stage2\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(30.10.13)stage2\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(30.10.13)stage2\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(30.10.13)stage2\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(30.10.13)stage2\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(30.10.13)stage2\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(30.10.13)stage2\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(30.10.13)stage2\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(30.10.13)stage2\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(30.10.13)рабочая(текущая) версия\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(03.11.13)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(03.11.13)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(03.11.13)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(03.11.13)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(03.11.13)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(03.11.13)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(03.11.13)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(03.11.13)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(03.11.13)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(03.11.13)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(03.11.13)Добавлено дерево\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(03.11.13)Добавлен split container\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(03.11.13)Текущий\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(03.11.13)Текущий\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)Текущий\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)Текущий\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(03.11.13)Текущий\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(03.11.13)Текущий\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(03.11.13)Текущий\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(03.11.13)Текущий\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(03.11.13)Текущий\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(03.11.13)Текущий\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)Текущий\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)Текущий\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(03.11.13)Текущий\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(03.11.13)Текущий\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(03.11.13)Текущий(работа над классом)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(06.11.13)Текущий(работа с TreeView)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage2)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\bin\Debug\SourceGrid.xml
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(06.11.13)Текущий(работа с TreeView stage3)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\bin\Debug\My_Cal.exe.config
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\obj\Debug\My_Cal.exe
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\obj\Debug\My_Cal.pdb
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\bin\Debug\My_Cal.exe
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\bin\Debug\My_Cal.pdb
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\bin\Debug\System.Data.SQLite.dll
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\bin\Debug\SourceGrid.xml
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\obj\Debug\My_Cal.Form1.resources
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+D:\My_Cal(06.11.13)Текущий(работа с TreeView stage4)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\bin\Debug\My_Cal.exe.config
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\obj\Debug\My_Cal.exe
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\obj\Debug\My_Cal.pdb
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\bin\Debug\My_Cal.exe
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\bin\Debug\My_Cal.pdb
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\bin\Debug\System.Data.SQLite.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\bin\Debug\SourceGrid.xml
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\obj\Debug\My_Cal.Form1.resources
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage5)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\bin\Debug\My_Cal.exe.config
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\obj\Debug\My_Cal.exe
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\obj\Debug\My_Cal.pdb
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\bin\Debug\My_Cal.exe
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\bin\Debug\My_Cal.pdb
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\bin\Debug\System.Data.SQLite.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\bin\Debug\SourceGrid.xml
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\obj\Debug\My_Cal.Form1.resources
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage6)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\bin\Debug\My_Cal.exe.config
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\obj\Debug\My_Cal.exe
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\obj\Debug\My_Cal.pdb
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\bin\Debug\My_Cal.exe
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\bin\Debug\My_Cal.pdb
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\bin\Debug\System.Data.SQLite.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\bin\Debug\SourceGrid.xml
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\obj\Debug\My_Cal.Form1.resources
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage7)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage8)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage9)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage10)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage11)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.exe.config
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.exe
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.pdb
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.exe
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.pdb
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\System.Data.SQLite.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.Form1.resources
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+D:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.exe.config
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.exe
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.pdb
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.exe
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.pdb
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\System.Data.SQLite.dll
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.Form1.resources
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+E:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.exe.config
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.exe
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.pdb
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.exe
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\My_Cal.pdb
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\System.Data.SQLite.dll
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.Form1.resources
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+G:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий(работа с TreeView stage12) - копия\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий Согласование\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий Согласование3\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий Согласование4\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий Согласование6\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий Согласование7\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.exe.config
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.exe
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.pdb
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\System.Data.SQLite.dll
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.Form1.resources
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+F:\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.exe.config
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.exe
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.pdb
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.exe
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.pdb
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\System.Data.SQLite.dll
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.Form1.resources
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+C:\Users\Пётр\Desktop\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.exe.config
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.exe
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.pdb
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.exe
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\My_Cal.pdb
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\System.Data.SQLite.dll
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.Form1.resources
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+C:\Users\Vohelem\Dropbox\курсач\My_Cal(07.11.13)Текущий Согласование8\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\bin\Debug\My_Cal.exe.config
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Debug\My_Cal.exe
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Debug\My_Cal.pdb
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\bin\Debug\My_Cal.exe
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\bin\Debug\My_Cal.pdb
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\bin\Debug\System.Data.SQLite.dll
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Debug\My_Cal.Form1.resources
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+C:\Users\Пётр\Desktop\КП\My_Cal(15.12.13)\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+C:\Файлы с ноутбука\КП\My_Cal(15.12.13)\My_Cal\bin\Debug\My_Cal.exe.config
+C:\Файлы с ноутбука\КП\My_Cal(15.12.13)\My_Cal\obj\Debug\My_Cal.exe
+C:\Файлы с ноутбука\КП\My_Cal(15.12.13)\My_Cal\obj\Debug\My_Cal.pdb
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\My_Cal.exe.config
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Debug\My_Cal.exe
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Debug\My_Cal.pdb
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\x64\SQLite.Interop.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\x86\SQLite.Interop.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\My_Cal.exe
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\My_Cal.pdb
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\System.Data.SQLite.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\System.Data.SQLite.Linq.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Debug\My_Cal.csprojResolveAssemblyReference.cache
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Debug\My_Cal.Form1.resources
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Debug\My_Cal.Properties.Resources.resources
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\obj\Debug\My_Cal.csproj.GenerateResource.Cache
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\SourceGrid.dll
+C:\Users\Пётр\Documents\Visual Studio 2012\Projects\TurningCalc\My_Cal\bin\Debug\SourceGrid.xml
