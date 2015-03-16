@@ -1,0 +1,5 @@
+http://primat.org/index/0-89
+M=\frac{P_{Z}D}{200}
+N=\frac{P_{Z}V}{1020\cdot 60}
+P=\frac{10C_{P}t^{x}S_{z}^{y}B^{u}}{D^{q}}
+V={\frac{C_{V}D^{q}}{T^{m}t^{x}{s_{z}}^{y}B^{u}z^{p}}K_{V}}

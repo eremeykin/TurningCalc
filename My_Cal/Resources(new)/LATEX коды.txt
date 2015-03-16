@@ -1,0 +1,6 @@
+http://primat.org/index/0-89
+V={\frac{C_{V}D^{q}}{T^{m}t^{x}s^{y}}K_{MV}K_{\Pi}_{V}K_{\Gamma}}
+M=10C_{M}D^{q}S^{y}K_{MP}
+P=10C_{P}D^{q}t^{x}S^{y}K_{MP}
+N=\frac{M\cdot n}{9750} 
+n=\frac{1000\cdot V}{\pi D}

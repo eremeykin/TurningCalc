@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="My_Cal.Step">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="My_Cal.Step.InputData">
+        <TypeIdentifier>
+          <NewMemberFileName>Step.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="My_Cal.Step.OutputData">
+        <TypeIdentifier>
+          <NewMemberFileName>Step.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAIAAAAAAAEAAAAAAAAAAAAAACEQAAJQEhA=</HashCode>
+      <FileName>Step.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Cal.TurningStep">
+    <Position X="2.25" Y="0.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="My_Cal.TurningStep.TurningInptuData">
+        <TypeIdentifier>
+          <NewMemberFileName>TurningStep.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="My_Cal.TurningStep.TurningOutputData">
+        <TypeIdentifier>
+          <NewMemberFileName>TurningStep.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAEAAAAAAAAAABAAAABCAAAAABA=</HashCode>
+      <FileName>TurningStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Cal.MillingStep">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="My_Cal.MillingStep.MillingInptutData">
+        <TypeIdentifier>
+          <NewMemberFileName>MillingStep.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+      <Class Name="My_Cal.MillingStep.MillingOutputData">
+        <TypeIdentifier>
+          <NewMemberFileName>MillingStep.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAEABAAAAAAAABAAAABCAAAAABA=</HashCode>
+      <FileName>MillingStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="My_Cal.DrillingStep">
+    <Position X="5.75" Y="1.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="My_Cal.DrillingStep.drillingKind">
+        <TypeIdentifier>
+          <NewMemberFileName>DrillingStep.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+      <Class Name="My_Cal.DrillingStep.DrillingInptuData">
+        <TypeIdentifier>
+          <NewMemberFileName>DrillingStep.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAEAAAAAAAAAABAAAABCAAAAABA=</HashCode>
+      <FileName>DrillingStep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -1,0 +1,5 @@
+\huge $V=\frac{C_{V}D^{q}}{T^{m}t^{x}s^{y}}K_{MV}K_{ÈV}K_{Ã}$
+\huge $M=10C_{M}D^{q}t^{x}s^{y}K_{MP}$
+\huge $P_{o}=10C_{P}D^{q}t^{x}s^{y}K_{MP}$
+\huge $N=\frac{M \cdot n}{9750}$
+\huge $n=\frac{1000V}{\pi D}$

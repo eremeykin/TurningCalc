@@ -1,0 +1,5 @@
+\huge $V=\frac{Ñ_{V}}{T^{m}t^{x}s^{y}}K_{ÌV}K_{ÏV}K_{ÈV}$
+\huge   $n=\frac{1000V}{\pi D}$
+\huge $P_{z}=10C_{P}t^{x}s^{y}V^{n}K_{MP}$
+\huge $M=\frac{P_{z}D}{200}$
+\huge $N=\frac{P_{z}V}{1020 \cdot 60}$

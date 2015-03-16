@@ -1,0 +1,3 @@
+http://primat.org/index/0-89
+M=P_{z}\frac{D}{2}
+N=\frac{P_{z}V}{1020 \cdot 60}
