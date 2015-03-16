@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,7 +23,7 @@ namespace My_Cal
         /// Поле для хранения индекса ComboBox
         /// </summary>
         public int cBoxIndex = -1;
-        
+
         public static bool operator true(MillingStep st)
         {
             //TODO Написать логику
@@ -154,7 +155,7 @@ namespace My_Cal
         /// Дополнительное поле для фрезерного перехода
         /// </summary>
         /// TODO заменить public на  private внутри
-        public class MillingOutputData
+        public class MillingOutputData 
         {
             /// <summary>
             /// минутная подача

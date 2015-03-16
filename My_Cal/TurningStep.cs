@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace My_Cal
 {
-    class TurningStep : Step
+    [Serializable]
+    public class TurningStep : Step
     {
 
         /// <summary>
@@ -17,7 +19,7 @@ namespace My_Cal
         /// <summary>
         /// Поле для хранения индекса ComboBox
         /// </summary>
-        public int cBoxIndex=-1;
+        public int cBoxIndex = -1;
 
         public static bool operator true(TurningStep st)
         {
@@ -136,7 +138,6 @@ namespace My_Cal
             /// подача при нарезании резьбы
             /// </summary>
             public float s_rezba = 0;
-
         }
 
         /// <summary>
@@ -146,6 +147,5 @@ namespace My_Cal
         public class TurningOutputData : OutputData
         {
         }
-
     }
 }

@@ -13,6 +13,8 @@ using SourceGrid.Selection;
 using System.Collections;
 using System.IO;
 using System.Diagnostics;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
 
 
 
@@ -62,6 +64,28 @@ namespace My_Cal
             DoFullRusultTab1_Drill();
             DoFullResultTab2_Drill();
             tabControl3.Visible = false;
+            #region Изменение шрифта
+            foreach (Control contr in this.Controls)
+            {
+                contr.Font = new Font("Microsoft Sans Serif", 10);
+            }
+            foreach (TabPage page in tabControl1.Controls)
+            {
+                foreach (Control grid in page.Controls)
+                    grid.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            foreach (TabPage page in tabControl2.Controls)
+            {
+                foreach (Control grid in page.Controls)
+                    grid.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            foreach (TabPage page in tabControl3.Controls)
+            {
+                foreach (Control grid in page.Controls)
+                    grid.Font = new Font("Microsoft Sans Serif", 12);
+            }
+            this.tabControl2.Font = new Font("Microsoft Sans Serif", 8);
+            #endregion
         }
         private void CustomInitialization()
         {
@@ -77,7 +101,7 @@ namespace My_Cal
             // Для вкладки результат 
             CellChangedEvent = new SourceGrid.Cells.Controllers.CustomEvents();
             CellChangedEvent.EditEnded += new EventHandler(CellEvent_Changed);
-            
+
             foreach (SourceGrid.Grid GRID in tabControl1.Controls.Find("grid", true))//выставить выравнивание по центру для всех ячеек
             {
                 for (int r = 0; r < GRID.Rows.Count; r++)
@@ -170,7 +194,12 @@ namespace My_Cal
             grid1.Selection.EnableMultiSelection = false;
             #endregion
 
+            foreach (SourceGrid.GridColumn col in grid1.Columns)
+                col.Width=100;
+            grid1.Columns[2].Width = 150;
 
+            foreach (SourceGrid.GridRow row in grid1.Rows)
+                row.Height = 25;
         }
         private void DoFullTab2()
         {
@@ -258,6 +287,13 @@ namespace My_Cal
             grid2.EnableSort = false;
             grid2.Selection.EnableMultiSelection = false;
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid2.Columns)
+                col.Width = 100;
+            grid2.Columns[2].Width = 150;
+
+            foreach (SourceGrid.GridRow row in grid2.Rows)
+                row.Height = 25;
         }
         private void DoFullTab3()
         {
@@ -293,6 +329,12 @@ namespace My_Cal
             grid3.EnableSort = false;
             grid3.Selection.EnableMultiSelection = false;
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid3.Columns)
+                col.Width = 100;
+            grid3.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid3.Rows)
+                row.Height = 25;
         }
         private void DoFullTab4()
         {
@@ -330,6 +372,11 @@ namespace My_Cal
             grid4.EnableSort = false;
             grid4.Selection.EnableMultiSelection = false;
             #endregion
+            foreach (SourceGrid.GridColumn col in grid4.Columns)
+                col.Width = 100;
+            grid4.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid4.Rows)
+                row.Height = 25;
         }
         private void DoFullTab5()
         {
@@ -413,6 +460,12 @@ namespace My_Cal
             grid5.EnableSort = false;
             grid5.Selection.EnableMultiSelection = false;
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid5.Columns)
+                col.Width = 100;
+            grid5.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid5.Rows)
+                row.Height = 25;
         }
         private void DoFullTab6()
         {
@@ -518,6 +571,12 @@ namespace My_Cal
             grid6[14, 2].AddController(CellChangedEvent_rezba);
 
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid6.Columns)
+                col.Width = 100;
+            grid6.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid6.Rows)
+                row.Height = 25;
         }
         private void DoFullTab7()
         {
@@ -602,9 +661,16 @@ namespace My_Cal
             grid7.EnableSort = false;
             grid7.Selection.EnableMultiSelection = false;
             #endregion
+
+            foreach (SourceGrid.GridColumn col in grid7.Columns)
+                col.Width = 100;
+            grid7.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid7.Rows)
+                row.Height = 25;
         }
         private void DoFullTab8()
         {
+
             SQLreader sqlReader = new SQLreader("database.sqlite");
             SQLiteDataReader sqlite_datareader = sqlReader.getReader("KmP");
             #region Код таблицы 9
@@ -637,6 +703,13 @@ namespace My_Cal
             grid8.EnableSort = false;
             grid8.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid8.Columns)
+                col.Width = 100;
+            grid8.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid8.Rows)
+                row.Height = 25;
         }
 
         private void DoFullRusultTab1_Turning()
@@ -761,7 +834,7 @@ namespace My_Cal
             // Добавляем возможность редактировать и указываем событие при изменении значения
             for (int r = 1; r < grid18.RowsCount; r++)
             {
-                if (r!=3 && r!=9 && r!=14)
+                if (r != 3 && r != 9 && r != 14)
                 {
                     grid18[r, 2].Editor = tb;
                     grid18[r, 2].AddController(CellChangedEvent);
@@ -772,6 +845,13 @@ namespace My_Cal
 
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid18.Columns)
+                col.Width = 80;
+            grid18.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid18.Rows)
+                r.Height = 25;
         }
         private void DoFullResultTab2_Turning()
         {
@@ -812,7 +892,7 @@ namespace My_Cal
 
             grid19[row, 2] = new SourceGrid.Cells.Cell();
             grid19[row, 3] = new SourceGrid.Cells.Cell("Нм");
-            
+
             row++;
             grid19[row, 0] = new SourceGrid.Cells.RowHeader("Потребляемая мощность");
             grid19[row, 1] = new SourceGrid.Cells.RowHeader();
@@ -971,6 +1051,13 @@ namespace My_Cal
             grid1Mill.EnableSort = false;
             grid1Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid1Mill.Columns)
+                col.Width = 60;
+            grid1Mill.Columns[0].Width = 200;
+            foreach (SourceGrid.GridRow row in grid1Mill.Rows)
+                row.Height = 25;
         }
         public void DoFullTab2_Mill()
         {
@@ -1013,6 +1100,12 @@ namespace My_Cal
             grid2Mill.EnableSort = false;
             grid2Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid2Mill.Columns)
+                col.Width = 100;
+            foreach (SourceGrid.GridRow row in grid2Mill.Rows)
+                row.Height = 25;
         }
         public void DoFullTab3_Mill()
         {
@@ -1054,6 +1147,13 @@ namespace My_Cal
             grid3Mill.EnableSort = false;
             grid3Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid3Mill.Columns)
+                col.Width = 150;
+            grid3Mill.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow row in grid3Mill.Rows)
+                row.Height = 25;
         }
         public void DoFullTab4_Mill()
         {
@@ -1083,6 +1183,13 @@ namespace My_Cal
             grid4Mill.EnableSort = false;
             grid4Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid4Mill.Columns)
+                col.Width = 100;
+            grid4Mill.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow row in grid4Mill.Rows)
+                row.Height = 25;
         }
         public void DoFullTab5_Mill()
         {
@@ -1158,6 +1265,13 @@ namespace My_Cal
             grid5Mill.EnableSort = false;
             grid5Mill.Selection.EnableMultiSelection = false;
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid5Mill.Columns)
+                col.Width = 100;
+            grid5Mill.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow row in grid5Mill.Rows)
+                row.Height = 25;
         }
         #endregion
 
@@ -1323,6 +1437,13 @@ namespace My_Cal
 
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid20.Columns)
+                col.Width = 80;
+            grid20.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid20.Rows)
+                r.Height = 25;
         }
         private void DoFullResultTab2_Milling()
         {
@@ -1396,7 +1517,7 @@ namespace My_Cal
             grid21.Rows[3].Height = 60;
             grid21.Rows[4].Height = 60;
             grid21.Rows[5].Height = 60;
-            
+
             #endregion
         }
         private void DoFullGrid20_Milling()
@@ -1421,10 +1542,10 @@ namespace My_Cal
             grid20[18, 2].Value = ms.inputData.Cp;
             grid20[19, 2].Value = ms.inputData.qp;
             grid20[20, 2].Value = ms.inputData.xp;
-            grid20[21, 2].Value = ms.inputData.yp; 
+            grid20[21, 2].Value = ms.inputData.yp;
             grid20[22, 2].Value = ms.inputData.up;
             grid20[23, 2].Value = ms.inputData.wp;
-            
+
 
         }
         private void DoFullGrid21_Milling()
@@ -1557,6 +1678,13 @@ namespace My_Cal
                 }
             }
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid9.Columns)
+                col.Width = 100;
+            grid9.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid9.Rows)
+                r.Height = 25;
         }
         private void DoFullTab2_Drill()
         {
@@ -1660,6 +1788,13 @@ namespace My_Cal
 
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid10.Columns)
+                col.Width = 100;
+            grid10.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid10.Rows)
+                r.Height = 25;
         }
         private void DoFullTab3_Drill()
         {
@@ -1692,6 +1827,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid11.Columns)
+                col.Width = 100;
+            grid11.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid11.Rows)
+                r.Height = 25;
         }
         private void DoFullTab4_Drill()
         {
@@ -1732,6 +1874,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid12.Columns)
+                col.Width = 100;
+            grid12.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid12.Rows)
+                r.Height = 25;
         }
         private void DoFullTab5_Drill()
         {
@@ -1767,6 +1916,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid13.Columns)
+                col.Width = 100;
+            grid13.Columns[0].Width = 150;
+            foreach (SourceGrid.GridRow r in grid13.Rows)
+                r.Height = 25;
         }
         private void DoFullTab6_Drill()
         {
@@ -1917,6 +2073,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid14.Columns)
+                col.Width = 80;
+            grid14.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid14.Rows)
+                r.Height = 25;
         }
         private void DoFullTab7_Drill()
         {
@@ -1997,6 +2160,13 @@ namespace My_Cal
             }
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid15.Columns)
+                col.Width = 80;
+            grid15.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid15.Rows)
+                r.Height = 25;
         }
         private void DoFullRusultTab1_Drill()
         {
@@ -2145,6 +2315,13 @@ namespace My_Cal
 
 
             #endregion
+
+
+            foreach (SourceGrid.GridColumn col in grid16.Columns)
+                col.Width = 80;
+            grid16.Columns[0].Width = 100;
+            foreach (SourceGrid.GridRow r in grid16.Rows)
+                r.Height = 25;
         }
         private void DoFullResultTab2_Drill()
         {
@@ -2336,7 +2513,6 @@ namespace My_Cal
         /// </summary>
         private void turningResultCell_Chenged(SourceGrid.CellContext context, EventArgs e)
         {
-            MessageBox.Show("Точение");
             switch (context.Position.Row)
             {
                 case 1:
@@ -2396,7 +2572,6 @@ namespace My_Cal
         /// </summary>
         private void millingResultCell_Chenged(SourceGrid.CellContext context, EventArgs e)
         {
-            MessageBox.Show("Фрезззззаа!!!");
             switch (context.Position.Row)
             {
                 case 1:
@@ -2444,7 +2619,7 @@ namespace My_Cal
                 case 16:
                     ms.inputData.mv = (float)context.Value;
                     break;
-                
+
                 case 18:
                     ms.inputData.Cp = (float)context.Value;
                     break;
@@ -2472,7 +2647,6 @@ namespace My_Cal
         /// </summary>
         private void drillingResultCell_Chenged(SourceGrid.CellContext context, EventArgs e)
         {
-            MessageBox.Show("Это сверление!!!");
             switch (context.Position.Row)
             {
                 case 1:
@@ -2753,7 +2927,8 @@ namespace My_Cal
             {
                 Utils.RowSelector(context);
             }
-            else {
+            else
+            {
                 Utils.CellSelector(context);
             }
         }
@@ -2843,8 +3018,9 @@ namespace My_Cal
                 }
                 else
                 {
-                    ds.inputData.dk = DrillingStep.drillingKind.NONE;
-                    ds.inputData.t = Convert.ToSingle(context.Value);
+                    //ds.inputData.dk = DrillingStep.drillingKind.NONE;
+                    ds.inputData.dk = DrillingStep.drillingKind.DRILLING;
+                    //ds.inputData.t = Convert.ToSingle(context.Value);
                     ds.setLCell(1, context);
                 }
                 Utils.CellSelector(context);
@@ -3142,30 +3318,6 @@ namespace My_Cal
         /// </summary>
         private void makeReportToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //Проверка готовности записи в файл
-            string str = "";
-            for (int i = 0; i < stepList.Count; i++)
-            {
-                try
-                {
-                    if ((TurningStep)stepList[i])//если объект ложный
-                    {
-
-                    }
-                    else
-                    {
-                        str = str + treeView1.Nodes[i].Text + "\n";
-                    }
-                }
-                catch
-                {
-                }
-            }
-            if (str != "")
-            {
-                MessageBox.Show("Не все переходы рассчитаны\nПроверьте переходы:\n" + str);
-            }
-            else
             {
 
                 saveFileDialog1.AddExtension = true;
@@ -3211,17 +3363,35 @@ namespace My_Cal
                         }
                         catch (InvalidCastException)
                         {
-                            fstr_out.Write("\r\n           Переход №" + (i + 1) + "(фрезерный)\r\n");
-                            fstr_out.Write("Скорость резания:   ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getV()) + " м/с\r\n");
-                            fstr_out.Write("Частота вращения:   ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getn()) + " об/мин\r\n");
-                            fstr_out.Write("Мощность:           ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getN()) + " кВт\r\n");
-                            fstr_out.Write("Сила резания:       ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getP()) + " Н\r\n");
-                            fstr_out.Write("Момент:             ");
-                            fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getM()) + " Нм\r\n");
+                            try
+                            {
+                                Convert.ToString(((TurningStep)stepList[i]).getV());
+                                fstr_out.Write("\r\n           Переход №" + (i + 1) + "(фрезерный)\r\n");
+                                fstr_out.Write("Скорость резания:   ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getV()) + " м/с\r\n");
+                                fstr_out.Write("Частота вращения:   ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getn()) + " об/мин\r\n");
+                                fstr_out.Write("Мощность:           ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getN()) + " кВт\r\n");
+                                fstr_out.Write("Сила резания:       ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getP()) + " Н\r\n");
+                                fstr_out.Write("Момент:             ");
+                                fstr_out.Write(Convert.ToString(((MillingStep)stepList[i]).getM()) + " Нм\r\n");
+                            }
+                            catch (InvalidCastException)
+                            {
+                                fstr_out.Write("\r\n           Переход №" + (i + 1) + "(сверлильный)\r\n");
+                                fstr_out.Write("Скорость резания:   ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getV()) + " м/с\r\n");
+                                fstr_out.Write("Частота вращения:   ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getn()) + " об/мин\r\n");
+                                fstr_out.Write("Мощность:           ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getN()) + " кВт\r\n");
+                                fstr_out.Write("Сила резания:       ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getP()) + " Н\r\n");
+                                fstr_out.Write("Момент:             ");
+                                fstr_out.Write(Convert.ToString(((DrillingStep)stepList[i]).getM()) + " Нм\r\n");
+                            }
                         }
                     }
                     catch (IOException exc)
@@ -3342,4 +3512,5 @@ namespace My_Cal
         }
 
     }
+
 }
